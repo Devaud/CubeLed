@@ -1,0 +1,117 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{url}
+
+% ajout des librairie pour l'insertion de code
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily,
+	stringstyle=\ttfamily\color{green!50!black},
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{red!50!black}\itshape,
+	showstringspaces=true,
+	tabsize=2, frame=single,
+	numbers=left, numberstyle=\tiny,
+	firstnumber=1, stepnumber=1, numbersep=5pt
+	}
+
+% En-tête et pied de page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Déclaration de l'en-tête
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[l]{}
+\fancyhead[c]{Documentation}
+\fancyhead[r]{\today}
+
+% Déclaration du pied de page
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[l]{Alan Devaud}
+\fancyfoot[c]{T.IS-E2B}
+\fancyfoot[r]{page \thepage}
+
+% Information sur le projet (auteur, titre, date,etc.)
+\title{}
+\author{Alan Devaud}
+\date{\today}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \begin{center}
+        % Logo and some informations
+        {\large CFPT Ecole d'informatique - Technicien ES en informatique}\\[0.5cm]
+        {\large Travail de semestre 2016-2017}\\[0.5cm]
+        %\includegraphics[width=0.6\textwidth]{YGCLogo.png}\\[1cm]
+        
+        % Title
+        \rule{\linewidth}{0.5mm} \\[0.4cm]
+        { \huge \bfseries  Documentation \\[0.4cm] }
+        \rule{\linewidth}{0.5mm} \\[1.5cm]
+    
+        % Author and supervisor
+        \noindent
+        \begin{minipage}{0.4\textwidth}
+          \begin{flushleft} \large
+            \emph{Elèves :}\\
+            M. Alan \textsc{Devaud}
+          \end{flushleft}
+        \end{minipage}%
+        \begin{minipage}{0.4\textwidth}
+          \begin{flushright} \large
+            \emph{Enseignants :} \\
+            M\up{me}~Anne \textsc{Terrier}\\
+            M.~Christophe \textsc{Maréchal}
+          \end{flushright}
+        \end{minipage}
+        
+        \vfill
+
+        % Bottom of the page
+        {\large Version 1.0 du\\ \today}
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+%Résumé
+\section{Résumé}
+\newpage
+
+% Table of contents
+\tableofcontents
+\newpage
+
+% Introduction
+\section{Introduction}
+\newpage
+
+% Cahier des charges
+\section{Cahier des charges}
+\newpage
+
+% Analyse de l'existant
+\section{Analyse de l'existant}
+\newpage
+
+% Analyse fonctionnelle
+\section{Analyse fonctionnelle}
+\newpage
+
+% Conclusion
+\section{Conclusion}
+
+\newpage
+
+% Pictures table
+\newpage
+\listoffigures
+
+
+\end{document}
