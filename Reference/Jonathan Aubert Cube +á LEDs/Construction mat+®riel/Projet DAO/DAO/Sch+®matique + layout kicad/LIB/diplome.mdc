@@ -1,0 +1,44 @@
+PCBNEW-LibDoc----V1  04.05.2012 23:40:17
+#
+$MODULE USB_B_ecole
+Li USB_B_ecole
+Kw USB
+$EndMODULE
+#
+$MODULE JACK_PWR_2.5_5.5_SMD
+Li JACK_PWR_2.5_5.5_SMD
+Cd JACK SMD ALIMENTATION AVEC INTER
+Kw JACK ALIM POWER
+$EndMODULE
+#
+$MODULE TROU_3.5
+Li TROU_3.5
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+$EndMODULE
+#
+$MODULE TROU_4.5
+Li TROU_4.5
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+$EndMODULE
+#
+$MODULE TROU_2.8
+Li TROU_2.8
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+$EndMODULE
+#
+$MODULE JUMPER_2.54
+Li JUMPER_2.54
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE con-molex-5566-8
+Li con-molex-5566-8
+Cd MINI FIT CONNECTOR 8 POL
+Kw MINI FIT CONNECTOR 8 POL
+$EndMODULE
+#
+$EndLIBDOC

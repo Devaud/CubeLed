@@ -1,0 +1,17 @@
+EESchema-DOCLIB  Version 2.0  Date: 04.05.2012 22:40:17
+#
+$CMP 4022
+D Jonhson Counter (8 states)
+K CMOS CNT CNT8
+$ENDCMP
+#
+$CMP 4023
+D Triple Nand 3 inputs
+K CMOS Nand3
+$ENDCMP
+#
+$CMP MIC5891
+K MICREL MIC 5891
+$ENDCMP
+#
+#End Doc Library

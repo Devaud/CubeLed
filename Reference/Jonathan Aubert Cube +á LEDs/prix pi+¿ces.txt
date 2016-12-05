@@ -1,0 +1,8 @@
+		Plaque alu 12x12x0.04" BPA-1527			563-BPA-1527		1	15.53
+		Boitier alu 12x12x3" AC-1424			563-AC-1424		1	46.72
+		LTC6990 VCO					1848037			1	4.35
+		Barrette à broche DIN 41651 64P			128479			1	7.67
+		Connecteur femelle selon la norme DIN 41651 64P	127123			1	9.5
+
+total: 83.77 CHF => 84 CHF
+

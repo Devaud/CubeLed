@@ -1,0 +1,573 @@
+EESchema Schematic File Version 2  date 01.06.2012 09:08:51
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:diplome
+LIBS:transistor-power
+LIBS:étage led-cache
+EELAYER 25  0
+EELAYER END
+$Descr A4 11700 8267
+Sheet 1 1
+Title ""
+Date "1 jun 2012"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	1450 6200 1700 6200
+Connection ~ 1900 5350
+Wire Wire Line
+	2250 5350 1900 5350
+Connection ~ 1900 4150
+Wire Wire Line
+	2250 4150 1900 4150
+Wire Notes Line
+	2200 4200 1600 4200
+Wire Notes Line
+	2200 4200 2200 4700
+Wire Notes Line
+	2200 4700 1600 4700
+Wire Wire Line
+	1900 6800 1600 6800
+Wire Wire Line
+	1600 6800 1600 6750
+Wire Wire Line
+	1900 5900 1900 5800
+Wire Wire Line
+	1900 5400 1900 5300
+Wire Wire Line
+	1600 6250 1600 6200
+Wire Wire Line
+	1900 6300 1900 6900
+Connection ~ 1900 6800
+Wire Wire Line
+	1900 4800 1900 4700
+Connection ~ 1600 6200
+Wire Notes Line
+	5200 3700 5200 3700
+Connection ~ 7900 6400
+Wire Wire Line
+	7900 6400 7400 6400
+Wire Wire Line
+	7400 6400 7400 5400
+Wire Wire Line
+	7400 5400 7450 5400
+Wire Wire Line
+	7900 5050 7900 4950
+Wire Notes Line
+	8200 4950 8200 4650
+Wire Notes Line
+	7550 6750 7550 6450
+Wire Notes Line
+	7550 6750 8300 6750
+Wire Notes Line
+	8200 4950 7600 4950
+Wire Wire Line
+	7900 5850 7900 5750
+Connection ~ 3700 6250
+Wire Notes Line
+	3700 4800 3700 4450
+Wire Wire Line
+	4000 4900 4000 4800
+Connection ~ 4000 6850
+Wire Wire Line
+	4000 6350 4000 6950
+Wire Wire Line
+	3700 6300 3700 6250
+Wire Wire Line
+	4000 5450 4000 5400
+Wire Notes Line
+	7500 1000 3200 1000
+Wire Notes Line
+	7500 3650 3200 3650
+Wire Notes Line
+	7500 3650 7500 1000
+Wire Wire Line
+	3900 3100 3900 3050
+Wire Wire Line
+	4500 3100 4500 3050
+Wire Wire Line
+	5100 3100 5100 3050
+Wire Wire Line
+	5700 3100 5700 3050
+Wire Wire Line
+	5400 1700 5400 1750
+Wire Wire Line
+	4800 1700 4800 1750
+Wire Wire Line
+	4200 1700 4200 1750
+Wire Wire Line
+	3600 1750 3600 1700
+Connection ~ 5700 2200
+Wire Wire Line
+	5700 2150 5700 2200
+Connection ~ 5100 2200
+Wire Wire Line
+	5100 2200 5100 2150
+Connection ~ 4500 2200
+Wire Wire Line
+	4500 2200 4500 2150
+Connection ~ 3900 2200
+Wire Wire Line
+	3900 2200 3900 2150
+Connection ~ 3900 2600
+Wire Wire Line
+	3900 2650 3900 2600
+Connection ~ 4500 2600
+Wire Wire Line
+	4500 2600 4500 2650
+Connection ~ 5100 2600
+Wire Wire Line
+	5100 2600 5100 2650
+Connection ~ 5700 2600
+Wire Wire Line
+	5700 2600 5700 2650
+Wire Wire Line
+	3600 2650 3600 2600
+Wire Wire Line
+	3600 2600 5900 2600
+Wire Wire Line
+	5400 2600 5400 2650
+Connection ~ 5400 2600
+Wire Wire Line
+	4800 2600 4800 2650
+Connection ~ 4800 2600
+Wire Wire Line
+	4200 2600 4200 2650
+Connection ~ 4200 2600
+Wire Wire Line
+	5900 2600 5900 2200
+Wire Wire Line
+	5900 2200 3600 2200
+Wire Wire Line
+	3600 2200 3600 2150
+Wire Wire Line
+	4200 2200 4200 2150
+Connection ~ 4200 2200
+Wire Wire Line
+	4800 2200 4800 2150
+Connection ~ 4800 2200
+Wire Wire Line
+	5400 2200 5400 2150
+Connection ~ 5400 2200
+Wire Wire Line
+	6000 2400 5900 2400
+Connection ~ 5900 2400
+Wire Wire Line
+	3900 1700 3900 1750
+Wire Wire Line
+	4500 1700 4500 1750
+Wire Wire Line
+	5100 1700 5100 1750
+Wire Wire Line
+	5700 1700 5700 1750
+Wire Wire Line
+	5400 3100 5400 3050
+Wire Wire Line
+	4800 3100 4800 3050
+Wire Wire Line
+	4200 3100 4200 3050
+Wire Wire Line
+	3600 3100 3600 3050
+Wire Notes Line
+	7500 1150 7500 1050
+Wire Notes Line
+	3200 3650 3200 1000
+Wire Wire Line
+	4000 5950 4000 5850
+Wire Wire Line
+	3700 6800 3700 6850
+Wire Wire Line
+	3700 6850 4000 6850
+Wire Notes Line
+	3700 4800 4300 4800
+Wire Notes Line
+	3700 4450 4300 4450
+Wire Notes Line
+	4300 4450 4300 4800
+Wire Wire Line
+	3800 6250 3600 6250
+Wire Notes Line
+	7550 6450 8300 6450
+Wire Notes Line
+	8300 6450 8300 6750
+Wire Notes Line
+	8200 4650 7600 4650
+Wire Notes Line
+	7600 4650 7600 4950
+Wire Wire Line
+	7900 6450 7900 6350
+Wire Wire Line
+	1900 4200 1900 4100
+Wire Notes Line
+	1600 4700 1600 4200
+Wire Wire Line
+	2250 4750 1900 4750
+Connection ~ 1900 4750
+Wire Wire Line
+	2250 5850 1900 5850
+Connection ~ 1900 5850
+Text Label 1450 6200 2    40   ~ 0
+LC0
+Text Label 2250 5850 0    40   ~ 0
+Pt4
+Text Label 2250 5350 0    40   ~ 0
+Pt3
+Text Label 2250 4750 0    40   ~ 0
+Pt2
+Text Label 2250 4150 0    40   ~ 0
+Pt1
+Text Notes 1800 4300 0    40   ~ 0
+pin 13
+Text Notes 1850 4650 0    40   ~ 0
+pin5
+Text Notes 1450 4700 0    60   ~ 0
+U6
+$Comp
+L +7V #PWR?
+U 1 1 4FC8687D
+P 1900 4100
+F 0 "#PWR?" H 1900 4060 30  0001 C CNN
+F 1 "+7V" H 1900 4210 30  0000 C CNN
+	1    1900 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED LED
+U 1 1 4FC8686A
+P 1900 5600
+F 0 "LED 64" H 1900 5700 50  0000 C CNN
+F 1 "LED" H 1900 5500 50  0000 C CNN
+	1    1900 5600
+	0    1    1    0   
+$EndComp
+$Comp
+L R R79
+U 1 1 4FC86869
+P 1900 5050
+F 0 "R79" V 1980 5050 50  0000 C CNN
+F 1 "R" V 1900 5050 50  0000 C CNN
+	1    1900 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L STP16NF06L Q1
+U 1 1 4FC86868
+P 1800 6100
+F 0 "Q1" H 2100 6200 50  0000 L BNN
+F 1 "STP16NF06L" H 2100 6100 50  0000 L BNN
+F 2 "transistor-power-TO220BV" H 1800 6250 50  0001 C CNN
+	1    1800 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R8
+U 1 1 4FC86867
+P 1600 6500
+F 0 "R8" V 1680 6500 50  0000 C CNN
+F 1 "1M" V 1600 6500 50  0000 C CNN
+	1    1600 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GNDPWR #PWR?
+U 1 1 4FC86866
+P 1900 6900
+F 0 "#PWR?" H 1900 6950 40  0001 C CNN
+F 1 "GNDPWR" H 1900 6820 40  0000 C CNN
+	1    1900 6900
+	1    0    0    -1  
+$EndComp
+Text Notes 1700 4500 0    60   ~ 0
+MIC5891
+Text Notes 7600 6650 0    60   ~ 0
+LED+MOS_CMD
+Text Notes 7700 4850 0    60   ~ 0
+MIC5891
+$Comp
+L R R1
+U 1 1 4FB4EE70
+P 7900 6100
+F 0 "R1" V 7980 6100 50  0000 C CNN
+F 1 "R" V 7900 6100 50  0000 C CNN
+	1    7900 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L FET_N Q1
+U 1 1 4FB4EE63
+P 7750 5400
+F 0 "Q1" H 7653 5650 70  0000 C CNN
+F 1 "JFET_N" H 7603 5153 60  0000 C CNN
+	1    7750 5400
+	1    0    0    -1  
+$EndComp
+Text GLabel 3600 6250 0    60   Input ~ 0
+LCn
+Text Notes 3800 4650 0    60   ~ 0
+MIC5891
+$Comp
+L GNDPWR #PWR?
+U 1 1 4FB4D6A3
+P 4000 6950
+F 0 "#PWR?" H 4000 7000 40  0001 C CNN
+F 1 "GNDPWR" H 4000 6870 40  0000 C CNN
+	1    4000 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 4FB4D691
+P 3700 6550
+F 0 "R2" V 3780 6550 50  0000 C CNN
+F 1 "1M" V 3700 6550 50  0000 C CNN
+	1    3700 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L STP16NF06L Qn
+U 1 1 4FB4D68A
+P 3900 6150
+F 0 "Qn" H 4200 6250 50  0000 L BNN
+F 1 "STP16NF06L" H 4200 6150 50  0000 L BNN
+F 2 "transistor-power-TO220BV" H 3900 6300 50  0001 C CNN
+	1    3900 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 4FB4D5BD
+P 4000 5150
+F 0 "R1" V 4080 5150 50  0000 C CNN
+F 1 "R" V 4000 5150 50  0000 C CNN
+	1    4000 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED Dn
+U 1 1 4FB4D5A3
+P 4000 5650
+F 0 "Dn" H 4000 5750 50  0000 C CNN
+F 1 "LED" H 4000 5550 50  0000 C CNN
+	1    4000 5650
+	0    1    1    0   
+$EndComp
+Text Notes 4500 1250 0    100  ~ 0
+Etage (vue de dessus)
+Text Label 5700 3100 3    60   ~ 0
+LED_64
+Text Label 5400 3100 3    60   ~ 0
+LED_63
+Text Label 5100 3100 3    60   ~ 0
+LED_62
+Text Label 4800 3100 3    60   ~ 0
+LED_61
+Text Label 4500 3100 3    60   ~ 0
+LED_60
+Text Label 4200 3100 3    60   ~ 0
+LED_59
+Text Label 3900 3100 3    60   ~ 0
+LED_58
+Text Label 3600 3100 3    60   ~ 0
+LED_57
+Text Label 5700 1700 1    60   ~ 0
+LED_8
+Text Label 5400 1700 1    60   ~ 0
+LED_7
+Text Label 5100 1700 1    60   ~ 0
+LED_6
+Text Label 4800 1700 1    60   ~ 0
+LED_5
+Text Label 4500 1700 1    60   ~ 0
+LED_4
+Text Label 4200 1700 1    60   ~ 0
+LED_3
+Text Label 3900 1700 1    60   ~ 0
+LED_2
+Text Notes 4400 2450 0    60   ~ 0
+Lignes 1 à 6 ...
+Text Label 3600 1700 1    60   ~ 0
+LED_1
+Text GLabel 6000 2400 2    60   Output ~ 0
+Cathode commune de l'étage
+Text Notes 6100 1950 0    80   ~ 0
+Ligne 0
+Text Notes 6100 2900 0    80   ~ 0
+Ligne 7
+$Comp
+L LED D57
+U 1 1 4FB246DD
+P 3600 2850
+F 0 "D57" H 3600 2950 50  0000 C CNN
+F 1 "LED" H 3600 2750 50  0000 C CNN
+	1    3600 2850
+	0    1    -1   0   
+$EndComp
+$Comp
+L LED D58
+U 1 1 4FB246DC
+P 3900 2850
+F 0 "D58" H 3900 2950 50  0000 C CNN
+F 1 "LED" H 3900 2750 50  0000 C CNN
+	1    3900 2850
+	0    1    -1   0   
+$EndComp
+$Comp
+L LED D59
+U 1 1 4FB246DB
+P 4200 2850
+F 0 "D59" H 4200 2950 50  0000 C CNN
+F 1 "LED" H 4200 2750 50  0000 C CNN
+	1    4200 2850
+	0    1    -1   0   
+$EndComp
+$Comp
+L LED D60
+U 1 1 4FB246DA
+P 4500 2850
+F 0 "D60" H 4500 2950 50  0000 C CNN
+F 1 "LED" H 4500 2750 50  0000 C CNN
+	1    4500 2850
+	0    1    -1   0   
+$EndComp
+$Comp
+L LED D64
+U 1 1 4FB246D9
+P 5700 2850
+F 0 "D64" H 5700 2950 50  0000 C CNN
+F 1 "LED" H 5700 2750 50  0000 C CNN
+	1    5700 2850
+	0    1    -1   0   
+$EndComp
+$Comp
+L LED D63
+U 1 1 4FB246D8
+P 5400 2850
+F 0 "D63" H 5400 2950 50  0000 C CNN
+F 1 "LED" H 5400 2750 50  0000 C CNN
+	1    5400 2850
+	0    1    -1   0   
+$EndComp
+$Comp
+L LED D62
+U 1 1 4FB246D7
+P 5100 2850
+F 0 "D62" H 5100 2950 50  0000 C CNN
+F 1 "LED" H 5100 2750 50  0000 C CNN
+	1    5100 2850
+	0    1    -1   0   
+$EndComp
+$Comp
+L LED D61
+U 1 1 4FB246D6
+P 4800 2850
+F 0 "D61" H 4800 2950 50  0000 C CNN
+F 1 "LED" H 4800 2750 50  0000 C CNN
+	1    4800 2850
+	0    1    -1   0   
+$EndComp
+$Comp
+L LED D5
+U 1 1 4FB246D2
+P 4800 1950
+F 0 "D5" H 4800 2050 50  0000 C CNN
+F 1 "LED" H 4800 1850 50  0000 C CNN
+	1    4800 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D6
+U 1 1 4FB246D1
+P 5100 1950
+F 0 "D6" H 5100 2050 50  0000 C CNN
+F 1 "LED" H 5100 1850 50  0000 C CNN
+	1    5100 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D7
+U 1 1 4FB246D0
+P 5400 1950
+F 0 "D7" H 5400 2050 50  0000 C CNN
+F 1 "LED" H 5400 1850 50  0000 C CNN
+	1    5400 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D8
+U 1 1 4FB246CF
+P 5700 1950
+F 0 "D8" H 5700 2050 50  0000 C CNN
+F 1 "LED" H 5700 1850 50  0000 C CNN
+	1    5700 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D4
+U 1 1 4FB241E5
+P 4500 1950
+F 0 "D4" H 4500 2050 50  0000 C CNN
+F 1 "LED" H 4500 1850 50  0000 C CNN
+	1    4500 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D3
+U 1 1 4FB241E2
+P 4200 1950
+F 0 "D3" H 4200 2050 50  0000 C CNN
+F 1 "LED" H 4200 1850 50  0000 C CNN
+	1    4200 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D2
+U 1 1 4FB241E0
+P 3900 1950
+F 0 "D2" H 3900 2050 50  0000 C CNN
+F 1 "LED" H 3900 1850 50  0000 C CNN
+	1    3900 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D1
+U 1 1 4FB2418E
+P 3600 1950
+F 0 "D1" H 3600 2050 50  0000 C CNN
+F 1 "LED" H 3600 1850 50  0000 C CNN
+	1    3600 1950
+	0    1    1    0   
+$EndComp
+$EndSCHEMATC

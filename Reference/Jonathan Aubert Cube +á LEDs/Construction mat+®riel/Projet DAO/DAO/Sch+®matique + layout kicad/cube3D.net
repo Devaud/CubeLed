@@ -1,0 +1,2273 @@
+# EESchema Netlist Version 1.1 created  01.06.2012 14:07:40
+(
+ ( /4FA43ED6 $noname  P4 CON-MOLEX_5566-08 {Lib=CON-MOLEX_5566-08}
+  (    1 /L0 )
+  (    2 /L1 )
+  (    3 /L2 )
+  (    4 /L3 )
+  (    5 /L4 )
+  (    6 /L5 )
+  (    7 /L6 )
+  (    8 /L7 )
+ )
+ ( /4FA4360C $noname  SW2 RST {Lib=SW_PUSH}
+  (    1 GNDPWR )
+  (    2 N-000067 )
+ )
+ ( /4FA435FE $noname  C22 1uF {Lib=C}
+  (    1 N-000067 )
+  (    2 GNDPWR )
+ )
+ ( /4FA3882F $noname  U3 C8051F320 {Lib=C8051F320}
+  (    1 ? )
+  (    2 Clk_MICREL )
+  (    3 GNDPWR )
+  (    4 N-000014 )
+  (    5 N-000015 )
+  (    6 +3.3V )
+  (    7 +5V )
+  (    8 /Vbus )
+  (    9 N-000063 )
+  (   10 N-000064 )
+  (   11 ? )
+  (   12 ? )
+  (   13 ? )
+  (   14 ? )
+  (   15 ? )
+  (   16 ? )
+  (   17 N-000034 )
+  (   18 N-000010 )
+  (   19 N-000033 )
+  (   20 N-000016 )
+  (   21 N-000013 )
+  (   22 /btn_suiv )
+  (   23 /btn_ok )
+  (   24 /btn_prec )
+  (   25 ~OE_MICREL )
+  (   26 /LC0 )
+  (   27 /BTN_interrupt )
+  (   28 /Clk_800Hz )
+  (   29 N-000011 )
+  (   30 N-000065 )
+  (   31 Strobe_MICREL )
+  (   32 Data_MICREL )
+ )
+ ( /4FA42F3F $noname  P3 EXT_CONN_5X2 {Lib=CONN_5X2}
+  (    1 +5V )
+  (    2 +3.3V )
+  (    3 N-000065 )
+  (    4 N-000011 )
+  (    5 N-000013 )
+  (    6 N-000016 )
+  (    7 N-000033 )
+  (    8 N-000010 )
+  (    9 N-000034 )
+  (   10 GNDPWR )
+ )
+ ( /4FA3DBC3 $noname  C4 10uF {Lib=CP1}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA3DBBB $noname  C1 470uF {Lib=CP1}
+  (    1 +7V )
+  (    2 GNDPWR )
+ )
+ ( /4FA39331 $noname  SW1 SWITCH_INV {Lib=SWITCH_INV}
+  (    1 ? )
+  (    2 +7V )
+  (    3 N-000005 )
+ )
+ ( /4FA39287 $noname  R83 1k {Lib=R}
+  (    1 N-000027 )
+  (    2 GNDPWR )
+ )
+ ( /4FA39286 $noname  R84 1k {Lib=R}
+  (    1 N-000032 )
+  (    2 GNDPWR )
+ )
+ ( /4FA39285 $noname  R85 1k {Lib=R}
+  (    1 N-000028 )
+  (    2 GNDPWR )
+ )
+ ( /4FA39277 $noname  R82 1k {Lib=R}
+  (    1 N-000029 )
+  (    2 GNDPWR )
+ )
+ ( /4FA39272 $noname  R81 1k {Lib=R}
+  (    1 N-000030 )
+  (    2 GNDPWR )
+ )
+ ( /4FA3926C $noname  R80 1k {Lib=R}
+  (    1 N-000003 )
+  (    2 GNDPWR )
+ )
+ ( /4FA391CD $noname  U5 4023 {Lib=4023}
+  (    1 /btn_suiv )
+  (    2 /btn_ok )
+  (    3 N-000003 )
+  (    4 N-000030 )
+  (    5 N-000029 )
+  (    6 ? )
+  (    7 GNDPWR )
+  (    8 /btn_prec )
+  (    9 /BTN_interrupt )
+  (   10 ? )
+  (   11 N-000027 )
+  (   12 N-000032 )
+  (   13 N-000028 )
+  (   14 +3.3V )
+ )
+ ( /4FA38CD0 $noname  P1 PWR_JACK {Lib=CONN_3}
+  (    1 N-000005 )
+  (    2 GNDPWR )
+  (    3 GNDPWR )
+ )
+ ( /4FA38854 $noname  U4 4022 {Lib=4022}
+  (    1 /LC1 )
+  (    2 /LC0 )
+  (    3 /LC2 )
+  (    4 /LC5 )
+  (    5 /LC6 )
+  (    7 /LC3 )
+  (    8 GNDPWR )
+  (   10 /LC7 )
+  (   11 /LC4 )
+  (   12 ? )
+  (   13 GNDPWR )
+  (   14 /Clk_Johnson )
+  (   15 GNDPWR )
+  (   16 +5V )
+ )
+ ( /4FA38847 $noname  U2 LTC6990 {Lib=LTC6990}
+  (    1 +5V )
+  (    2 GNDPWR )
+  (    3 N-000045 )
+  (    4 N-000061 )
+  (    5 +5V )
+  (    6 /Clk_800Hz )
+ )
+ ( /4FA28BB8 $noname  C13 100nF {Lib=C}
+  (    1 GNDPWR )
+  (    2 +3.3V )
+ )
+ ( /4FA248F0 $noname  C10 100nF {Lib=C}
+  (    1 /btn_suiv )
+  (    2 GNDPWR )
+ )
+ ( /4FA248E2 $noname  C12 100nF {Lib=C}
+  (    1 /btn_prec )
+  (    2 GNDPWR )
+ )
+ ( /4FA248DC $noname  C11 100nF {Lib=C}
+  (    1 /btn_ok )
+  (    2 GNDPWR )
+ )
+ ( /4FA0E0E0 $noname  SW3 suivant {Lib=SW_PUSH}
+  (    1 GNDPWR )
+  (    2 /btn_suiv )
+ )
+ ( /4FA0E0DB $noname  SW5 précédent {Lib=SW_PUSH}
+  (    1 GNDPWR )
+  (    2 /btn_prec )
+ )
+ ( /4FA0E0CF $noname  SW4 ok {Lib=SW_PUSH}
+  (    1 GNDPWR )
+  (    2 /btn_ok )
+ )
+ ( /4FA0022A $noname  C8 10nF {Lib=C}
+  (    1 /Clk_Johnson )
+  (    2 GNDPWR )
+ )
+ ( /4FA00224 $noname  R7 1.5k {Lib=R}
+  (    1 /Clk_Johnson )
+  (    2 /Clk_800Hz )
+ )
+ ( /4FA000A2 $noname  C3 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA00038 $noname  R4 1.2k {Lib=R}
+  (    1 N-000061 )
+  (    2 GNDPWR )
+ )
+ ( /4FA00020 $noname  RV1 20k {Lib=POT}
+  (    1 N-000044 )
+  (    2 GNDPWR )
+  (    3 GNDPWR )
+ )
+ ( /4F9FFFF2 $noname  R6 1.3k {Lib=R}
+  (    1 +5V )
+  (    2 N-000061 )
+ )
+ ( /4F9FFFC7 $noname  R3 470k {Lib=R}
+  (    1 N-000045 )
+  (    2 N-000044 )
+ )
+ ( /4F94732F transistor-power-TO220BV  Q2 STP16 {Lib=STP16NF06L}
+  (    D /L4 )
+  (    G /LC4 )
+  (    S GNDPWR )
+ )
+ ( /4F94732E $noname  R9 1M {Lib=R}
+  (    1 /LC4 )
+  (    2 GNDPWR )
+ )
+ ( /4F94732D $noname  R11 1M {Lib=R}
+  (    1 /LC5 )
+  (    2 GNDPWR )
+ )
+ ( /4F94732C transistor-power-TO220BV  Q4 STP16 {Lib=STP16NF06L}
+  (    D /L5 )
+  (    G /LC5 )
+  (    S GNDPWR )
+ )
+ ( /4F94732B transistor-power-TO220BV  Q8 STP16 {Lib=STP16NF06L}
+  (    D /L7 )
+  (    G /LC7 )
+  (    S GNDPWR )
+ )
+ ( /4F94732A $noname  R15 1M {Lib=R}
+  (    1 /LC7 )
+  (    2 GNDPWR )
+ )
+ ( /4F947329 transistor-power-TO220BV  Q6 STP16 {Lib=STP16NF06L}
+  (    D /L6 )
+  (    G /LC6 )
+  (    S GNDPWR )
+ )
+ ( /4F947328 $noname  R13 1M {Lib=R}
+  (    1 /LC6 )
+  (    2 GNDPWR )
+ )
+ ( /4F9472DA $noname  R12 1M {Lib=R}
+  (    1 /LC2 )
+  (    2 GNDPWR )
+ )
+ ( /4F9472C1 transistor-power-TO220BV  Q5 STP16 {Lib=STP16NF06L}
+  (    D /L2 )
+  (    G /LC2 )
+  (    S GNDPWR )
+ )
+ ( /4F9472C0 $noname  R14 1M {Lib=R}
+  (    1 /LC3 )
+  (    2 GNDPWR )
+ )
+ ( /4F9472BF transistor-power-TO220BV  Q7 STP16 {Lib=STP16NF06L}
+  (    D /L3 )
+  (    G /LC3 )
+  (    S GNDPWR )
+ )
+ ( /4F94723B transistor-power-TO220BV  Q3 STP16 {Lib=STP16NF06L}
+  (    D /L1 )
+  (    G /LC1 )
+  (    S GNDPWR )
+ )
+ ( /4F94723A $noname  R10 1M {Lib=R}
+  (    1 /LC1 )
+  (    2 GNDPWR )
+ )
+ ( /4F946FBC $noname  R8 1M {Lib=R}
+  (    1 /LC0 )
+  (    2 GNDPWR )
+ )
+ ( /4F946F93 transistor-power-TO220BV  Q1 STP16NF06L {Lib=STP16NF06L}
+  (    D /L0 )
+  (    G /LC0 )
+  (    S GNDPWR )
+ )
+ ( /4F946BC0 $noname  C9 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4F946628 $noname  C2 100nF {Lib=C}
+  (    1 +7V )
+  (    2 GNDPWR )
+ )
+ ( /4F945BA9 $noname  C5 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4F944B12 $noname  U1 LM340T-5 {Lib=LM7805}
+  (  GND GNDPWR )
+  (   VI +7V )
+  (   VO +5V )
+ )
+ ( /4F9449F2 $noname  J1 USB {Lib=USB}
+  (    1 /Vbus )
+  (    2 N-000015 )
+  (    3 N-000014 )
+  (    4 GNDPWR )
+  (    5 GNDPWR )
+  (    6 GNDPWR )
+ )
+ ( /4F646E3A $noname  R1 1k {Lib=R}
+  (    1 +3.3V )
+  (    2 N-000067 )
+ )
+ ( /4F513770 $noname  R2 1k {Lib=R}
+  (    1 N-000063 )
+  (    2 N-000067 )
+ )
+ ( /4F513707 $noname  R5 1k {Lib=R}
+  (    1 N-000064 )
+  (    2 N-000040 )
+ )
+ ( /4F5136B7 $noname  P2 PRG_CONN_5X2 {Lib=CONN_5X2}
+  (    1 +3.3V )
+  (    2 GNDPWR )
+  (    3 GNDPWR )
+  (    4 N-000064 )
+  (    5 N-000067 )
+  (    6 N-000040 )
+  (    7 N-000063 )
+  (    8 ? )
+  (    9 GNDPWR )
+  (   10 ? )
+ )
+ ( /4F513660 $noname  C6 100nF {Lib=C}
+  (    1 +3.3V )
+  (    2 GNDPWR )
+ )
+ ( /4F513636 $noname  C7 10uF {Lib=C}
+  (    1 +3.3V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA2483E $noname  U6 MIC5891 {Lib=MIC5891}
+  (    1 GNDPWR )
+  (    2 Clk_MICREL )
+  (    3 Data_MICREL )
+  (    4 Strobe_MICREL )
+  (    5 /DRIVERS/LED_64 )
+  (    6 /DRIVERS/LED_63 )
+  (    7 /DRIVERS/LED_62 )
+  (    8 /DRIVERS/LED_61 )
+  (    9 /DRIVERS/LED_60 )
+  (   10 /DRIVERS/LED_59 )
+  (   11 /DRIVERS/LED_58 )
+  (   12 /DRIVERS/LED_57 )
+  (   13 +7V )
+  (   14 ~OE_MICREL )
+  (   15 +5V )
+  (   16 N-000181 )
+ )
+ ( /4FA2468F/4FA2483D $noname  U7 MIC5891 {Lib=MIC5891}
+  (    1 GNDPWR )
+  (    2 Clk_MICREL )
+  (    3 N-000197 )
+  (    4 Strobe_MICREL )
+  (    5 /DRIVERS/LED_48 )
+  (    6 /DRIVERS/LED_47 )
+  (    7 /DRIVERS/LED_46 )
+  (    8 /DRIVERS/LED_45 )
+  (    9 /DRIVERS/LED_44 )
+  (   10 /DRIVERS/LED_43 )
+  (   11 /DRIVERS/LED_42 )
+  (   12 /DRIVERS/LED_41 )
+  (   13 +7V )
+  (   14 ~OE_MICREL )
+  (   15 +5V )
+  (   16 N-000180 )
+ )
+ ( /4FA2468F/4FA2483C $noname  U10 MIC5891 {Lib=MIC5891}
+  (    1 GNDPWR )
+  (    2 Clk_MICREL )
+  (    3 N-000181 )
+  (    4 Strobe_MICREL )
+  (    5 /DRIVERS/LED_56 )
+  (    6 /DRIVERS/LED_55 )
+  (    7 /DRIVERS/LED_54 )
+  (    8 /DRIVERS/LED_53 )
+  (    9 /DRIVERS/LED_52 )
+  (   10 /DRIVERS/LED_51 )
+  (   11 /DRIVERS/LED_50 )
+  (   12 /DRIVERS/LED_49 )
+  (   13 +7V )
+  (   14 ~OE_MICREL )
+  (   15 +5V )
+  (   16 N-000197 )
+ )
+ ( /4FA2468F/4FA2483B $noname  U11 MIC5891 {Lib=MIC5891}
+  (    1 GNDPWR )
+  (    2 Clk_MICREL )
+  (    3 N-000180 )
+  (    4 Strobe_MICREL )
+  (    5 /DRIVERS/LED_40 )
+  (    6 /DRIVERS/LED_39 )
+  (    7 /DRIVERS/LED_38 )
+  (    8 /DRIVERS/LED_37 )
+  (    9 /DRIVERS/LED_36 )
+  (   10 /DRIVERS/LED_35 )
+  (   11 /DRIVERS/LED_34 )
+  (   12 /DRIVERS/LED_33 )
+  (   13 +7V )
+  (   14 ~OE_MICREL )
+  (   15 +5V )
+  (   16 N-000174 )
+ )
+ ( /4FA2468F/4FA2483A $noname  U13 MIC5891 {Lib=MIC5891}
+  (    1 GNDPWR )
+  (    2 Clk_MICREL )
+  (    3 N-000175 )
+  (    4 Strobe_MICREL )
+  (    5 /DRIVERS/LED_8 )
+  (    6 /DRIVERS/LED_7 )
+  (    7 /DRIVERS/LED_6 )
+  (    8 /DRIVERS/LED_5 )
+  (    9 /DRIVERS/LED_4 )
+  (   10 /DRIVERS/LED_3 )
+  (   11 /DRIVERS/LED_2 )
+  (   12 /DRIVERS/LED_1 )
+  (   13 +7V )
+  (   14 ~OE_MICREL )
+  (   15 +5V )
+  (   16 ? )
+ )
+ ( /4FA2468F/4FA24839 $noname  U12 MIC5891 {Lib=MIC5891}
+  (    1 GNDPWR )
+  (    2 Clk_MICREL )
+  (    3 N-000091 )
+  (    4 Strobe_MICREL )
+  (    5 /DRIVERS/LED_24 )
+  (    6 /DRIVERS/LED_23 )
+  (    7 /DRIVERS/LED_22 )
+  (    8 /DRIVERS/LED_21 )
+  (    9 /DRIVERS/LED_20 )
+  (   10 /DRIVERS/LED_19 )
+  (   11 /DRIVERS/LED_18 )
+  (   12 /DRIVERS/LED_17 )
+  (   13 +7V )
+  (   14 ~OE_MICREL )
+  (   15 +5V )
+  (   16 N-000196 )
+ )
+ ( /4FA2468F/4FA24838 $noname  U9 MIC5891 {Lib=MIC5891}
+  (    1 GNDPWR )
+  (    2 Clk_MICREL )
+  (    3 N-000196 )
+  (    4 Strobe_MICREL )
+  (    5 /DRIVERS/LED_16 )
+  (    6 /DRIVERS/LED_15 )
+  (    7 /DRIVERS/LED_14 )
+  (    8 /DRIVERS/LED_13 )
+  (    9 /DRIVERS/LED_12 )
+  (   10 /DRIVERS/LED_11 )
+  (   11 /DRIVERS/LED_10 )
+  (   12 /DRIVERS/LED_9 )
+  (   13 +7V )
+  (   14 ~OE_MICREL )
+  (   15 +5V )
+  (   16 N-000175 )
+ )
+ ( /4FA2468F/4FA24837 $noname  U8 MIC5891 {Lib=MIC5891}
+  (    1 GNDPWR )
+  (    2 Clk_MICREL )
+  (    3 N-000174 )
+  (    4 Strobe_MICREL )
+  (    5 /DRIVERS/LED_32 )
+  (    6 /DRIVERS/LED_31 )
+  (    7 /DRIVERS/LED_30 )
+  (    8 /DRIVERS/LED_29 )
+  (    9 /DRIVERS/LED_28 )
+  (   10 /DRIVERS/LED_27 )
+  (   11 /DRIVERS/LED_26 )
+  (   12 /DRIVERS/LED_25 )
+  (   13 +7V )
+  (   14 ~OE_MICREL )
+  (   15 +5V )
+  (   16 N-000091 )
+ )
+ ( /4FA2468F/4FA24826 $noname  C14 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA24825 $noname  C18 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA24823 $noname  C15 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA24822 $noname  C21 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA24820 $noname  C16 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA2481F $noname  C19 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA2481E $noname  C17 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA2481D $noname  C20 100nF {Lib=C}
+  (    1 +5V )
+  (    2 GNDPWR )
+ )
+ ( /4FA2468F/4FA2480F $noname  P5 CONN_32X2 {Lib=CONN_32X2}
+  (    1 N-000145 )
+  (    2 N-000116 )
+  (    3 N-000146 )
+  (    4 N-000115 )
+  (    5 N-000147 )
+  (    6 N-000114 )
+  (    7 N-000125 )
+  (    8 N-000113 )
+  (    9 N-000126 )
+  (   10 N-000112 )
+  (   11 N-000127 )
+  (   12 N-000111 )
+  (   13 N-000128 )
+  (   14 N-000110 )
+  (   15 N-000129 )
+  (   16 N-000135 )
+  (   17 N-000139 )
+  (   18 N-000141 )
+  (   19 N-000162 )
+  (   20 N-000119 )
+  (   21 N-000161 )
+  (   22 N-000120 )
+  (   23 N-000134 )
+  (   24 N-000121 )
+  (   25 N-000133 )
+  (   26 N-000136 )
+  (   27 N-000140 )
+  (   28 N-000142 )
+  (   29 N-000144 )
+  (   30 N-000122 )
+  (   31 N-000132 )
+  (   32 N-000123 )
+  (   33 N-000131 )
+  (   34 N-000124 )
+  (   35 N-000130 )
+  (   36 N-000137 )
+  (   37 N-000150 )
+  (   38 N-000151 )
+  (   39 N-000149 )
+  (   40 N-000152 )
+  (   41 N-000148 )
+  (   42 N-000153 )
+  (   43 N-000173 )
+  (   44 N-000154 )
+  (   45 N-000172 )
+  (   46 N-000155 )
+  (   47 N-000171 )
+  (   48 N-000156 )
+  (   49 N-000170 )
+  (   50 N-000157 )
+  (   51 N-000169 )
+  (   52 N-000158 )
+  (   53 N-000168 )
+  (   54 N-000159 )
+  (   55 N-000163 )
+  (   56 N-000138 )
+  (   57 N-000164 )
+  (   58 N-000143 )
+  (   59 N-000165 )
+  (   60 N-000118 )
+  (   61 N-000166 )
+  (   62 N-000117 )
+  (   63 N-000167 )
+  (   64 N-000160 )
+ )
+ ( /4FA2468F/4FA2480E $noname  R16 27R {Lib=R}
+  (    1 N-000145 )
+  (    2 /DRIVERS/LED_1 )
+ )
+ ( /4FA2468F/4FA2480D $noname  R17 27R {Lib=R}
+  (    1 N-000146 )
+  (    2 /DRIVERS/LED_3 )
+ )
+ ( /4FA2468F/4FA2480C $noname  R18 27R {Lib=R}
+  (    1 N-000147 )
+  (    2 /DRIVERS/LED_5 )
+ )
+ ( /4FA2468F/4FA2480B $noname  R19 27R {Lib=R}
+  (    1 N-000125 )
+  (    2 /DRIVERS/LED_7 )
+ )
+ ( /4FA2468F/4FA2480A $noname  R20 27R {Lib=R}
+  (    1 N-000126 )
+  (    2 /DRIVERS/LED_9 )
+ )
+ ( /4FA2468F/4FA24809 $noname  R21 27R {Lib=R}
+  (    1 N-000127 )
+  (    2 /DRIVERS/LED_11 )
+ )
+ ( /4FA2468F/4FA24808 $noname  R22 27R {Lib=R}
+  (    1 N-000128 )
+  (    2 /DRIVERS/LED_13 )
+ )
+ ( /4FA2468F/4FA24807 $noname  R23 27R {Lib=R}
+  (    1 N-000129 )
+  (    2 /DRIVERS/LED_15 )
+ )
+ ( /4FA2468F/4FA24806 $noname  R24 27R {Lib=R}
+  (    1 N-000139 )
+  (    2 /DRIVERS/LED_17 )
+ )
+ ( /4FA2468F/4FA24805 $noname  R33 27R {Lib=R}
+  (    1 N-000130 )
+  (    2 /DRIVERS/LED_35 )
+ )
+ ( /4FA2468F/4FA24804 $noname  R32 27R {Lib=R}
+  (    1 N-000131 )
+  (    2 /DRIVERS/LED_33 )
+ )
+ ( /4FA2468F/4FA24803 $noname  R31 27R {Lib=R}
+  (    1 N-000132 )
+  (    2 /DRIVERS/LED_31 )
+ )
+ ( /4FA2468F/4FA24802 $noname  R30 27R {Lib=R}
+  (    1 N-000144 )
+  (    2 /DRIVERS/LED_29 )
+ )
+ ( /4FA2468F/4FA24801 $noname  R29 27R {Lib=R}
+  (    1 N-000140 )
+  (    2 /DRIVERS/LED_27 )
+ )
+ ( /4FA2468F/4FA24800 $noname  R28 27R {Lib=R}
+  (    1 N-000133 )
+  (    2 /DRIVERS/LED_25 )
+ )
+ ( /4FA2468F/4FA247FF $noname  R27 27R {Lib=R}
+  (    1 N-000134 )
+  (    2 /DRIVERS/LED_23 )
+ )
+ ( /4FA2468F/4FA247FE $noname  R26 27R {Lib=R}
+  (    1 N-000161 )
+  (    2 /DRIVERS/LED_21 )
+ )
+ ( /4FA2468F/4FA247FD $noname  R25 27R {Lib=R}
+  (    1 N-000162 )
+  (    2 /DRIVERS/LED_19 )
+ )
+ ( /4FA2468F/4FA247FC $noname  R43 27R {Lib=R}
+  (    1 N-000163 )
+  (    2 /DRIVERS/LED_55 )
+ )
+ ( /4FA2468F/4FA247FB $noname  R44 27R {Lib=R}
+  (    1 N-000164 )
+  (    2 /DRIVERS/LED_57 )
+ )
+ ( /4FA2468F/4FA247FA $noname  R45 27R {Lib=R}
+  (    1 N-000165 )
+  (    2 /DRIVERS/LED_59 )
+ )
+ ( /4FA2468F/4FA247F9 $noname  R46 27R {Lib=R}
+  (    1 N-000166 )
+  (    2 /DRIVERS/LED_61 )
+ )
+ ( /4FA2468F/4FA247F8 $noname  R47 27R {Lib=R}
+  (    1 N-000167 )
+  (    2 /DRIVERS/LED_63 )
+ )
+ ( /4FA2468F/4FA247F7 $noname  R42 27R {Lib=R}
+  (    1 N-000168 )
+  (    2 /DRIVERS/LED_53 )
+ )
+ ( /4FA2468F/4FA247F6 $noname  R41 27R {Lib=R}
+  (    1 N-000169 )
+  (    2 /DRIVERS/LED_51 )
+ )
+ ( /4FA2468F/4FA247F5 $noname  R40 27R {Lib=R}
+  (    1 N-000170 )
+  (    2 /DRIVERS/LED_49 )
+ )
+ ( /4FA2468F/4FA247F4 $noname  R39 27R {Lib=R}
+  (    1 N-000171 )
+  (    2 /DRIVERS/LED_47 )
+ )
+ ( /4FA2468F/4FA247F3 $noname  R38 27R {Lib=R}
+  (    1 N-000172 )
+  (    2 /DRIVERS/LED_45 )
+ )
+ ( /4FA2468F/4FA247F2 $noname  R37 27R {Lib=R}
+  (    1 N-000173 )
+  (    2 /DRIVERS/LED_43 )
+ )
+ ( /4FA2468F/4FA247F1 $noname  R36 27R {Lib=R}
+  (    1 N-000148 )
+  (    2 /DRIVERS/LED_41 )
+ )
+ ( /4FA2468F/4FA247F0 $noname  R35 27R {Lib=R}
+  (    1 N-000149 )
+  (    2 /DRIVERS/LED_39 )
+ )
+ ( /4FA2468F/4FA247EF $noname  R34 27R {Lib=R}
+  (    1 N-000150 )
+  (    2 /DRIVERS/LED_37 )
+ )
+ ( /4FA2468F/4FA247EE $noname  R66 27R {Lib=R}
+  (    1 /DRIVERS/LED_38 )
+  (    2 N-000151 )
+ )
+ ( /4FA2468F/4FA247ED $noname  R67 27R {Lib=R}
+  (    1 /DRIVERS/LED_40 )
+  (    2 N-000152 )
+ )
+ ( /4FA2468F/4FA247EC $noname  R68 27R {Lib=R}
+  (    1 /DRIVERS/LED_42 )
+  (    2 N-000153 )
+ )
+ ( /4FA2468F/4FA247EB $noname  R69 27R {Lib=R}
+  (    1 /DRIVERS/LED_44 )
+  (    2 N-000154 )
+ )
+ ( /4FA2468F/4FA247EA $noname  R70 27R {Lib=R}
+  (    1 /DRIVERS/LED_46 )
+  (    2 N-000155 )
+ )
+ ( /4FA2468F/4FA247E9 $noname  R71 27R {Lib=R}
+  (    1 /DRIVERS/LED_48 )
+  (    2 N-000156 )
+ )
+ ( /4FA2468F/4FA247E8 $noname  R72 27R {Lib=R}
+  (    1 /DRIVERS/LED_50 )
+  (    2 N-000157 )
+ )
+ ( /4FA2468F/4FA247E7 $noname  R73 27R {Lib=R}
+  (    1 /DRIVERS/LED_52 )
+  (    2 N-000158 )
+ )
+ ( /4FA2468F/4FA247E6 $noname  R74 27R {Lib=R}
+  (    1 /DRIVERS/LED_54 )
+  (    2 N-000159 )
+ )
+ ( /4FA2468F/4FA247E5 $noname  R79 27R {Lib=R}
+  (    1 /DRIVERS/LED_64 )
+  (    2 N-000160 )
+ )
+ ( /4FA2468F/4FA247E4 $noname  R78 27R {Lib=R}
+  (    1 /DRIVERS/LED_62 )
+  (    2 N-000117 )
+ )
+ ( /4FA2468F/4FA247E3 $noname  R77 27R {Lib=R}
+  (    1 /DRIVERS/LED_60 )
+  (    2 N-000118 )
+ )
+ ( /4FA2468F/4FA247E2 $noname  R76 27R {Lib=R}
+  (    1 /DRIVERS/LED_58 )
+  (    2 N-000143 )
+ )
+ ( /4FA2468F/4FA247E1 $noname  R75 27R {Lib=R}
+  (    1 /DRIVERS/LED_56 )
+  (    2 N-000138 )
+ )
+ ( /4FA2468F/4FA247E0 $noname  R57 27R {Lib=R}
+  (    1 /DRIVERS/LED_20 )
+  (    2 N-000119 )
+ )
+ ( /4FA2468F/4FA247DF $noname  R58 27R {Lib=R}
+  (    1 /DRIVERS/LED_22 )
+  (    2 N-000120 )
+ )
+ ( /4FA2468F/4FA247DE $noname  R59 27R {Lib=R}
+  (    1 /DRIVERS/LED_24 )
+  (    2 N-000121 )
+ )
+ ( /4FA2468F/4FA247DD $noname  R60 27R {Lib=R}
+  (    1 /DRIVERS/LED_26 )
+  (    2 N-000136 )
+ )
+ ( /4FA2468F/4FA247DC $noname  R61 27R {Lib=R}
+  (    1 /DRIVERS/LED_28 )
+  (    2 N-000142 )
+ )
+ ( /4FA2468F/4FA247DB $noname  R62 27R {Lib=R}
+  (    1 /DRIVERS/LED_30 )
+  (    2 N-000122 )
+ )
+ ( /4FA2468F/4FA247DA $noname  R63 27R {Lib=R}
+  (    1 /DRIVERS/LED_32 )
+  (    2 N-000123 )
+ )
+ ( /4FA2468F/4FA247D9 $noname  R64 27R {Lib=R}
+  (    1 /DRIVERS/LED_34 )
+  (    2 N-000124 )
+ )
+ ( /4FA2468F/4FA247D8 $noname  R65 27R {Lib=R}
+  (    1 /DRIVERS/LED_36 )
+  (    2 N-000137 )
+ )
+ ( /4FA2468F/4FA247D7 $noname  R56 27R {Lib=R}
+  (    1 /DRIVERS/LED_18 )
+  (    2 N-000141 )
+ )
+ ( /4FA2468F/4FA247D6 $noname  R55 27R {Lib=R}
+  (    1 /DRIVERS/LED_16 )
+  (    2 N-000135 )
+ )
+ ( /4FA2468F/4FA247D5 $noname  R54 27R {Lib=R}
+  (    1 /DRIVERS/LED_14 )
+  (    2 N-000110 )
+ )
+ ( /4FA2468F/4FA247D4 $noname  R53 27R {Lib=R}
+  (    1 /DRIVERS/LED_12 )
+  (    2 N-000111 )
+ )
+ ( /4FA2468F/4FA247D3 $noname  R52 27R {Lib=R}
+  (    1 /DRIVERS/LED_10 )
+  (    2 N-000112 )
+ )
+ ( /4FA2468F/4FA247D2 $noname  R51 27R {Lib=R}
+  (    1 /DRIVERS/LED_8 )
+  (    2 N-000113 )
+ )
+ ( /4FA2468F/4FA247D1 $noname  R50 27R {Lib=R}
+  (    1 /DRIVERS/LED_6 )
+  (    2 N-000114 )
+ )
+ ( /4FA2468F/4FA247D0 $noname  R49 27R {Lib=R}
+  (    1 /DRIVERS/LED_4 )
+  (    2 N-000115 )
+ )
+ ( /4FA2468F/4FA247CF $noname  R48 27R {Lib=R}
+  (    1 /DRIVERS/LED_2 )
+  (    2 N-000116 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C22
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ CP*
+ SM*
+$endlist
+$component C1
+ CP*
+ SM*
+$endlist
+$component R83
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R84
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R85
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R82
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R81
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R80
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C13
+ SM*
+ C?
+ C1-1
+$endlist
+$component C10
+ SM*
+ C?
+ C1-1
+$endlist
+$component C12
+ SM*
+ C?
+ C1-1
+$endlist
+$component C11
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ SM*
+ C?
+ C1-1
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R15
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R14
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C9
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component C14
+ SM*
+ C?
+ C1-1
+$endlist
+$component C18
+ SM*
+ C?
+ C1-1
+$endlist
+$component C15
+ SM*
+ C?
+ C1-1
+$endlist
+$component C21
+ SM*
+ C?
+ C1-1
+$endlist
+$component C16
+ SM*
+ C?
+ C1-1
+$endlist
+$component C19
+ SM*
+ C?
+ C1-1
+$endlist
+$component C17
+ SM*
+ C?
+ C1-1
+$endlist
+$component C20
+ SM*
+ C?
+ C1-1
+$endlist
+$component R16
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R17
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R18
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R19
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R20
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R21
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R23
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R24
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R33
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R32
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R31
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R30
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R29
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R28
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R27
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R26
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R25
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R43
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R44
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R45
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R46
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R47
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R42
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R41
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R40
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R39
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R38
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R37
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R36
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R35
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R34
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R66
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R67
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R68
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R69
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R70
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R71
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R72
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R73
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R74
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R79
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R78
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R77
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R76
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R75
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R57
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R58
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R59
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R60
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R61
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R62
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R63
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R64
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R65
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R56
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R55
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R54
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R53
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R52
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R51
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R50
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R49
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R48
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 2 "GNDPWR" "GNDPWR"
+ C7 2
+ C6 2
+ P2 9
+ P2 3
+ P2 2
+ RV1 3
+ RV1 2
+ R4 2
+ U1 GND
+ C5 2
+ C2 2
+ C9 2
+ Q1 S
+ R8 2
+ J1 6
+ J1 5
+ J1 4
+ R15 2
+ Q8 S
+ Q4 S
+ R10 2
+ Q3 S
+ Q7 S
+ R13 2
+ Q6 S
+ U7 1
+ R11 2
+ R9 2
+ U6 1
+ Q2 S
+ U10 1
+ R14 2
+ Q5 S
+ R12 2
+ C3 2
+ C8 2
+ C18 2
+ C14 2
+ C11 2
+ C12 2
+ C10 2
+ C13 1
+ U8 1
+ U2 2
+ U4 15
+ U4 13
+ C20 2
+ SW4 1
+ SW5 1
+ SW3 1
+ U9 1
+ U4 8
+ U5 7
+ P1 3
+ P1 2
+ U5 7
+ R80 2
+ R81 2
+ R82 2
+ R85 2
+ R84 2
+ C17 2
+ R83 2
+ U11 1
+ C19 2
+ C16 2
+ C21 2
+ C1 2
+ C4 2
+ P3 10
+ U13 1
+ U12 1
+ U5 7
+ SW2 1
+ U3 3
+ C22 2
+ C15 2
+Net 3 "" ""
+ U5 3
+ R80 1
+Net 5 "" ""
+ SW1 3
+ P1 1
+Net 6 "/BTN_interrupt" "BTN_interrupt"
+ U5 9
+ U3 27
+Net 7 "Clk_MICREL" "Clk_MICREL"
+ U13 2
+ U8 2
+ U3 2
+ U7 2
+ U6 2
+ U12 2
+ U11 2
+ U10 2
+ U9 2
+Net 8 "~OE_MICREL" "~OE_MICREL"
+ U13 14
+ U12 14
+ U10 14
+ U11 14
+ U6 14
+ U3 25
+ U7 14
+ U9 14
+ U8 14
+Net 10 "" ""
+ U3 18
+ P3 8
+Net 11 "" ""
+ P3 4
+ U3 29
+Net 12 "+5V" "+5V"
+ U2 1
+ U10 15
+ C21 1
+ C16 1
+ C19 1
+ C17 1
+ C20 1
+ U8 15
+ C14 1
+ U4 16
+ C18 1
+ P3 1
+ U12 15
+ U3 7
+ U9 15
+ U2 5
+ C15 1
+ C9 1
+ C3 1
+ U6 15
+ U7 15
+ R6 1
+ U11 15
+ C4 1
+ U13 15
+ C5 1
+ U1 VO
+Net 13 "" ""
+ U3 21
+ P3 5
+Net 14 "" ""
+ J1 3
+ U3 4
+Net 15 "" ""
+ J1 2
+ U3 5
+Net 16 "" ""
+ U3 20
+ P3 6
+Net 18 "Strobe_MICREL" "Strobe_MICREL"
+ U8 4
+ U9 4
+ U12 4
+ U6 4
+ U7 4
+ U10 4
+ U3 31
+ U11 4
+ U13 4
+Net 20 "/btn_suiv" "btn_suiv"
+ SW3 2
+ U5 1
+ U3 22
+ C10 1
+Net 21 "Data_MICREL" "Data_MICREL"
+ U3 32
+ U6 3
+Net 23 "/btn_ok" "btn_ok"
+ C11 1
+ SW4 2
+ U5 2
+ U3 23
+Net 25 "/btn_prec" "btn_prec"
+ C12 1
+ U5 8
+ SW5 2
+ U3 24
+Net 27 "" ""
+ U5 11
+ R83 1
+Net 28 "" ""
+ U5 13
+ R85 1
+Net 29 "" ""
+ R82 1
+ U5 5
+Net 30 "" ""
+ R81 1
+ U5 4
+Net 32 "" ""
+ U5 12
+ R84 1
+Net 33 "" ""
+ U3 19
+ P3 7
+Net 34 "" ""
+ U3 17
+ P3 9
+Net 37 "/Vbus" "Vbus"
+ J1 1
+ U3 8
+Net 38 "/LC1" "LC1"
+ U4 1
+ R10 1
+ Q3 G
+Net 39 "/L0" "L0"
+ P4 1
+ Q1 D
+Net 40 "" ""
+ R5 2
+ P2 6
+Net 43 "+7V" "+7V"
+ U7 13
+ U8 13
+ U10 13
+ U9 13
+ U6 13
+ C1 1
+ SW1 2
+ U1 VI
+ C2 1
+ U13 13
+ U11 13
+ U12 13
+Net 44 "" ""
+ R3 2
+ RV1 1
+Net 45 "" ""
+ U2 3
+ R3 1
+Net 46 "/Clk_800Hz" "Clk_800Hz"
+ U2 6
+ U3 28
+ R7 2
+Net 47 "/LC0" "LC0"
+ U3 26
+ U4 2
+ Q1 G
+ R8 1
+Net 48 "/L4" "L4"
+ P4 5
+ Q2 D
+Net 49 "/LC4" "LC4"
+ Q2 G
+ U4 11
+ R9 1
+Net 50 "/Clk_Johnson" "Clk_Johnson"
+ U4 14
+ R7 1
+ C8 1
+Net 51 "/L2" "L2"
+ P4 3
+ Q5 D
+Net 52 "/L3" "L3"
+ P4 4
+ Q7 D
+Net 53 "/L1" "L1"
+ Q3 D
+ P4 2
+Net 54 "/LC3" "LC3"
+ U4 7
+ Q7 G
+ R14 1
+Net 55 "/LC2" "LC2"
+ U4 3
+ R12 1
+ Q5 G
+Net 56 "/L5" "L5"
+ P4 6
+ Q4 D
+Net 57 "/L7" "L7"
+ Q8 D
+ P4 8
+Net 58 "/L6" "L6"
+ Q6 D
+ P4 7
+Net 59 "/LC6" "LC6"
+ R13 1
+ Q6 G
+ U4 5
+Net 60 "/LC7" "LC7"
+ U4 10
+ R15 1
+ Q8 G
+Net 61 "" ""
+ R6 2
+ R4 1
+ U2 4
+Net 62 "/LC5" "LC5"
+ R11 1
+ Q4 G
+ U4 4
+Net 63 "" ""
+ R2 1
+ U3 9
+ P2 7
+Net 64 "" ""
+ R5 1
+ P2 4
+ U3 10
+Net 65 "" ""
+ P3 3
+ U3 30
+Net 66 "+3.3V" "+3.3V"
+ P3 2
+ U5 14
+ U5 14
+ C13 2
+ P2 1
+ C6 1
+ C7 1
+ R1 1
+ U3 6
+ U5 14
+Net 67 "" ""
+ P2 5
+ SW2 2
+ R2 2
+ C22 1
+ R1 2
+Net 68 "/DRIVERS/LED_48" "LED_48"
+ U7 5
+ R71 1
+Net 69 "/DRIVERS/LED_39" "LED_39"
+ U11 6
+ R35 2
+Net 70 "/DRIVERS/LED_37" "LED_37"
+ R34 2
+ U11 8
+Net 71 "/DRIVERS/LED_35" "LED_35"
+ U11 10
+ R33 2
+Net 72 "/DRIVERS/LED_33" "LED_33"
+ R32 2
+ U11 12
+Net 73 "/DRIVERS/LED_46" "LED_46"
+ U7 7
+ R70 1
+Net 74 "/DRIVERS/LED_44" "LED_44"
+ R69 1
+ U7 9
+Net 75 "/DRIVERS/LED_42" "LED_42"
+ U7 11
+ R68 1
+Net 76 "/DRIVERS/LED_50" "LED_50"
+ U10 11
+ R72 1
+Net 77 "/DRIVERS/LED_52" "LED_52"
+ U10 9
+ R73 1
+Net 78 "/DRIVERS/LED_54" "LED_54"
+ U10 7
+ R74 1
+Net 79 "/DRIVERS/LED_55" "LED_55"
+ U10 6
+ R43 2
+Net 80 "/DRIVERS/LED_3" "LED_3"
+ R17 2
+ U13 10
+Net 81 "/DRIVERS/LED_5" "LED_5"
+ U13 8
+ R18 2
+Net 82 "/DRIVERS/LED_7" "LED_7"
+ U13 6
+ R19 2
+Net 83 "/DRIVERS/LED_18" "LED_18"
+ U12 11
+ R56 1
+Net 84 "/DRIVERS/LED_20" "LED_20"
+ U12 9
+ R57 1
+Net 85 "/DRIVERS/LED_22" "LED_22"
+ R58 1
+ U12 7
+Net 86 "/DRIVERS/LED_24" "LED_24"
+ U12 5
+ R59 1
+Net 87 "/DRIVERS/LED_63" "LED_63"
+ R47 2
+ U6 6
+Net 88 "/DRIVERS/LED_61" "LED_61"
+ U6 8
+ R46 2
+Net 89 "/DRIVERS/LED_59" "LED_59"
+ U6 10
+ R45 2
+Net 90 "/DRIVERS/LED_57" "LED_57"
+ U6 12
+ R44 2
+Net 91 "" ""
+ U12 3
+ U8 16
+Net 92 "/DRIVERS/LED_16" "LED_16"
+ U9 5
+ R55 1
+Net 93 "/DRIVERS/LED_15" "LED_15"
+ U9 6
+ R23 2
+Net 94 "/DRIVERS/LED_14" "LED_14"
+ U9 7
+ R54 1
+Net 95 "/DRIVERS/LED_13" "LED_13"
+ R22 2
+ U9 8
+Net 96 "/DRIVERS/LED_12" "LED_12"
+ R53 1
+ U9 9
+Net 97 "/DRIVERS/LED_11" "LED_11"
+ R21 2
+ U9 10
+Net 98 "/DRIVERS/LED_10" "LED_10"
+ U9 11
+ R52 1
+Net 99 "/DRIVERS/LED_9" "LED_9"
+ R20 2
+ U9 12
+Net 100 "/DRIVERS/LED_32" "LED_32"
+ R63 1
+ U8 5
+Net 101 "/DRIVERS/LED_31" "LED_31"
+ U8 6
+ R31 2
+Net 102 "/DRIVERS/LED_30" "LED_30"
+ U8 7
+ R62 1
+Net 103 "/DRIVERS/LED_29" "LED_29"
+ R30 2
+ U8 8
+Net 104 "/DRIVERS/LED_28" "LED_28"
+ U8 9
+ R61 1
+Net 105 "/DRIVERS/LED_27" "LED_27"
+ U8 10
+ R29 2
+Net 106 "/DRIVERS/LED_26" "LED_26"
+ R60 1
+ U8 11
+Net 107 "/DRIVERS/LED_25" "LED_25"
+ R28 2
+ U8 12
+Net 109 "/DRIVERS/LED_1" "LED_1"
+ U13 12
+ R16 2
+Net 110 "" ""
+ R54 2
+ P5 14
+Net 111 "" ""
+ R53 2
+ P5 12
+Net 112 "" ""
+ P5 10
+ R52 2
+Net 113 "" ""
+ P5 8
+ R51 2
+Net 114 "" ""
+ R50 2
+ P5 6
+Net 115 "" ""
+ R49 2
+ P5 4
+Net 116 "" ""
+ P5 2
+ R48 2
+Net 117 "" ""
+ R78 2
+ P5 62
+Net 118 "" ""
+ R77 2
+ P5 60
+Net 119 "" ""
+ P5 20
+ R57 2
+Net 120 "" ""
+ P5 22
+ R58 2
+Net 121 "" ""
+ R59 2
+ P5 24
+Net 122 "" ""
+ P5 30
+ R62 2
+Net 123 "" ""
+ R63 2
+ P5 32
+Net 124 "" ""
+ R64 2
+ P5 34
+Net 125 "" ""
+ P5 7
+ R19 1
+Net 126 "" ""
+ P5 9
+ R20 1
+Net 127 "" ""
+ P5 11
+ R21 1
+Net 128 "" ""
+ P5 13
+ R22 1
+Net 129 "" ""
+ P5 15
+ R23 1
+Net 130 "" ""
+ R33 1
+ P5 35
+Net 131 "" ""
+ R32 1
+ P5 33
+Net 132 "" ""
+ R31 1
+ P5 31
+Net 133 "" ""
+ R28 1
+ P5 25
+Net 134 "" ""
+ P5 23
+ P5 23
+ R27 1
+Net 135 "" ""
+ P5 16
+ R55 2
+Net 136 "" ""
+ R60 2
+ P5 26
+Net 137 "" ""
+ P5 36
+ R65 2
+Net 138 "" ""
+ P5 56
+ R75 2
+Net 139 "" ""
+ P5 17
+ R24 1
+Net 140 "" ""
+ P5 27
+ R29 1
+Net 141 "" ""
+ R56 2
+ P5 18
+Net 142 "" ""
+ R61 2
+ P5 28
+Net 143 "" ""
+ P5 58
+ R76 2
+Net 144 "" ""
+ P5 29
+ R30 1
+Net 145 "" ""
+ P5 1
+ R16 1
+Net 146 "" ""
+ P5 3
+ R17 1
+Net 147 "" ""
+ P5 5
+ R18 1
+Net 148 "" ""
+ R36 1
+ P5 41
+Net 149 "" ""
+ R35 1
+ P5 39
+Net 150 "" ""
+ P5 37
+ R34 1
+Net 151 "" ""
+ R66 2
+ P5 38
+Net 152 "" ""
+ P5 40
+ R67 2
+Net 153 "" ""
+ P5 42
+ R68 2
+Net 154 "" ""
+ P5 44
+ R69 2
+Net 155 "" ""
+ R70 2
+ P5 46
+Net 156 "" ""
+ P5 48
+ R71 2
+Net 157 "" ""
+ R72 2
+ P5 50
+Net 158 "" ""
+ R73 2
+ P5 52
+Net 159 "" ""
+ R74 2
+ P5 54
+Net 160 "" ""
+ R79 2
+ P5 64
+Net 161 "" ""
+ R26 1
+ P5 21
+Net 162 "" ""
+ R25 1
+ P5 19
+Net 163 "" ""
+ R43 1
+ P5 55
+Net 164 "" ""
+ R44 1
+ P5 57
+Net 165 "" ""
+ R45 1
+ P5 59
+Net 166 "" ""
+ P5 61
+ R46 1
+Net 167 "" ""
+ R47 1
+ P5 63
+Net 168 "" ""
+ P5 53
+ R42 1
+Net 169 "" ""
+ R41 1
+ P5 51
+Net 170 "" ""
+ P5 49
+ R40 1
+Net 171 "" ""
+ P5 47
+ R39 1
+Net 172 "" ""
+ R38 1
+ P5 45
+Net 173 "" ""
+ P5 43
+ R37 1
+Net 174 "" ""
+ U11 16
+ U8 3
+Net 175 "" ""
+ U9 16
+ U13 3
+Net 176 "/DRIVERS/LED_47" "LED_47"
+ R39 2
+ U7 6
+Net 177 "/DRIVERS/LED_45" "LED_45"
+ U7 8
+ R38 2
+Net 178 "/DRIVERS/LED_43" "LED_43"
+ U7 10
+ R37 2
+Net 179 "/DRIVERS/LED_41" "LED_41"
+ R36 2
+ U7 12
+Net 180 "" ""
+ U11 3
+ U7 16
+Net 181 "" ""
+ U10 3
+ U6 16
+Net 182 "/DRIVERS/LED_56" "LED_56"
+ R75 1
+ U10 5
+Net 183 "/DRIVERS/LED_53" "LED_53"
+ U10 8
+ R42 2
+Net 184 "/DRIVERS/LED_51" "LED_51"
+ U10 10
+ R41 2
+Net 185 "/DRIVERS/LED_49" "LED_49"
+ U10 12
+ R40 2
+Net 186 "/DRIVERS/LED_64" "LED_64"
+ R79 1
+ U6 5
+Net 187 "/DRIVERS/LED_62" "LED_62"
+ R78 1
+ U6 7
+Net 188 "/DRIVERS/LED_60" "LED_60"
+ R77 1
+ U6 9
+Net 189 "/DRIVERS/LED_58" "LED_58"
+ U6 11
+ R76 1
+Net 190 "/DRIVERS/LED_4" "LED_4"
+ U13 9
+ R49 1
+Net 191 "/DRIVERS/LED_2" "LED_2"
+ U13 11
+ R48 1
+Net 192 "/DRIVERS/LED_23" "LED_23"
+ U12 6
+ R27 2
+Net 193 "/DRIVERS/LED_21" "LED_21"
+ U12 8
+ R26 2
+Net 194 "/DRIVERS/LED_19" "LED_19"
+ U12 10
+ R25 2
+Net 195 "/DRIVERS/LED_17" "LED_17"
+ U12 12
+ R24 2
+Net 196 "" ""
+ U9 3
+ U12 16
+Net 197 "" ""
+ U10 16
+ U7 3
+Net 198 "/DRIVERS/LED_40" "LED_40"
+ R67 1
+ U11 5
+Net 199 "/DRIVERS/LED_38" "LED_38"
+ U11 7
+ R66 1
+Net 200 "/DRIVERS/LED_36" "LED_36"
+ R65 1
+ U11 9
+Net 201 "/DRIVERS/LED_34" "LED_34"
+ U11 11
+ R64 1
+Net 202 "/DRIVERS/LED_8" "LED_8"
+ U13 5
+ R51 1
+Net 203 "/DRIVERS/LED_6" "LED_6"
+ R50 1
+ U13 7
+}
+#End
