@@ -71,11 +71,11 @@ namespace CubeLed2K17
             //Geometry  - a simple triangle about the origin
             triangleVertices = new VertexPositionColor[3];
             triangleVertices[0] = new VertexPositionColor(new Vector3(
-                                  0, 20, 0), Cl2k17Color.Red);
+                                  0, 20, 0), Color.Red);
             triangleVertices[1] = new VertexPositionColor(new Vector3(-
-                                  20, -20, 0), Cl2k17Color.Green);
+                                  20, -20, 0), Color.Green);
             triangleVertices[2] = new VertexPositionColor(new Vector3(
-                                  20, -20, 0), Cl2k17Color.Blue);
+                                  20, -20, 0), Color.Blue);
 
             //Vert buffer
             vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(
@@ -173,7 +173,7 @@ namespace CubeLed2K17
             basicEffect.View = viewMatrix;
             basicEffect.World = worldMatrix;
 
-            GraphicsDevice.Clear(Cl2k17Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
 
             //Turn off culling so we see both sides of our rendered triangle
