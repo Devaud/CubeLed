@@ -8,6 +8,11 @@ namespace CFPT.Manager
 {
     public class CubeLedManager
     {
+        #region Constructor
+        public CubeLedManager()
+        {
 
+        }
+        #endregion
     }
 }
