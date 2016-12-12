@@ -18,6 +18,7 @@ namespace CubeLed2K17
         Matrix projectionMatrix;
         Matrix viewMatrix;
         Matrix worldMatrix;
+        Sphere mySphere;
 
         //BasicEffect for rendering
         BasicEffect basicEffect;
@@ -48,14 +49,9 @@ namespace CubeLed2K17
             //Setup Camera
             camTarget = new Vector3(0f, 0f, 0f);
             camPosition = new Vector3(0f, 0f, -100f);
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(
-                               MathHelper.ToRadians(45f), 
-                               GraphicsDevice.DisplayMode.AspectRatio,
-                1f, 1000f);
-            viewMatrix = Matrix.CreateLookAt(camPosition, camTarget, 
-                         new Vector3(0f, 1f, 0f));// Y up
-            worldMatrix = Matrix.CreateWorld(camTarget, Vector3.
-                          Forward, Vector3.Up);
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), GraphicsDevice.DisplayMode.AspectRatio,1f, 1000f);
+            viewMatrix = Matrix.CreateLookAt(camPosition, camTarget, new Vector3(0f, 1f, 0f));// Y up
+            worldMatrix = Matrix.CreateWorld(camTarget, Vector3.Forward, Vector3.Up);
 
             //BasicEffect
             basicEffect = new BasicEffect(GraphicsDevice);
@@ -69,20 +65,19 @@ namespace CubeLed2K17
             basicEffect.LightingEnabled = false;
 
             //Geometry  - a simple triangle about the origin
-            triangleVertices = new VertexPositionColor[3];
-            triangleVertices[0] = new VertexPositionColor(new Vector3(
-                                  0, 20, 0), Color.Red);
-            triangleVertices[1] = new VertexPositionColor(new Vector3(-
-                                  20, -20, 0), Color.Green);
-            triangleVertices[2] = new VertexPositionColor(new Vector3(
+            
+            triangleVertices = new VertexPositionColor[4];
+            triangleVertices[0] = new VertexPositionColor(new Vector3(-20, 20, 0), Color.Red);
+            triangleVertices[1] = new VertexPositionColor(new Vector3(20, 20, 0), Color.Yellow);
+            triangleVertices[2] = new VertexPositionColor(new Vector3(-20, -20, 0), Color.Green);
+            triangleVertices[3] = new VertexPositionColor(new Vector3(20, -20, 0), Color.Blue);
                                   20, -20, 0), Color.Blue);
 
             //Vert buffer
-            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(
-                           VertexPositionColor), 3, BufferUsage.
-                           WriteOnly);
-            vertexBuffer.SetData<VertexPositionColor>(triangleVertices)
-                                                      ;
+            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), 4, BufferUsage.WriteOnly);
+            vertexBuffer.SetData<VertexPositionColor>(triangleVertices);
+
+            mySphere = new Sphere(GraphicsDevice, 10);
         }       
 
         /// <summary>
@@ -160,6 +155,9 @@ namespace CubeLed2K17
             }
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget,
                          Vector3.Up);
+
+            mySphere.Update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -181,13 +179,7 @@ namespace CubeLed2K17
             rasterizerState.CullMode = CullMode.None;
             GraphicsDevice.RasterizerState = rasterizerState;
 
-            foreach(EffectPass pass in basicEffect.CurrentTechnique.
-                    Passes)
-            {
-                pass.Apply();
-                GraphicsDevice.DrawPrimitives(PrimitiveType.
-                                              TriangleList, 0, 3);
-            }
+            mySphere.Draw(viewMatrix, projectionMatrix);
             
             base.Draw(gameTime);
         }
