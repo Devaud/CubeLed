@@ -4,4 +4,5 @@
 \contentsline {section}{\numberline {3}Cahier des charges}{4}
 \contentsline {section}{\numberline {4}Analyse de l'existant}{5}
 \contentsline {section}{\numberline {5}Analyse fonctionnelle}{6}
-\contentsline {section}{\numberline {6}Conclusion}{7}
+\contentsline {section}{\numberline {6}Analyse organique}{7}
+\contentsline {section}{\numberline {7}Conclusion}{8}
