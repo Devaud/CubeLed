@@ -16,7 +16,7 @@ namespace CubeLed2K17
     {
         public Vector3 Position;
         public Vector3 Normal;
-
+        
 
         /// <summary>
         /// Constructor.

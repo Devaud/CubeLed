@@ -7,7 +7,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{73534367-FB84-42B2-84CC-809B7B1615B6}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CubeLed2K17</RootNamespace>
     <AssemblyName>CubeLed2K17</AssemblyName>
@@ -37,12 +37,15 @@
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Cl2k17Color.cs" />
     <Compile Include="Cube.cs" />
     <Compile Include="Face.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="GeomitricPrimitive.cs" />
+    <Compile Include="GeometricPrimitive.cs" />
     <Compile Include="Led.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,6 +54,9 @@
     <Compile Include="VertexPositionNormal.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="CubeLedLibrary">
+      <HintPath>..\CubeLedLibrary\bin\Debug\CubeLedLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>

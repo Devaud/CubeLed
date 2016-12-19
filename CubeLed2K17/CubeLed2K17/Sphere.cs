@@ -8,35 +8,69 @@ using System.Threading.Tasks;
 
 namespace CubeLed2K17
 {
-        public class Sphere
+    public class Sphere
+    {
+        private const int DEFAULT_BRIGHTNESS = 50;
+
+        private SpherePrimitive primitive;
+
+        public Vector3 Position;
+        public Vector3 Velocity;
+        public Color ledColor;
+        private int brightness;
+
+        public int Brightness
         {
-            private SpherePrimitive primitive;
-
-            public Vector3 Position;
-            public Vector3 Velocity;
-            public Color Color = Color.White;
-
-            public float Radius { get; private set; }
-
-            public BoundingSphere Bounds
+            get { return brightness; }
+            set
             {
-                get { return new BoundingSphere(Position, Radius); }
-            }
-
-            public Sphere(GraphicsDevice graphics, float radius)
-            {
-                primitive = new SpherePrimitive(graphics, radius * 2f, 10);
-                Radius = radius;
-            }
-
-            public void Update(GameTime gameTime)
-            {
-                Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            }
-
-            public void Draw(Matrix view, Matrix projection)
-            {
-                primitive.Draw(Matrix.CreateTranslation(Position), view, projection, Color);
+                if (value == 0)
+                {
+                    On = false;
+                }
+                else
+                {
+                    On = true;
+                }
+                brightness = value;
             }
         }
+        public bool On;
+        public float Radius { get; private set; }
+
+        public BoundingSphere Bounds
+        {
+            get { return new BoundingSphere(Position, Radius); }
+        }
+
+        public Sphere(GraphicsDevice graphics, float radius)
+        {
+            primitive = new SpherePrimitive(graphics, radius * 2f, 10);
+            Radius = radius;
+            ledColor = Color.LightBlue;
+            Brightness = DEFAULT_BRIGHTNESS;
+            On = true;
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            // calcul la luminosité de la sphère 
+            if (On)
+            {
+                this.ledColor = Color.FromNonPremultiplied((Brightness * 2), (Brightness * 2), (int)(Color.LightBlue.B), Color.LightBlue.A);
+            }
+            else
+            {
+                this.ledColor = Color.Black;
+            }
+
+        }
+
+        public void Draw(Matrix view, Matrix projection)
+        {
+            primitive.Draw(Matrix.CreateTranslation(Position), view, projection, ledColor);
+        }
+    }
 }

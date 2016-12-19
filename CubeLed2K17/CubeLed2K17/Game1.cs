@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using CFPT.Manager;
 
 namespace CubeLed2K17
 {
@@ -9,6 +10,8 @@ namespace CubeLed2K17
     /// </summary>
     public class Game1 : Game
     {
+        public CubeLedManager CubeLedManager { get; set; }
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -23,10 +26,6 @@ namespace CubeLed2K17
         //BasicEffect for rendering
         BasicEffect basicEffect;
 
-        //Geometric info
-        VertexPositionColor[] triangleVertices;
-        VertexBuffer vertexBuffer;
-
         //Orbit
         bool orbit = false;
 
@@ -34,6 +33,7 @@ namespace CubeLed2K17
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            this.CubeLedManager = new CubeLedManager();
         }
 
         /// <summary>
@@ -48,8 +48,8 @@ namespace CubeLed2K17
 
             //Setup Camera
             camTarget = new Vector3(0f, 0f, 0f);
-            camPosition = new Vector3(0f, 0f, -100f);
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), GraphicsDevice.DisplayMode.AspectRatio,1f, 1000f);
+            camPosition = new Vector3(0f, 0f, -200f);
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), GraphicsDevice.DisplayMode.AspectRatio, 1f, 1000f);
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget, new Vector3(0f, 1f, 0f));// Y up
             worldMatrix = Matrix.CreateWorld(camTarget, Vector3.Forward, Vector3.Up);
 
@@ -64,20 +64,8 @@ namespace CubeLed2K17
             //If you want to use lighting and VPC you need to create a custom def
             basicEffect.LightingEnabled = false;
 
-            //Geometry  - a simple triangle about the origin
-            
-            triangleVertices = new VertexPositionColor[4];
-            triangleVertices[0] = new VertexPositionColor(new Vector3(-20, 20, 0), Color.Red);
-            triangleVertices[1] = new VertexPositionColor(new Vector3(20, 20, 0), Color.Yellow);
-            triangleVertices[2] = new VertexPositionColor(new Vector3(-20, -20, 0), Color.Green);
-            triangleVertices[3] = new VertexPositionColor(new Vector3(20, -20, 0), Color.Blue);
-
-            //Vert buffer
-            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), 4, BufferUsage.WriteOnly);
-            vertexBuffer.SetData<VertexPositionColor>(triangleVertices);
-
             mySphere = new Sphere(GraphicsDevice, 10);
-        }       
+        }
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
@@ -112,6 +100,21 @@ namespace CubeLed2K17
                             Keys.Escape))
                 Exit();
 
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
+            {
+                if (mySphere.Brightness < 100)
+                {
+                    mySphere.Brightness++;
+                }
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad2))
+            {
+                if (mySphere.Brightness > 0)
+                {
+                    mySphere.Brightness--;
+                }
+            }
+
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
                 camPosition.X -= 1f;
@@ -132,13 +135,21 @@ namespace CubeLed2K17
                 camPosition.Y += 1f;
                 camTarget.Y += 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.OemPlus))
+            if (Keyboard.GetState().IsKeyDown(Keys.PageUp) && camPosition.Z < -150f)
             {
                 camPosition.Z += 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.OemMinus))
+            if (Keyboard.GetState().IsKeyDown(Keys.PageDown))
             {
                 camPosition.Z -= 1f;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+            {
+                mySphere.ledColor = Color.Black;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Back))
+            {
+                mySphere.ledColor = Color.White;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
@@ -171,7 +182,6 @@ namespace CubeLed2K17
             basicEffect.World = worldMatrix;
 
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            GraphicsDevice.SetVertexBuffer(vertexBuffer);
 
             //Turn off culling so we see both sides of our rendered triangle
             RasterizerState rasterizerState = new RasterizerState();
@@ -179,7 +189,7 @@ namespace CubeLed2K17
             GraphicsDevice.RasterizerState = rasterizerState;
 
             mySphere.Draw(viewMatrix, projectionMatrix);
-            
+
             base.Draw(gameTime);
         }
     }
