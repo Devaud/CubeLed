@@ -71,7 +71,6 @@ namespace CubeLed2K17
             triangleVertices[1] = new VertexPositionColor(new Vector3(20, 20, 0), Color.Yellow);
             triangleVertices[2] = new VertexPositionColor(new Vector3(-20, -20, 0), Color.Green);
             triangleVertices[3] = new VertexPositionColor(new Vector3(20, -20, 0), Color.Blue);
-                                  20, -20, 0), Color.Blue);
 
             //Vert buffer
             vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor), 4, BufferUsage.WriteOnly);
