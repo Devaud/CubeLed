@@ -21,6 +21,8 @@ namespace CubeLed2K17
         Matrix projectionMatrix;
         Matrix viewMatrix;
         Matrix worldMatrix;
+        int PreviousMouseState;
+        MouseState CurrentMouseState;
         //Sphere mySphere;
         //Face myFace;
         Cube myCube;
@@ -104,6 +106,7 @@ namespace CubeLed2K17
                             Keys.Escape))
                 Exit();
 
+            // ------------ Important --------------- change the brightness of the led
             /*if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
             {
                 if (mySphere.Brightness < 100)
@@ -118,6 +121,7 @@ namespace CubeLed2K17
                     mySphere.Brightness--;
                 }
             }*/
+            // ---------------------------------------
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
@@ -147,6 +151,12 @@ namespace CubeLed2K17
             {
                 camPosition.Z -= 1f;
             }
+
+            CurrentMouseState = Mouse.GetState();
+            camPosition.Z += (CurrentMouseState.ScrollWheelValue - PreviousMouseState < 0) ? 8 : 0;
+            camPosition.Z -= (CurrentMouseState.ScrollWheelValue - PreviousMouseState > 0) ? 8 : 0;
+            PreviousMouseState = CurrentMouseState.ScrollWheelValue;
+
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 orbit = !orbit;
