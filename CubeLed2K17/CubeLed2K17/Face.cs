@@ -27,14 +27,21 @@ namespace CubeLed2K17
         #endregion
 
         #region Constructor
-        public Face(GraphicsDevice graphics, float radius, Vector3 position)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="graphics"></param>
+        /// <param name="radius">radius of each </param>
+        /// <param name="position"></param>
+        /// <param name="number"></param>
+        public Face(GraphicsDevice graphics, float radius, Vector3 position, int number)
         {
             this.T_Leds = new Sphere[WIDTH, HEIGHT];
             for (int x = 0; x < WIDTH; x++)
             {
                 for (int y = 0; y < HEIGHT; y++)
                 {
-                    this.T_Leds[x, y] = new Sphere(graphics, 10, new Vector3(25 + x * 25, 25 + y * 25, 15));
+                    this.T_Leds[x, y] = new Sphere(graphics, radius, new Vector3(25 + x * 25, 25 + y * 25, 25 * number));
                 }
             }  
         }

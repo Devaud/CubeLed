@@ -22,7 +22,8 @@ namespace CubeLed2K17
         Matrix viewMatrix;
         Matrix worldMatrix;
         //Sphere mySphere;
-        Face myFace;
+        //Face myFace;
+        Cube myCube;
 
         //BasicEffect for rendering
         BasicEffect basicEffect;
@@ -66,7 +67,8 @@ namespace CubeLed2K17
             basicEffect.LightingEnabled = false;
 
             //mySphere = new Sphere(GraphicsDevice, 10, new Vector3(10,10,10));
-            myFace = new Face(GraphicsDevice, 10, new Vector3(10, 10, 10));
+            //myFace = new Face(GraphicsDevice, 10, new Vector3(10, 10, 10),1);
+            myCube = new Cube(GraphicsDevice, 10, new Vector3(10, 10, 10));
         }
 
         /// <summary>
@@ -161,7 +163,8 @@ namespace CubeLed2K17
                          Vector3.Up);
 
             //mySphere.Update(gameTime);
-            myFace.Update(gameTime);
+            //myFace.Update(gameTime);
+            myCube.Update(gameTime);
             base.Update(gameTime);
             
         }
@@ -184,8 +187,8 @@ namespace CubeLed2K17
             GraphicsDevice.RasterizerState = rasterizerState;
 
             //mySphere.Draw(viewMatrix, projectionMatrix);
-            myFace.Draw(viewMatrix, projectionMatrix);
-
+            //myFace.Draw(viewMatrix, projectionMatrix);
+            myCube.Draw(viewMatrix, projectionMatrix);
             base.Draw(gameTime);
         }
     }

@@ -45,7 +45,7 @@ namespace CubeLed2K17
 
         public Sphere(GraphicsDevice graphics, float radius, Vector3 position)
         {
-            primitive = new SpherePrimitive(graphics, radius * 2f, 10);
+            primitive = new SpherePrimitive(graphics, radius, 10);
             this.Radius = radius;
             this.ledColor = Color.LightBlue;
             this.Brightness = DEFAULT_BRIGHTNESS;
