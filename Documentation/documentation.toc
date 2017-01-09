@@ -3,6 +3,8 @@
 \contentsline {section}{\numberline {2}Introduction}{3}
 \contentsline {section}{\numberline {3}Cahier des charges}{4}
 \contentsline {section}{\numberline {4}Analyse de l'existant}{5}
-\contentsline {section}{\numberline {5}Analyse fonctionnelle}{6}
-\contentsline {section}{\numberline {6}Analyse organique}{7}
-\contentsline {section}{\numberline {7}Conclusion}{8}
+\contentsline {subsection}{\numberline {4.1}Repr\IeC {\'e}sentation du Cube dans l'application}{5}
+\contentsline {subsection}{\numberline {4.2}Format ".cube"}{7}
+\contentsline {section}{\numberline {5}Analyse fonctionnelle}{8}
+\contentsline {section}{\numberline {6}Analyse organique}{9}
+\contentsline {section}{\numberline {7}Conclusion}{10}

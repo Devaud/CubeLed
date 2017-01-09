@@ -97,14 +97,30 @@ Notre projet consiste à améliorer le projet Cube de M. \textsc{Aubert} Jonatha
 
 % Cahier des charges
 \section{Cahier des charges}
+\textbf{\large{But :}}
+\begin{description}
+	\item Reprendre le projet CubeLed et l'améliorer.\\
+\end{description}
+
+\textbf{\large{Points demandés :}}
+\begin{itemize}
+	\item[*] Interface 3D
+	\item[*] Affichage d'un cube de leds
+	\item[*] Intéractions avec le cube
+	\item[*] Intéractions avec les leds
+	\item[*] Gestion de la couleur
+	\item[*] Gestion d'animation
+\end{itemize}
 \newpage
 
 % Analyse de l'existant
 \section{Analyse de l'existant}
-Le Cube à Leds est représenté sous la forme d'un tableau à trois dimensions :
+\subsection{Représentation du Cube dans l'application}
+\noindent Le cube possède huit étages, chaques étage contient huit rangées qui, elles-mêmes contiennent huit Leds. Le Cube à Leds est représenté sous la forme d'un tableau à trois dimensions :
 \begin{center}
-	\textsc{CubeLED}[x][y][]nbImage = value
+	\textsc{CubeLED}[x][y][nbImage] = value
 \end{center}
+\begin{center}
 \begin{tabular}{r  l}
 	\raggedright{\textbf{CubeLED :}} & Le nom du tableau\\
 	\textbf{x :} & Position d'une Led sur l'axe "x"\\
@@ -112,9 +128,95 @@ Le Cube à Leds est représenté sous la forme d'un tableau à trois dimensions 
 	\textbf{nbImage :} & Numéro de l'image (animation)\\
 	\textbf{value :} & Valeur stockée\\
 \end{tabular}
+\end{center}
+
+\vspace{1.5cm} 
+
+\textbf{\large{Explication de la valeur stockée dans \emph{"value"} :}}
+
+\noindent Ce sont les deux premiers paramètres qui sont utiles pour représenter la position d'une Led allumée, c'est donc grâce à la valeur stockée que nous indiquerons au microcontrôleur quelle Led il va devoir allumer. On envoie donc une valeur entre 0 et 255, sous forme binaire. Dans cette chaîne binaire, chaque "1" représente une LED allumée et chaque "0" une LED éteinte.
+\vspace{1cm} 
+
+\noindent \textsc{Exemple 1 : CubeLED}[0][0][0] = $128_{10}$ -> $10000000_2$ 
+\begin{description}
+	\item[->]La dernière Led de la ligne x = 0 / y = 0 est allumée.\\
+\end{description}
+
+\noindent \textsc{Exemple 2 : CubeLED}[6][4][0] = $170_{10}$ -> $10101010_2$ 
+\begin{description}
+	\item[->]Une Led sur deux est allumée sur la ligne x = 6 / y = 4.\\
+\end{description}
+
+\noindent \textsc{Exemple 3 : CubeLED}[2][7][0] = $0_{10}$ -> $00000000_2$ 
+\begin{description}
+	\item[->]Aucunes Leds sont allumées sur la ligne x = 2 / y = 7.\\
+\end{description}
+
+\noindent \textsc{Exemple 4 : CubeLED}[8][1][0] = $255_{10}$ -> $11111111_2$ 
+\begin{description}
+	\item[->]Toutes les Leds sont allumées sur la ligne x = 8 / y = 1.\\
+\end{description}
+
 
 \newpage
 
+\noindent Ce format est utilisé pour simplifier la communication avec le microcontrôleur et la création de fichiers ".cube". Il est aussi important de prendre conscience de l’orientation du Cube en utilisant ce format.
+
+\vspace{0.5cm}
+
+\noindent Voici donc ci-dessous, un schéma représentant le tableau CubeLED. La face droite est l’équivalent des deux premiers index de notre tableau (\emph{CubeLED[x][y]}) et les valeurs affichées sur cette dernière sont les éléments stockés à ces positions.
+
+\vspace{0.5cm}
+
+\noindent Le microcontrôleur analyse la valeur binaire convertie (voir axe Z) et allume une LED à chaque fois qu’elle rencontre un "1".
+
+\vspace{0.5cm}
+
+\noindent Note : Le tableau complet contient des animations, ce schéma représente une seule image qui pourrait être présente dans le tableau.
+
+\begin{center}
+	\includegraphics[width=8cm]{./img/schemaCube.png}\\
+	\textsc{Figure 1} - Représentation 3D du tableau \emph{CubeLED}
+\end{center}
+
+\newpage
+
+\subsection{Format ".cube"}
+\noindent Le fichier cube est construit en trois catégories principales :
+\begin{itemize}
+	\item[*] En-tête du fichier (ASCII)
+	\item[*] Images du CubeLED
+	\item[*] Luminosité
+\end{itemize}
+Chaque partie du fichier est séparée par des séparateurs de début et fin. Pour indiquer le début d’une partie, on utilise "\#", pour marquer la fin d’une partie on utilise "\$" par convention.
+
+\vspace{0.5cm}
+
+
+\begin{flushleft}
+	\noindent Voici un schéma représentant la structure du fichier ".cube" :
+	\includegraphics[width=15cm]{./img/structureCube.png}\\
+\end{flushleft}
+\begin{center}
+	\begin{tabular}{|r  l|}
+		\hline
+		 & \\
+		\textbf{\emph{En-tête :}} & Contient les informations relatives à l'animation \\
+		\textbf{\emph{Images :}} & Contient les informations sur la position des Leds allumées (par étages) \\
+		\textbf{\emph{Luminosité :}} & Si le mode est variable, on indique la luminosité pour chaque image,\\
+		 & sinon on indique la luminosité générale du cube. \\
+		 & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\noindent Voici un schéma représentant un étage du cube, un étage contient huit lignes de leds :
+\begin{center}
+	\includegraphics[width=10cm]{./img/structureEtage.png}\\
+	\textsc{Figure 1} - Représentation d'un étage du \emph{CubeLED}
+\end{center}
+
+\newpage
 % Analyse fonctionnelle
 \section{Analyse fonctionnelle}
 \newpage
