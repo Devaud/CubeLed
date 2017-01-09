@@ -10,7 +10,7 @@ namespace CubeLed2K17
     /// </summary>
     public class Game1 : Game
     {
-        public CubeLedManager CubeLedManager { get; set; }
+        //public CubeLedManager CubeLedManager { get; set; }
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -21,7 +21,8 @@ namespace CubeLed2K17
         Matrix projectionMatrix;
         Matrix viewMatrix;
         Matrix worldMatrix;
-        Sphere mySphere;
+        //Sphere mySphere;
+        Face myFace;
 
         //BasicEffect for rendering
         BasicEffect basicEffect;
@@ -33,7 +34,7 @@ namespace CubeLed2K17
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            this.CubeLedManager = new CubeLedManager();
+            //this.CubeLedManager = new CubeLedManager();
         }
 
         /// <summary>
@@ -47,8 +48,8 @@ namespace CubeLed2K17
             base.Initialize();
 
             //Setup Camera
-            camTarget = new Vector3(0f, 0f, 0f);
-            camPosition = new Vector3(0f, 0f, -200f);
+            camTarget = new Vector3(100f, 100f, 0f);
+            camPosition = new Vector3(10f, 100f, -400f);
             projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), GraphicsDevice.DisplayMode.AspectRatio, 1f, 1000f);
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget, new Vector3(0f, 1f, 0f));// Y up
             worldMatrix = Matrix.CreateWorld(camTarget, Vector3.Forward, Vector3.Up);
@@ -64,7 +65,8 @@ namespace CubeLed2K17
             //If you want to use lighting and VPC you need to create a custom def
             basicEffect.LightingEnabled = false;
 
-            mySphere = new Sphere(GraphicsDevice, 10);
+            //mySphere = new Sphere(GraphicsDevice, 10, new Vector3(10,10,10));
+            myFace = new Face(GraphicsDevice, 10, new Vector3(10, 10, 10));
         }
 
         /// <summary>
@@ -100,7 +102,7 @@ namespace CubeLed2K17
                             Keys.Escape))
                 Exit();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
+            /*if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
             {
                 if (mySphere.Brightness < 100)
                 {
@@ -113,7 +115,7 @@ namespace CubeLed2K17
                 {
                     mySphere.Brightness--;
                 }
-            }
+            }*/
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
@@ -143,14 +145,6 @@ namespace CubeLed2K17
             {
                 camPosition.Z -= 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-            {
-                mySphere.ledColor = Color.Black;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.Back))
-            {
-                mySphere.ledColor = Color.White;
-            }
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 orbit = !orbit;
@@ -166,9 +160,10 @@ namespace CubeLed2K17
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget,
                          Vector3.Up);
 
-            mySphere.Update(gameTime);
-
+            //mySphere.Update(gameTime);
+            myFace.Update(gameTime);
             base.Update(gameTime);
+            
         }
 
         /// <summary>
@@ -188,7 +183,8 @@ namespace CubeLed2K17
             rasterizerState.CullMode = CullMode.None;
             GraphicsDevice.RasterizerState = rasterizerState;
 
-            mySphere.Draw(viewMatrix, projectionMatrix);
+            //mySphere.Draw(viewMatrix, projectionMatrix);
+            myFace.Draw(viewMatrix, projectionMatrix);
 
             base.Draw(gameTime);
         }

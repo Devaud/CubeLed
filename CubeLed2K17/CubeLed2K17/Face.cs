@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,39 +10,56 @@ namespace CubeLed2K17
 {
     class Face
     {
+        private const int WIDTH = 8;
+        private const int HEIGHT = 8;
+
         #region Fields
-        private int width;
-        private int height;
-        private Led[,] t_Leds;
+        private Sphere[,] _t_Leds;
         #endregion
 
         #region Properties
-        public int Width
-        {
-            get { return this.width; }
-            set { this.width = value; }
-        }
 
-        public int Height
+        public Sphere[,] T_Leds
         {
-            get { return this.height; }
-            set { this.height = value; }
-        }
-
-        public Led[,] T_Leds
-        {
-            get { return this.t_Leds; }
-            set { this.t_Leds = value; }
+            get { return _t_Leds; }
+            set { _t_Leds = value; }
         }
         #endregion
 
         #region Constructor
-        public Face()
+        public Face(GraphicsDevice graphics, float radius, Vector3 position)
         {
-            this.Height = 8;
-            this.Width = 8;
-            this.T_Leds = new Led[this.Width, this.Height];
+            this.T_Leds = new Sphere[WIDTH, HEIGHT];
+            for (int x = 0; x < WIDTH; x++)
+            {
+                for (int y = 0; y < HEIGHT; y++)
+                {
+                    this.T_Leds[x, y] = new Sphere(graphics, 10, new Vector3(25 + x * 25, 25 + y * 25, 15));
+                }
+            }  
         }
         #endregion
+
+        public void Update(GameTime gameTime)
+        {
+            for (int x = 0; x < WIDTH; x++)
+            {
+                for (int y = 0; y < HEIGHT; y++)
+                {
+                    this.T_Leds[x, y].Update(gameTime);
+                }
+            }  
+        }
+
+        public void Draw(Matrix view, Matrix projection)
+        {
+            for (int x = 0; x < WIDTH; x++)
+			{
+                for (int y = 0; y < HEIGHT; y++)
+                {
+                    this.T_Leds[x,y].Draw(view, projection);
+                }            
+			}           
+        }
     }
 }

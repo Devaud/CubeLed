@@ -35,7 +35,7 @@ namespace CubeLed2K17
                 brightness = value;
             }
         }
-        public bool On;
+        public bool On; // state of the led (on/off)
         public float Radius { get; private set; }
 
         public BoundingSphere Bounds
@@ -43,18 +43,19 @@ namespace CubeLed2K17
             get { return new BoundingSphere(Position, Radius); }
         }
 
-        public Sphere(GraphicsDevice graphics, float radius)
+        public Sphere(GraphicsDevice graphics, float radius, Vector3 position)
         {
             primitive = new SpherePrimitive(graphics, radius * 2f, 10);
-            Radius = radius;
-            ledColor = Color.LightBlue;
-            Brightness = DEFAULT_BRIGHTNESS;
-            On = true;
+            this.Radius = radius;
+            this.ledColor = Color.LightBlue;
+            this.Brightness = DEFAULT_BRIGHTNESS;
+            this.On = true;
+            this.Position = position;
         }
 
         public void Update(GameTime gameTime)
         {
-            Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //this.Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // calcul la luminosité de la sphère 
             if (On)
