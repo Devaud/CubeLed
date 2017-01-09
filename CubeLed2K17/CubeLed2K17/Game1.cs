@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using CFPT.Manager;
+using System;
 
 namespace CubeLed2K17
 {
@@ -106,6 +107,8 @@ namespace CubeLed2K17
                             Keys.Escape))
                 Exit();
 
+            this.UsbUpdater(gameTime);
+
             // ------------ Important --------------- change the brightness of the led
             /*if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
             {
@@ -179,6 +182,18 @@ namespace CubeLed2K17
             
         }
 
+        private void UsbUpdater(GameTime gameTime)
+        {
+            if (this.CubeLedManager.IsConnected)
+            {
+                Console.WriteLine("Cube is connected");
+            }
+
+            if (this.CubeLedManager.CanCommunicate)
+            {
+                Console.WriteLine("Cube can communicate");
+            }
+        }
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
