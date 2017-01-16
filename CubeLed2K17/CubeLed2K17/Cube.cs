@@ -12,7 +12,7 @@ namespace CubeLed2K17
     {
         private const int NB_FACE = 8;
 
-        #region Fields        
+        #region Fields
         private List<Face> faces;
         #endregion
 

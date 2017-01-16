@@ -11,6 +11,7 @@ namespace CFPT.Manager
     public class CubeLedManager
     {
         #region Properties
+        private const char SEPARATOR = ';';
         private const int BUFFER_SIZE = 65;
         private const int NULL_VALUE = 0x00;
         private const int DEFAULT_VENDOR_ID = 0x16C0;
@@ -67,6 +68,9 @@ namespace CFPT.Manager
         }
         #endregion
 
+        #region Methods
+
+        #region Usb connection
         private void UsbPort_OnSpecifiedDeviceRemoved(object sender, EventArgs e)
         {
             // Stop device processus
@@ -105,7 +109,9 @@ namespace CFPT.Manager
         {
             throw new NotImplementedException();
         }
+        #endregion
 
+        #region Data transfert
         void UsbPort_OnDataSend(object sender, EventArgs e)
         {
             // throw new NotImplementedException();
@@ -141,7 +147,9 @@ namespace CFPT.Manager
                 }
             }
         }
+        #endregion
 
+        #region Utilities function for data
         /// <summary>
         /// Check if the buffer change
         /// </summary>
@@ -204,5 +212,21 @@ namespace CFPT.Manager
                 Console.WriteLine(ex.Message);
             }
         }
+
+        public void SendData(string[,,] data)
+        {
+            byte[, ,] datacube = this.Cube3DToCubeled(data);
+        }
+
+        private byte[, ,] Cube3DToCubeled(string[, ,] data)
+        {
+            byte[,,] dataCube = new byte[8,8,8];
+
+
+
+            return dataCube;
+        }
+        #endregion
+        #endregion
     }
 }
