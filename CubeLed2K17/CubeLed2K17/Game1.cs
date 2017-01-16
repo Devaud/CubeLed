@@ -22,11 +22,12 @@ namespace CubeLed2K17
         Matrix projectionMatrix;
         Matrix viewMatrix;
         Matrix worldMatrix;
+
         int PreviousMouseState;
         MouseState CurrentMouseState;
-        //Sphere mySphere;
-        //Face myFace;
         Cube myCube;
+        private Texture2D cursorTexture;
+        private Vector2 cursorPos;
 
         //BasicEffect for rendering
         BasicEffect basicEffect;
@@ -38,6 +39,7 @@ namespace CubeLed2K17
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            this.IsMouseVisible = true;
             //this.CubeLedManager = new CubeLedManager();
         }
 
@@ -50,7 +52,7 @@ namespace CubeLed2K17
         protected override void Initialize()
         {
             base.Initialize();
-
+            
             //Setup Camera
             camTarget = new Vector3(100f, 100f, 0f);
             camPosition = new Vector3(10f, 100f, -400f);
@@ -69,8 +71,6 @@ namespace CubeLed2K17
             //If you want to use lighting and VPC you need to create a custom def
             basicEffect.LightingEnabled = false;
 
-            //mySphere = new Sphere(GraphicsDevice, 10, new Vector3(10,10,10));
-            //myFace = new Face(GraphicsDevice, 10, new Vector3(10, 10, 10),1);
             myCube = new Cube(GraphicsDevice, 10, new Vector3(10, 10, 10));
         }
 
@@ -82,7 +82,7 @@ namespace CubeLed2K17
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            cursorTexture = Content.Load<Texture2D>("Graphics\\HandGrab.png");
             // TODO: use this.Content to load your game content here
         }
 
@@ -102,6 +102,8 @@ namespace CubeLed2K17
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            this.cursorPos = new Vector2(CurrentMouseState.X - this.cursorTexture.Width / 2, CurrentMouseState.Y - cursorTexture.Height / 2);
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back ==
                             ButtonState.Pressed || Keyboard.GetState().IsKeyDown(
                             Keys.Escape))
@@ -175,8 +177,6 @@ namespace CubeLed2K17
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget,
                          Vector3.Up);
 
-            //mySphere.Update(gameTime);
-            //myFace.Update(gameTime);
             myCube.Update(gameTime);
             base.Update(gameTime);
             
@@ -210,11 +210,39 @@ namespace CubeLed2K17
             RasterizerState rasterizerState = new RasterizerState();
             rasterizerState.CullMode = CullMode.None;
             GraphicsDevice.RasterizerState = rasterizerState;
-
-            //mySphere.Draw(viewMatrix, projectionMatrix);
-            //myFace.Draw(viewMatrix, projectionMatrix);
+            
             myCube.Draw(viewMatrix, projectionMatrix);
+            spriteBatch.Begin();
+            //spriteBatch.Draw(cursorTexture, new Rectangle((int)cursorPos.X, (int)cursorPos.Y, cursorTexture.Width, cursorTexture.Height), Color.White);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
+
+        /*public Ray CalculateRay(Vector2 mouseLocation, Matrix view, Matrix projection, Viewport viewport)
+        {
+            Vector3 nearPoint = viewport.Unproject(new Vector3(mouseLocation.X,
+                    mouseLocation.Y, 0.0f),
+                    projection,
+                    view,
+                    Matrix.Identity);
+
+            Vector3 farPoint = viewport.Unproject(new Vector3(mouseLocation.X,
+                    mouseLocation.Y, 1.0f),
+                    projection,
+                    view,
+                    Matrix.Identity);
+
+            Vector3 direction = farPoint - nearPoint;
+            direction.Normalize();
+
+            return new Ray(nearPoint, direction);
+        }
+
+        public float? IntersectDistance(BoundingSphere sphere, Vector2 mouseLocation,
+            Matrix view, Matrix projection, Viewport viewport)
+        {
+            Ray mouseRay = CalculateRay(mouseLocation, view, projection, viewport);
+            return mouseRay.Intersects(sphere);
+        }*/
     }
 }

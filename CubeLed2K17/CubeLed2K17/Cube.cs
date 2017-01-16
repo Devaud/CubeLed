@@ -52,6 +52,17 @@ namespace CubeLed2K17
             }
         }
 
+        /// <summary>
+        /// return in the format string all characteristic of the leds in the cube
+        /// </summary>
+        /// <returns>Leds values with the format "Frame;State;intensity;Color"
+        ///                                 ex : "2;true;50;65535</returns>
+        public string[,,] GetCubeState()
+        {
+            string[,,] ledStates = new string[8,8,8];
+
+            return ledStates;
+        }
 
         #endregion
     }
