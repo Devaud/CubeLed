@@ -26,6 +26,12 @@ namespace CubeLed
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="graphics"></param>
+        /// <param name="radius">radius of </param>
+        /// <param name="position"></param>
         public Cube(GraphicsDevice graphics, float radius, Vector3 position)
         {
             this.Faces = new List<Face>();
