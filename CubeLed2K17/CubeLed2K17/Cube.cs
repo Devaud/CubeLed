@@ -30,7 +30,7 @@ namespace CubeLed2K17
         {
             this.Faces = new List<Face>();
 
-            for (int i = 1; i < NB_FACE+1; i++)
+            for (uint i = 1; i < NB_FACE+1; i++)
             {
                 Faces.Add(new Face(graphics, radius, new Vector3(10, 10, 10), i));
             }
@@ -61,6 +61,14 @@ namespace CubeLed2K17
         {
             string[,,] ledStates = new string[8,8,8];
 
+            foreach (Face face in this.Faces)
+	        {
+                foreach (Led led in face.T_Leds)
+                {
+                    //ledStates[face.Id, led.X, led.Y] = led.On;
+                }
+	        }
+            
             return ledStates;
         }
 

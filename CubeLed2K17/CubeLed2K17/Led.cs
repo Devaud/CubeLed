@@ -13,11 +13,16 @@ namespace CubeLed2K17
         private const int DEFAULT_BRIGHTNESS = 50;
 
         private SpherePrimitive primitive;
+        private int _x;
+        private int _y;
+
 
         public Vector3 Position;
         public Vector3 Velocity;
         public Color ledColor;
         private int brightness;
+        public bool On; // state of the led (on/off)
+        public float Radius { get; private set; }
 
         public int Brightness
         {
@@ -35,21 +40,30 @@ namespace CubeLed2K17
                 brightness = value;
             }
         }
-        public bool On; // state of the led (on/off)
-        public float Radius { get; private set; }
+
+        public int X
+        {
+            get { return _x; }
+            set { _x = value; }
+        }
+
+        public int Y
+        {
+            get { return _y; }
+            set { _y = value; }
+        }
 
         public BoundingSphere Bounds
         {
             get { return new BoundingSphere(Position, Radius); }
         }
 
-        public Led(GraphicsDevice graphics, float radius, Vector3 position)
+        public Led(GraphicsDevice graphics, float radius, Vector3 position, int x, int y)
         {
             primitive = new SpherePrimitive(graphics, radius, 10);
             this.Radius = radius;
             this.ledColor = Color.LightBlue;
             this.Brightness = DEFAULT_BRIGHTNESS;
-            this.On = true;
             this.Position = position;
         }
 
