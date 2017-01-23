@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,44 +8,86 @@ using System.Threading.Tasks;
 
 namespace CubeLed
 {
-    class Led
+    public class Led
     {
-        #region Fields
-        private Cl2k17Color color;
-        private bool on;
-        private int intensity;
+        private const int DEFAULT_BRIGHTNESS = 50;
 
-        #endregion
+        private SpherePrimitive primitive;
+        private int _x;
+        private int _y;
 
-        #region Properties
-        public Cl2k17Color Color
+
+        public Vector3 Position;
+        public Vector3 Velocity;
+        public Color ledColor;
+        private int brightness;
+        public bool On; // state of the led (on/off)
+        public float Radius { get; private set; }
+
+        public int Brightness
         {
-            get { return this.color; }
-            set { this.color = value; }
+            get { return brightness; }
+            set
+            {
+                if (value == 0)
+                {
+                    On = false;
+                }
+                else
+                {
+                    On = true;
+                }
+                brightness = value;
+            }
         }
 
-        public bool On
+        public int X
         {
-            get { return this.on; }
-            set { this.on = value; }
+            get { return _x; }
+            set { _x = value; }
         }
 
-        public int Intensity
+        public int Y
         {
-            get { return this.intensity; }
-            set { this.intensity = value; }
-        }
-        #endregion
-
-        #region constructor
-        public Led()
-        {
-            this.On = false;
-            this.Intensity = 100;
+            get { return _y; }
+            set { _y = value; }
         }
 
-        #endregion
+        public BoundingSphere Bounds
+        {
+            get { return new BoundingSphere(Position, Radius); }
+        }
 
+        public Led(GraphicsDevice graphics, float radius, Vector3 position, int x, int y)
+        {
+            primitive = new SpherePrimitive(graphics, radius, 10);
+            this.Radius = radius;
+            this.ledColor = Color.LightBlue;
+            this.Brightness = DEFAULT_BRIGHTNESS;
+            this.Position = position;
+            this.X = x;
+            this.Y = y;
+        }
 
+        public void Update(GameTime gameTime)
+        {
+            //this.Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            // calcul la luminosité de la sphère 
+            if (On)
+            {
+                this.ledColor = Color.FromNonPremultiplied((Brightness * 2), (Brightness * 2), (int)(Color.LightBlue.B), Color.LightBlue.A);
+            }
+            else
+            {
+                this.ledColor = Color.Black;
+            }
+
+        }
+
+        public void Draw(Matrix view, Matrix projection)
+        {
+            primitive.Draw(Matrix.CreateTranslation(Position), view, projection, ledColor);
+        }
     }
 }

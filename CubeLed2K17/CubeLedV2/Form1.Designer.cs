@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pctSurface = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,11 +42,21 @@
             this.pctSurface.TabIndex = 0;
             this.pctSurface.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(499, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 485);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pctSurface);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pctSurface;
+        private System.Windows.Forms.Button button1;
     }
 }
 

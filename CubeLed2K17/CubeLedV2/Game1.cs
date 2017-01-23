@@ -160,6 +160,7 @@ namespace CubeLed
             if (Keyboard.GetState().IsKeyDown(Keys.PageDown))
             {
                 camPosition.Z -= 1f;
+                myCube.GetCubeState();
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {

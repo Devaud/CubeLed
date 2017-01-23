@@ -12,7 +12,7 @@ namespace CubeLed
     {
         private const int NB_FACE = 8;
 
-        #region Fields        
+        #region Fields
         private List<Face> faces;
         #endregion
 
@@ -30,7 +30,7 @@ namespace CubeLed
         {
             this.Faces = new List<Face>();
 
-            for (int i = 1; i < NB_FACE+1; i++)
+            for (uint i = 1; i < NB_FACE + 1; i++)
             {
                 Faces.Add(new Face(graphics, radius, new Vector3(10, 10, 10), i));
             }
@@ -48,10 +48,33 @@ namespace CubeLed
         {
             for (int i = 0; i < NB_FACE; i++)
             {
-                Faces[i].Draw(view,projection);
+                Faces[i].Draw(view, projection);
             }
         }
 
+        /// <summary>
+        /// return in the format string all characteristic of the leds in the cube
+        /// </summary>
+        /// <returns>Leds values with the format "Frame;State;intensity;Color"
+        ///                                 ex : "2;true;50;65535</returns>
+        public string[, ,] GetCubeState()
+        {
+            string[, ,] ledStates = new string[8, 8, 8];
+
+            foreach (Face face in this.Faces)
+            {
+                foreach (Led led in face.T_Leds)
+                {
+                    ledStates[led.X, led.Y, face.Id-1] = led.On.ToString() + ";" + 
+                                                        led.Brightness.ToString() + ";" + 
+                                                        led.ledColor.R.ToString() + ";" + 
+                                                        led.ledColor.G.ToString() + ";" + 
+                                                        led.ledColor.B.ToString() + ";";
+                }
+            }
+
+            return ledStates;
+        }
 
         #endregion
     }
