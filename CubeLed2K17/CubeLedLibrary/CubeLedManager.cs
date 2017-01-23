@@ -16,6 +16,14 @@ namespace CFPT.Manager
         private const int NULL_VALUE = 0x00;
         private const int DEFAULT_VENDOR_ID = 0x16C0;
         private const int DEFAULT_PRODUCT_ID = 0x2010;
+        private const int MAX_LED = 8;
+
+        private const int FRAME_POS = 0;
+        private const int LIGHT_POS = 1;
+        private const int INTENSITY_POS = 2;
+        private const int RED_COLOR_POS = 3;
+        private const int GREE_COLOR_POS = 4;
+        private const int BLUE_COLOR_POS = 5;
 
         private const string STR_CUBE_READY = "#ready$"; // Frame received in case of good connexion
         private const string STR_START_DRAWING = "#draw$"; // Frame send for start the draw
@@ -29,7 +37,7 @@ namespace CFPT.Manager
         #endregion
 
         #region Constructor
-        
+
         /// <summary>
         /// Create new CubeLedManager
         /// </summary>
@@ -213,18 +221,74 @@ namespace CFPT.Manager
             }
         }
 
-        public void SendData(string[,,] data)
+        /// <summary>
+        /// Send the data cube
+        /// </summary>
+        /// <param name="data">Data cube</param>
+        public void SendData(string[, ,] data)
         {
             byte[, ,] datacube = this.Cube3DToCubeled(data);
+
+            for (int k = 0; k < datacube.GetLength(2); k++)
+            {
+                int bufferIndex = 0;
+                for (int i = 0; i < datacube.GetLength(0); i++)
+                    for (int j = 0; j < datacube.GetLength(1); j++)
+                    {
+                        try
+                        {
+                            this.BufferOut[bufferIndex] = datacube[i, j, k];
+                            bufferIndex++;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                    }
+
+                try
+                {
+                    this.UsbPort.SpecifiedDevice.SendData(this.BufferOut.ToBytes());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+
+
         }
 
+        /// <summary>
+        /// Convert the data cube in a Cubeled data
+        /// </summary>
+        /// <param name="data">Data cube</param>
+        /// <returns>Cubeled data</returns>
         private byte[, ,] Cube3DToCubeled(string[, ,] data)
         {
-            byte[,,] dataCube = new byte[8,8,8];
+            byte[, ,] datacube = new byte[8, 8, 8];
 
+            for (int i = 0; i < data.GetLength(0); i++)
+            {
+                for (int j = 0; j < data.GetLength(1); j++)
+                {
+                    for (int k = 0; k < data.GetLength(2); k++)
+                    {
+                        string[] dataSplited = data[i, j, k].Split(SEPARATOR);
 
+                        int line = i / MAX_LED;
+                        int bitRow = (byte)((MAX_LED - 1) - (i % MAX_LED));
 
-            return dataCube;
+                        if (Convert.ToBoolean(dataSplited[LIGHT_POS]))
+                            datacube[i, j, Convert.ToInt32(dataSplited[FRAME_POS])] |= (byte)(0x01 << bitRow);
+                        else if (Convert.ToBoolean(dataSplited[1]))
+                            datacube[i, j, Convert.ToInt32(dataSplited[FRAME_POS])] &= (byte)~(0x01 << bitRow);
+                    }
+                }
+            }
+
+            return datacube;
         }
         #endregion
         #endregion
