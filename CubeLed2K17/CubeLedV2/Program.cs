@@ -14,13 +14,13 @@ namespace CubeLed
         [STAThread]
         static void Main()
         {
-            Form1 form = new Form1();
+            FrmCubeLed form = new FrmCubeLed();
             form.Show();
             Game1 game = new Game1(form.getDrawSurface());
-            game.Run();   
+            game.Run();  
             /*Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());*/
+            Application.Run(new FrmCubeLed());*/
         }
     }
 }
