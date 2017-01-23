@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using CFPT.Manager;
+//using CFPT.Manager;
 using System;
 
 namespace CubeLed2K17

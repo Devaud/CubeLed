@@ -1,24 +1,27 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-<<<<<<< HEAD
-using CFPT.Manager;
-using System;
-=======
 //using CFPT.Manager;
->>>>>>> Creation d'un nouveau projet pour inclure une interface
 
-namespace CubeLed2K17
+namespace CubeLed
 {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
     {
-        public CubeLedManager CubeLedManager { get; set; }
+        //public CubeLedManager CubeLedManager { get; set; }
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private IntPtr drawSurface;
 
         //Camera
         Vector3 camTarget;
@@ -26,12 +29,9 @@ namespace CubeLed2K17
         Matrix projectionMatrix;
         Matrix viewMatrix;
         Matrix worldMatrix;
-
-        int PreviousMouseState;
-        MouseState CurrentMouseState;
+        //Sphere mySphere;
+        //Face myFace;
         Cube myCube;
-        private Texture2D cursorTexture;
-        private Vector2 cursorPos;
 
         //BasicEffect for rendering
         BasicEffect basicEffect;
@@ -39,11 +39,16 @@ namespace CubeLed2K17
         //Orbit
         bool orbit = false;
 
-        public Game1()
+        public Game1(IntPtr drawSurface)
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
+            this.drawSurface = drawSurface;
+            graphics.PreparingDeviceSettings +=
+            new EventHandler<PreparingDeviceSettingsEventArgs>(graphics_PreparingDeviceSettings);
+            System.Windows.Forms.Control.FromHandle((this.Window.Handle)).VisibleChanged +=
+            new EventHandler(Game1_VisibleChanged); 
             //this.CubeLedManager = new CubeLedManager();
         }
 
@@ -56,7 +61,7 @@ namespace CubeLed2K17
         protected override void Initialize()
         {
             base.Initialize();
-            
+
             //Setup Camera
             camTarget = new Vector3(100f, 100f, 0f);
             camPosition = new Vector3(10f, 100f, -400f);
@@ -75,8 +80,9 @@ namespace CubeLed2K17
             //If you want to use lighting and VPC you need to create a custom def
             basicEffect.LightingEnabled = false;
 
+            //mySphere = new Sphere(GraphicsDevice, 10, new Vector3(10,10,10));
+            //myFace = new Face(GraphicsDevice, 10, new Vector3(10, 10, 10),1);
             myCube = new Cube(GraphicsDevice, 10, new Vector3(10, 10, 10));
-            this.CubeLedManager = new CubeLedManager();
         }
 
         /// <summary>
@@ -87,7 +93,7 @@ namespace CubeLed2K17
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            cursorTexture = Content.Load<Texture2D>("Graphics\\HandGrab.png");
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -107,16 +113,11 @@ namespace CubeLed2K17
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            this.cursorPos = new Vector2(CurrentMouseState.X - this.cursorTexture.Width / 2, CurrentMouseState.Y - cursorTexture.Height / 2);
-
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back ==
                             ButtonState.Pressed || Keyboard.GetState().IsKeyDown(
                             Keys.Escape))
                 Exit();
 
-            this.UsbUpdater(gameTime);
-
-            // ------------ Important --------------- change the brightness of the led
             /*if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
             {
                 if (mySphere.Brightness < 100)
@@ -131,7 +132,6 @@ namespace CubeLed2K17
                     mySphere.Brightness--;
                 }
             }*/
-            // ---------------------------------------
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
@@ -161,12 +161,6 @@ namespace CubeLed2K17
             {
                 camPosition.Z -= 1f;
             }
-
-            CurrentMouseState = Mouse.GetState();
-            camPosition.Z += (CurrentMouseState.ScrollWheelValue - PreviousMouseState < 0) ? 8 : 0;
-            camPosition.Z -= (CurrentMouseState.ScrollWheelValue - PreviousMouseState > 0) ? 8 : 0;
-            PreviousMouseState = CurrentMouseState.ScrollWheelValue;
-
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 orbit = !orbit;
@@ -182,23 +176,13 @@ namespace CubeLed2K17
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget,
                          Vector3.Up);
 
+            //mySphere.Update(gameTime);
+            //myFace.Update(gameTime);
             myCube.Update(gameTime);
             base.Update(gameTime);
             
         }
 
-        private void UsbUpdater(GameTime gameTime)
-        {
-            if (this.CubeLedManager.IsConnected)
-            {
-                Console.WriteLine("Cube is connected");
-            }
-
-            if (this.CubeLedManager.CanCommunicate)
-            {
-                Console.WriteLine("Cube can communicate");
-            }
-        }
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -215,39 +199,23 @@ namespace CubeLed2K17
             RasterizerState rasterizerState = new RasterizerState();
             rasterizerState.CullMode = CullMode.None;
             GraphicsDevice.RasterizerState = rasterizerState;
-            
+
+            //mySphere.Draw(viewMatrix, projectionMatrix);
+            //myFace.Draw(viewMatrix, projectionMatrix);
             myCube.Draw(viewMatrix, projectionMatrix);
-            spriteBatch.Begin();
-            //spriteBatch.Draw(cursorTexture, new Rectangle((int)cursorPos.X, (int)cursorPos.Y, cursorTexture.Width, cursorTexture.Height), Color.White);
-            spriteBatch.End();
             base.Draw(gameTime);
         }
 
-        /*public Ray CalculateRay(Vector2 mouseLocation, Matrix view, Matrix projection, Viewport viewport)
+        void graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
         {
-            Vector3 nearPoint = viewport.Unproject(new Vector3(mouseLocation.X,
-                    mouseLocation.Y, 0.0f),
-                    projection,
-                    view,
-                    Matrix.Identity);
-
-            Vector3 farPoint = viewport.Unproject(new Vector3(mouseLocation.X,
-                    mouseLocation.Y, 1.0f),
-                    projection,
-                    view,
-                    Matrix.Identity);
-
-            Vector3 direction = farPoint - nearPoint;
-            direction.Normalize();
-
-            return new Ray(nearPoint, direction);
+            e.GraphicsDeviceInformation.PresentationParameters.DeviceWindowHandle =
+            drawSurface;
         }
 
-        public float? IntersectDistance(BoundingSphere sphere, Vector2 mouseLocation,
-            Matrix view, Matrix projection, Viewport viewport)
+        private void Game1_VisibleChanged(object sender, EventArgs e)
         {
-            Ray mouseRay = CalculateRay(mouseLocation, view, projection, viewport);
-            return mouseRay.Intersects(sphere);
-        }*/
+            if (System.Windows.Forms.Control.FromHandle((this.Window.Handle)).Visible == true)
+                System.Windows.Forms.Control.FromHandle((this.Window.Handle)).Visible = false;
+        }
     }
 }
