@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CFPT.Manager;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 //using CFPT.Manager;
@@ -158,6 +159,8 @@ namespace CubeLed2K17
                 camPosition.Z -= 1f;
             }
 
+            if (Keyboard.GetState().IsKeyDown(Keys.C))
+                this.CubeLedManager.SendData(myCube.GetCubeState());
             CurrentMouseState = Mouse.GetState();
             camPosition.Z += (CurrentMouseState.ScrollWheelValue - PreviousMouseState < 0) ? 8 : 0;
             camPosition.Z -= (CurrentMouseState.ScrollWheelValue - PreviousMouseState > 0) ? 8 : 0;
