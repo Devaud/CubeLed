@@ -107,5 +107,10 @@ namespace CubeLed
         {
             this.ApplicationExit();
         }
+
+        private void BtnPlay_Click(object sender, EventArgs e)
+        {
+            Game.SelectLed(0, 0, 0);
+        }
     }
 }
