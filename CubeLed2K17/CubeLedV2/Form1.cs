@@ -42,7 +42,6 @@ namespace CubeLed
         private void FrmCubeLed_Load(object sender, EventArgs e)
         {
             this.UsbComm = new CubeLedManager();
-   
         }
 
         public void connect(Game1 game)
