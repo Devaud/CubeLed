@@ -14,7 +14,7 @@ namespace CubeLed
 
         #region Fields
         private List<Face> faces;
-        private int[, ,] LedSelected = new int[,,]{{{0,0,0}}};
+        private int[, ,] LedSelected = new int[,,] { { { 0, 0, 0 } } };
         #endregion
 
         #region Properties
@@ -72,10 +72,10 @@ namespace CubeLed
             {
                 foreach (Led led in face.T_Leds)
                 {
-                    ledStates[led.X, led.Y, face.Id-1] = led.On.ToString() + ";" + 
-                                                        led.Brightness.ToString() + ";" + 
-                                                        led.ledColor.R.ToString() + ";" + 
-                                                        led.ledColor.G.ToString() + ";" + 
+                    ledStates[led.X, led.Y, face.Id - 1] = "0;" + led.On.ToString() + ";" +
+                                                        led.Brightness.ToString() + ";" +
+                                                        led.ledColor.R.ToString() + ";" +
+                                                        led.ledColor.G.ToString() + ";" +
                                                         led.ledColor.B.ToString() + ";";
                 }
             }
@@ -90,8 +90,8 @@ namespace CubeLed
 
         public void SelectLed(int x, int y, int z)
         {
-            this.Faces[z].SelectLed(x,y);
-           // this.Faces[]
+            this.Faces[z].SelectLed(x, y);
+            // this.Faces[]
         }
 
         #endregion

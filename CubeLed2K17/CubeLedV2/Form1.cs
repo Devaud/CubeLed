@@ -18,7 +18,7 @@ namespace CubeLed
     {
         public CubeLedManager UsbComm { get; set; }
         public Timer CheckUsbState { get; set; }
-        Game1 Game;
+        public Game1 Game { get; set; }
 
         //public Game1 Game { get; set; }
 
@@ -110,6 +110,12 @@ namespace CubeLed
         private void BtnPlay_Click(object sender, EventArgs e)
         {
             Game.SelectLed(0, 0, 0);
+        }
+
+        private void BtnPause_Click(object sender, EventArgs e)
+        {
+            string[,,] cubeState = this.Game.GetCubeState();
+            this.UsbComm.SendData(cubeState);
         }
     }
 }

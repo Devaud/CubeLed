@@ -233,5 +233,10 @@ namespace CubeLed
             // % 8 is for protect the function
             myCube.SelectLed(x % 8, y % 8, z % 8);
         }
+
+        public string[, ,] GetCubeState()
+        {
+            return this.myCube.GetCubeState();
+        }
     }
 }
