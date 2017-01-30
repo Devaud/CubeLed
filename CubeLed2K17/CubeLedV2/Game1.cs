@@ -153,11 +153,11 @@ namespace CubeLed
                 camPosition.Y += 1f;
                 camTarget.Y += 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.PageUp) && camPosition.Z < -150f)
+            if (Keyboard.GetState().IsKeyDown(Keys.Add) && camPosition.Z < -150f)
             {
                 camPosition.Z += 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.PageDown))
+            if (Keyboard.GetState().IsKeyDown(Keys.Subtract))
             {
                 camPosition.Z -= 1f;
                 myCube.GetCubeState();
