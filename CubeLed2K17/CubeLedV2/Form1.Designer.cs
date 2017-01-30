@@ -30,33 +30,37 @@
         {
             this.pctSurface = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.RdbOn = new System.Windows.Forms.RadioButton();
-            this.RdbOff = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.RdbAnimOn = new System.Windows.Forms.RadioButton();
-            this.RdbAnimOff = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TRBIntensity = new System.Windows.Forms.TrackBar();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BtnCouleur = new System.Windows.Forms.Button();
-            this.TBNbImage = new System.Windows.Forms.TextBox();
-            this.TBms = new System.Windows.Forms.TextBox();
-            this.BtnPlay = new System.Windows.Forms.Button();
-            this.BtnPause = new System.Windows.Forms.Button();
+            this.TRBIntensity = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RdbOff = new System.Windows.Forms.RadioButton();
+            this.RdbOn = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnStop = new System.Windows.Forms.Button();
+            this.BtnPause = new System.Windows.Forms.Button();
+            this.BtnPlay = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.TBms = new System.Windows.Forms.TextBox();
+            this.TBNbImage = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.RdbAnimOff = new System.Windows.Forms.RadioButton();
+            this.RdbAnimOn = new System.Windows.Forms.RadioButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.TSSLIsConnected = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TSSLCanCommunicate = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TRBIntensity)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pctSurface
             // 
             this.pctSurface.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pctSurface.Location = new System.Drawing.Point(1, 2);
+            this.pctSurface.Location = new System.Drawing.Point(2, 12);
             this.pctSurface.Name = "pctSurface";
             this.pctSurface.Size = new System.Drawing.Size(836, 441);
             this.pctSurface.TabIndex = 0;
@@ -76,6 +80,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
             // 
+            // BtnCouleur
+            // 
+            this.BtnCouleur.Location = new System.Drawing.Point(16, 92);
+            this.BtnCouleur.Name = "BtnCouleur";
+            this.BtnCouleur.Size = new System.Drawing.Size(301, 23);
+            this.BtnCouleur.TabIndex = 4;
+            this.BtnCouleur.Text = "Changer la couleur";
+            this.BtnCouleur.UseVisualStyleBackColor = true;
+            // 
+            // TRBIntensity
+            // 
+            this.TRBIntensity.Location = new System.Drawing.Point(92, 44);
+            this.TRBIntensity.Maximum = 100;
+            this.TRBIntensity.Name = "TRBIntensity";
+            this.TRBIntensity.Size = new System.Drawing.Size(225, 45);
+            this.TRBIntensity.TabIndex = 3;
+            this.TRBIntensity.Value = 50;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(89, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Intensité :";
+            // 
+            // RdbOff
+            // 
+            this.RdbOff.AutoSize = true;
+            this.RdbOff.Location = new System.Drawing.Point(16, 44);
+            this.RdbOff.Name = "RdbOff";
+            this.RdbOff.Size = new System.Drawing.Size(39, 17);
+            this.RdbOff.TabIndex = 1;
+            this.RdbOff.Text = "Off";
+            this.RdbOff.UseVisualStyleBackColor = true;
+            this.RdbOff.Click += new System.EventHandler(this.RdbOff_Click);
+            // 
             // RdbOn
             // 
             this.RdbOn.AutoSize = true;
@@ -88,17 +130,6 @@
             this.RdbOn.Text = "On";
             this.RdbOn.UseVisualStyleBackColor = true;
             this.RdbOn.Click += new System.EventHandler(this.RdbOn_Click);
-            // 
-            // RdbOff
-            // 
-            this.RdbOff.AutoSize = true;
-            this.RdbOff.Location = new System.Drawing.Point(16, 44);
-            this.RdbOff.Name = "RdbOff";
-            this.RdbOff.Size = new System.Drawing.Size(39, 17);
-            this.RdbOff.TabIndex = 1;
-            this.RdbOff.Text = "Off";
-            this.RdbOff.UseVisualStyleBackColor = true;
-            this.RdbOff.Click += new System.EventHandler(this.RdbOff_Click);
             // 
             // groupBox2
             // 
@@ -115,65 +146,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // RdbAnimOn
+            // BtnStop
             // 
-            this.RdbAnimOn.AutoSize = true;
-            this.RdbAnimOn.Checked = true;
-            this.RdbAnimOn.Location = new System.Drawing.Point(20, 44);
-            this.RdbAnimOn.Name = "RdbAnimOn";
-            this.RdbAnimOn.Size = new System.Drawing.Size(88, 17);
-            this.RdbAnimOn.TabIndex = 0;
-            this.RdbAnimOn.TabStop = true;
-            this.RdbAnimOn.Text = "Animation On";
-            this.RdbAnimOn.UseVisualStyleBackColor = true;
-            this.RdbAnimOn.Click += new System.EventHandler(this.RdbAnimOn_Click);
+            this.BtnStop.Location = new System.Drawing.Point(135, 101);
+            this.BtnStop.Name = "BtnStop";
+            this.BtnStop.Size = new System.Drawing.Size(75, 23);
+            this.BtnStop.TabIndex = 5;
+            this.BtnStop.Text = "Stop";
+            this.BtnStop.UseVisualStyleBackColor = true;
             // 
-            // RdbAnimOff
+            // BtnPause
             // 
-            this.RdbAnimOff.AutoSize = true;
-            this.RdbAnimOff.Location = new System.Drawing.Point(20, 98);
-            this.RdbAnimOff.Name = "RdbAnimOff";
-            this.RdbAnimOff.Size = new System.Drawing.Size(86, 17);
-            this.RdbAnimOff.TabIndex = 1;
-            this.RdbAnimOff.Text = "Animaton Off";
-            this.RdbAnimOff.UseVisualStyleBackColor = true;
-            this.RdbAnimOff.Click += new System.EventHandler(this.RdbAnimOff_Click);
+            this.BtnPause.Location = new System.Drawing.Point(135, 72);
+            this.BtnPause.Name = "BtnPause";
+            this.BtnPause.Size = new System.Drawing.Size(75, 23);
+            this.BtnPause.TabIndex = 4;
+            this.BtnPause.Text = "Pause";
+            this.BtnPause.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // BtnPlay
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Intensité :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nb images :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "ms/image :";
-            // 
-            // TRBIntensity
-            // 
-            this.TRBIntensity.Location = new System.Drawing.Point(92, 44);
-            this.TRBIntensity.Maximum = 100;
-            this.TRBIntensity.Name = "TRBIntensity";
-            this.TRBIntensity.Size = new System.Drawing.Size(225, 45);
-            this.TRBIntensity.TabIndex = 3;
-            this.TRBIntensity.Value = 50;
+            this.BtnPlay.Location = new System.Drawing.Point(135, 41);
+            this.BtnPlay.Name = "BtnPlay";
+            this.BtnPlay.Size = new System.Drawing.Size(75, 23);
+            this.BtnPlay.TabIndex = 3;
+            this.BtnPlay.Text = "Play";
+            this.BtnPlay.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -188,14 +186,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Options";
             // 
-            // BtnCouleur
+            // TBms
             // 
-            this.BtnCouleur.Location = new System.Drawing.Point(16, 92);
-            this.BtnCouleur.Name = "BtnCouleur";
-            this.BtnCouleur.Size = new System.Drawing.Size(301, 23);
-            this.BtnCouleur.TabIndex = 4;
-            this.BtnCouleur.Text = "Changer la couleur";
-            this.BtnCouleur.UseVisualStyleBackColor = true;
+            this.TBms.Location = new System.Drawing.Point(100, 52);
+            this.TBms.Name = "TBms";
+            this.TBms.Size = new System.Drawing.Size(77, 20);
+            this.TBms.TabIndex = 6;
+            this.TBms.Text = "300";
             // 
             // TBNbImage
             // 
@@ -205,60 +202,96 @@
             this.TBNbImage.TabIndex = 5;
             this.TBNbImage.Text = "8";
             // 
-            // TBms
+            // label3
             // 
-            this.TBms.Location = new System.Drawing.Point(100, 52);
-            this.TBms.Name = "TBms";
-            this.TBms.Size = new System.Drawing.Size(77, 20);
-            this.TBms.TabIndex = 6;
-            this.TBms.Text = "300";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "ms/image :";
             // 
-            // BtnPlay
+            // label2
             // 
-            this.BtnPlay.Location = new System.Drawing.Point(135, 41);
-            this.BtnPlay.Name = "BtnPlay";
-            this.BtnPlay.Size = new System.Drawing.Size(75, 23);
-            this.BtnPlay.TabIndex = 3;
-            this.BtnPlay.Text = "Play";
-            this.BtnPlay.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nb images :";
             // 
-            // BtnPause
+            // RdbAnimOff
             // 
-            this.BtnPause.Location = new System.Drawing.Point(135, 72);
-            this.BtnPause.Name = "BtnPause";
-            this.BtnPause.Size = new System.Drawing.Size(75, 23);
-            this.BtnPause.TabIndex = 4;
-            this.BtnPause.Text = "Pause";
-            this.BtnPause.UseVisualStyleBackColor = true;
+            this.RdbAnimOff.AutoSize = true;
+            this.RdbAnimOff.Location = new System.Drawing.Point(20, 98);
+            this.RdbAnimOff.Name = "RdbAnimOff";
+            this.RdbAnimOff.Size = new System.Drawing.Size(86, 17);
+            this.RdbAnimOff.TabIndex = 1;
+            this.RdbAnimOff.Text = "Animaton Off";
+            this.RdbAnimOff.UseVisualStyleBackColor = true;
+            this.RdbAnimOff.Click += new System.EventHandler(this.RdbAnimOff_Click);
             // 
-            // BtnStop
+            // RdbAnimOn
             // 
-            this.BtnStop.Location = new System.Drawing.Point(135, 101);
-            this.BtnStop.Name = "BtnStop";
-            this.BtnStop.Size = new System.Drawing.Size(75, 23);
-            this.BtnStop.TabIndex = 5;
-            this.BtnStop.Text = "Stop";
-            this.BtnStop.UseVisualStyleBackColor = true;
+            this.RdbAnimOn.AutoSize = true;
+            this.RdbAnimOn.Checked = true;
+            this.RdbAnimOn.Location = new System.Drawing.Point(20, 44);
+            this.RdbAnimOn.Name = "RdbAnimOn";
+            this.RdbAnimOn.Size = new System.Drawing.Size(88, 17);
+            this.RdbAnimOn.TabIndex = 0;
+            this.RdbAnimOn.TabStop = true;
+            this.RdbAnimOn.Text = "Animation On";
+            this.RdbAnimOn.UseVisualStyleBackColor = true;
+            this.RdbAnimOn.Click += new System.EventHandler(this.RdbAnimOn_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSSLIsConnected,
+            this.TSSLCanCommunicate});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 621);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(839, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // TSSLIsConnected
+            // 
+            this.TSSLIsConnected.Name = "TSSLIsConnected";
+            this.TSSLIsConnected.Size = new System.Drawing.Size(102, 17);
+            this.TSSLIsConnected.Text = "USB disconnected";
+            // 
+            // TSSLCanCommunicate
+            // 
+            this.TSSLCanCommunicate.Name = "TSSLCanCommunicate";
+            this.TSSLCanCommunicate.Size = new System.Drawing.Size(134, 17);
+            this.TSSLCanCommunicate.Text = "USB can\'t communicate";
             // 
             // FrmCubeLed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 624);
+            this.ClientSize = new System.Drawing.Size(839, 643);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pctSurface);
             this.Name = "FrmCubeLed";
             this.Text = "CubeLed";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCubeLed_FormClosing);
+            this.Load += new System.EventHandler(this.FrmCubeLed_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TRBIntensity)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TRBIntensity)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,6 +315,9 @@
         private System.Windows.Forms.Button BtnStop;
         private System.Windows.Forms.Button BtnPause;
         private System.Windows.Forms.Button BtnPlay;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel TSSLIsConnected;
+        private System.Windows.Forms.ToolStripStatusLabel TSSLCanCommunicate;
     }
 }
 

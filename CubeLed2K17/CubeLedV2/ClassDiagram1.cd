@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CubeLed.Cl2k17Color" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAIAABgAQAgAAAQAAAAQAAAAAAAgAgCAAAhAAAAA=</HashCode>
+      <FileName>Cl2k17Color.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.Cube" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAIAAAIQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cube.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.Face" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAoAAAABAAAAEAAQAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Face.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.FrmCubeLed" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAIAACAABDgACgCACAECAIAAgAggAGEAKAAAAIA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.Game1" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAEGCAAAwQgAAgAAiEAAAAAAAgAAAAAAAAAEAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.GeometricPrimitive" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAQQAAAECAAAgAQAAAAAAAAABAQACAIAAAAAAAAAAA=</HashCode>
+      <FileName>GeomitricPrimitive.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CubeLed.Led" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQIgAAIAAQAAkAgAgAAAAAAAAAAAAAAAAAAAAAEYoA=</HashCode>
+      <FileName>Led.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.Program" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.Sphere" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQIgAAAAAAAAkAgAgAAAAAAAAAAAAAAAAAAAAAEAoA=</HashCode>
+      <FileName>Sphere.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.SpherePrimitive" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SpherePrimitive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.Properties.Resources" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CubeLed.Properties.Settings" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="CubeLed.VertexPositionNormal" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAABIAAABAAAAAAAAAAA=</HashCode>
+      <FileName>VertexPositionNormal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

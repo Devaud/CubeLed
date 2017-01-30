@@ -85,7 +85,6 @@ namespace CFPT.Manager
             this.BufferIn = null;
             this.BufferOut = null;
             this.IsConnected = false;
-            Console.WriteLine("Device VID : 0x{0} / PID 0x{1} is awating to connect", this.UsbPort.VendorId.ToString("X4"), this.UsbPort.ProductId.ToString("X4"));
         }
 
         void UsbPort_OnDeviceRemoved(object sender, EventArgs e)
@@ -105,7 +104,6 @@ namespace CFPT.Manager
                 this.BufferIn = new DataByte(this.UsbPort.SpecifiedDevice.InputReportLength);
                 this.BufferOut = new DataByte(this.UsbPort.SpecifiedDevice.OutputReportLength);
                 this.IsConnected = true;
-                Console.WriteLine("Device VID : 0x{0} / PID 0x{1} is connected", this.UsbPort.VendorId.ToString("X4"), this.UsbPort.ProductId.ToString("X4"));
             }
             catch (Exception ex)
             {

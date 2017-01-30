@@ -188,9 +188,14 @@ namespace CubeLed2K17
 
         private void UsbUpdater(GameTime gameTime)
         {
+            Console.Clear();
             if (this.CubeLedManager.IsConnected)
             {
                 Console.WriteLine("Cube is connected");
+            }
+            else
+            {
+                Console.WriteLine("Cube is disconnected");
             }
 
             if (this.CubeLedManager.CanCommunicate)
