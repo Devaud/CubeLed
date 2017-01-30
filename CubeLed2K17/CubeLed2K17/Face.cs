@@ -77,5 +77,10 @@ namespace CubeLed2K17
                 }            
 			}           
         }
+
+        public void ChangeLed(int x, int y)
+        {
+
+        }
     }
 }

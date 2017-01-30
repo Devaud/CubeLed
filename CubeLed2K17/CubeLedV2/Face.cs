@@ -77,5 +77,20 @@ namespace CubeLed
                 }            
 			}           
         }
+
+        public void ChangeLed(int x, int y)
+        {
+            T_Leds[Math.Abs(x - 7), y].On = false;
+        }
+
+        public void SelectLed(int x, int y)
+        {
+            T_Leds[Math.Abs(x - 7), y].Selected = true;
+        }
+
+        public void UnSelectLed(int x, int y)
+        {
+            T_Leds[Math.Abs(x - 7), y].Selected = false;
+        }
     }
 }

@@ -17,7 +17,8 @@ namespace CubeLed
             FrmCubeLed form = new FrmCubeLed();
             form.Show();
             Game1 game = new Game1(form.getDrawSurface());
-            game.Run();
+            form.connect(game);
+            game.Run();         
             /*Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmCubeLed());*/

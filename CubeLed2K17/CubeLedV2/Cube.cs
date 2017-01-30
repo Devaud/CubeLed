@@ -14,6 +14,7 @@ namespace CubeLed
 
         #region Fields
         private List<Face> faces;
+        private int[, ,] LedSelected = new int[,,]{{{0,0,0}}};
         #endregion
 
         #region Properties
@@ -80,6 +81,17 @@ namespace CubeLed
             }
 
             return ledStates;
+        }
+
+        public void ChangeLed(int x, int y, int z)
+        {
+            this.Faces[z].ChangeLed(x, y);
+        }
+
+        public void SelectLed(int x, int y, int z)
+        {
+            this.Faces[z].SelectLed(x,y);
+           // this.Faces[]
         }
 
         #endregion

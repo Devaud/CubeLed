@@ -22,6 +22,8 @@ namespace CubeLed
         public Color ledColor;
         private int brightness;
         public bool On; // state of the led (on/off)
+        private bool _selected = false;
+
         public float Radius { get; private set; }
 
         public int Brightness
@@ -53,6 +55,12 @@ namespace CubeLed
             set { _y = value; }
         }
 
+        public bool Selected
+        {
+            get { return _selected; }
+            set { _selected = value; }
+        }
+
         public BoundingSphere Bounds
         {
             get { return new BoundingSphere(Position, Radius); }
@@ -74,7 +82,11 @@ namespace CubeLed
             //this.Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // calcul la luminosité de la sphère 
-            if (On)
+            if (Selected)
+            {
+                this.ledColor = Color.Orange;
+            }
+            else if (On)
             {
                 this.ledColor = Color.FromNonPremultiplied((Brightness * 2), (Brightness * 2), (int)(Color.LightBlue.B), Color.LightBlue.A);
             }

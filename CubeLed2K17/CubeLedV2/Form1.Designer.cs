@@ -60,9 +60,10 @@
             // pctSurface
             // 
             this.pctSurface.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pctSurface.Location = new System.Drawing.Point(2, 12);
+            this.pctSurface.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pctSurface.Location = new System.Drawing.Point(0, 0);
             this.pctSurface.Name = "pctSurface";
-            this.pctSurface.Size = new System.Drawing.Size(836, 441);
+            this.pctSurface.Size = new System.Drawing.Size(839, 434);
             this.pctSurface.TabIndex = 0;
             this.pctSurface.TabStop = false;
             // 
@@ -96,6 +97,7 @@
             this.TRBIntensity.Name = "TRBIntensity";
             this.TRBIntensity.Size = new System.Drawing.Size(225, 45);
             this.TRBIntensity.TabIndex = 3;
+            this.TRBIntensity.TabStop = false;
             this.TRBIntensity.Value = 50;
             // 
             // label1
@@ -172,6 +174,7 @@
             this.BtnPlay.TabIndex = 3;
             this.BtnPlay.Text = "Play";
             this.BtnPlay.UseVisualStyleBackColor = true;
+            this.BtnPlay.Click += new System.EventHandler(this.BtnPlay_Click);
             // 
             // groupBox3
             // 

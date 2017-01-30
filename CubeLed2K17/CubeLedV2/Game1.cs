@@ -177,8 +177,6 @@ namespace CubeLed
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget,
                          Vector3.Up);
 
-            //mySphere.Update(gameTime);
-            //myFace.Update(gameTime);
             myCube.Update(gameTime);
             base.Update(gameTime);
             
@@ -201,8 +199,6 @@ namespace CubeLed
             rasterizerState.CullMode = CullMode.None;
             GraphicsDevice.RasterizerState = rasterizerState;
 
-            //mySphere.Draw(viewMatrix, projectionMatrix);
-            //myFace.Draw(viewMatrix, projectionMatrix);
             myCube.Draw(viewMatrix, projectionMatrix);
             base.Draw(gameTime);
         }
@@ -217,6 +213,25 @@ namespace CubeLed
         {
             if (System.Windows.Forms.Control.FromHandle((this.Window.Handle)).Visible == true)
                 System.Windows.Forms.Control.FromHandle((this.Window.Handle)).Visible = false;
+        }
+
+        /// <summary>
+        /// Change on/off the led
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
+        public void ChangeLed(int x, int y, int z)
+        {
+            // % 8 is for protect the function
+            myCube.ChangeLed(x % 8, y % 8, z % 8);
+        }
+
+        //
+        public void SelectLed(int x, int y, int z)
+        {
+            // % 8 is for protect the function
+            myCube.SelectLed(x % 8, y % 8, z % 8);
         }
     }
 }

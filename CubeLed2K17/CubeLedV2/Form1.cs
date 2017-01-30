@@ -18,6 +18,8 @@ namespace CubeLed
     {
         public CubeLedManager UsbComm { get; set; }
         public Timer CheckUsbState { get; set; }
+        Game1 Game;
+
         //public Game1 Game { get; set; }
 
         public FrmCubeLed()
@@ -43,6 +45,11 @@ namespace CubeLed
    
         }
 
+        public void connect(Game1 game)
+        {
+            this.Game = game; 
+        }
+
         public IntPtr getDrawSurface()
         {
             return pctSurface.Handle;
@@ -50,7 +57,7 @@ namespace CubeLed
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void RdbOff_Click(object sender, EventArgs e)
