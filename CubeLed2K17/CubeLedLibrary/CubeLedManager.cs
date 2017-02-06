@@ -141,8 +141,8 @@ namespace CFPT.Manager
                 // if the cube is ready to receive data
                 if (str_rec.Contains(STR_CUBE_READY))
                 {
-                    SendCommand(STR_START_DRAWING);
-                    Send0x00();
+                    this.SendCommand(STR_START_DRAWING);
+                    this.Send0x00();
 
                     this.CanCommunicate = true;
                 }
@@ -219,43 +219,45 @@ namespace CFPT.Manager
             }
         }
 
+        private void SendFrame(byte[,,] data, int frameIndex)
+        {
+            int bufferIndex = 1;
+            for (int i = 0; i < data.GetLength(0); i++)
+                for (int j = 0; j < data.GetLength(1); j++)
+                {
+                    try
+                    {
+                        this.BufferOut[bufferIndex] = data[i, j, frameIndex];
+                        bufferIndex++;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+
+            try
+            {
+                this.UsbPort.SpecifiedDevice.SendData(this.BufferOut.ToBytes());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
         /// <summary>
         /// Send the data cube
         /// </summary>
         /// <param name="data">Data cube</param>
-        public void SendData(string[, ,] data)
+        public void SendDataToCube(string[, ,] data)
         {
             byte[, ,] datacube = this.Cube3DToCubeled(data);
 
-            for (int k = 0; k < datacube.GetLength(2); k++)
-            {
-                int bufferIndex = 0;
-                for (int i = 0; i < datacube.GetLength(0); i++)
-                    for (int j = 0; j < datacube.GetLength(1); j++)
-                    {
-                        try
-                        {
-                            this.BufferOut[bufferIndex] = datacube[i, j, k];
-                            bufferIndex++;
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
-                    }
+            this.SendCommand(STR_START_DRAWING);
+            this.SendFrame(datacube, 0);
 
-                try
-                {
-                    this.UsbPort.SpecifiedDevice.SendData(this.BufferOut.ToBytes());
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-
-
-
+            
         }
 
         /// <summary>
@@ -268,23 +270,19 @@ namespace CFPT.Manager
             byte[, ,] datacube = new byte[8, 8, 8];
 
             for (int i = 0; i < data.GetLength(0); i++)
-            {
                 for (int j = 0; j < data.GetLength(1); j++)
-                {
                     for (int k = 0; k < data.GetLength(2); k++)
                     {
                         string[] dataSplited = data[i, j, k].Split(SEPARATOR);
 
                         int line = i / MAX_LED;
-                        int bitRow = (byte)((MAX_LED - 1) - (i % MAX_LED));
+                        int bitRow = (byte)((MAX_LED - 1) - (k % MAX_LED));
 
                         if (Convert.ToBoolean(dataSplited[LIGHT_POS]))
                             datacube[i, j, Convert.ToInt32(dataSplited[FRAME_POS])] |= (byte)(0x01 << bitRow);
                         else if (Convert.ToBoolean(dataSplited[1]))
                             datacube[i, j, Convert.ToInt32(dataSplited[FRAME_POS])] &= (byte)~(0x01 << bitRow);
                     }
-                }
-            }
 
             return datacube;
         }
