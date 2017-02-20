@@ -13,9 +13,6 @@ namespace CubeLed
         private const int DEFAULT_BRIGHTNESS = 50;
 
         private SpherePrimitive primitive;
-        private int _x;
-        private int _y;
-
 
         public Vector3 Position;
         public Vector3 Velocity;
@@ -43,18 +40,6 @@ namespace CubeLed
             }
         }
 
-        public int X
-        {
-            get { return _x; }
-            set { _x = value; }
-        }
-
-        public int Y
-        {
-            get { return _y; }
-            set { _y = value; }
-        }
-
         public bool Selected
         {
             get { return _selected; }
@@ -66,15 +51,13 @@ namespace CubeLed
             get { return new BoundingSphere(Position, Radius); }
         }
 
-        public Led(GraphicsDevice graphics, float radius, Vector3 position, int x, int y)
+        public Led(GraphicsDevice graphics, float radius, Vector3 position)
         {
             primitive = new SpherePrimitive(graphics, radius, 10);
             this.Radius = radius;
             this.ledColor = Color.LightBlue;
             this.Brightness = DEFAULT_BRIGHTNESS;
             this.Position = position;
-            this.X = x;
-            this.Y = y;
         }
 
         public void Update(GameTime gameTime)

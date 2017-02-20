@@ -70,13 +70,16 @@ namespace CubeLed
 
             foreach (Face face in this.Faces)
             {
-                foreach (Led led in face.T_Leds)
+                for (int y = 8; y > 0; y-- )
                 {
-                    ledStates[led.X, led.Y, face.Id - 1] = "0;" + led.On.ToString() + ";" +
-                                                        led.Brightness.ToString() + ";" +
-                                                        led.ledColor.R.ToString() + ";" +
-                                                        led.ledColor.G.ToString() + ";" +
-                                                        led.ledColor.B.ToString() + ";";
+                    for (int x = 0; x < 8; x++)
+                    {
+                        ledStates[x, y, face.Id - 1] = "0;" + face.T_Leds[x,y].On.ToString() + ";" +
+                                    face.T_Leds[x, y].Brightness.ToString() + ";" +
+                                    face.T_Leds[x, y].ledColor.R.ToString() + ";" +
+                                    face.T_Leds[x, y].ledColor.G.ToString() + ";" +
+                                    face.T_Leds[x, y].ledColor.B.ToString() + ";";
+                    }
                 }
             }
 

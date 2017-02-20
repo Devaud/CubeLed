@@ -48,7 +48,7 @@ namespace CubeLed
             {
                 for (int y = 0; y < HEIGHT; y++)
                 {
-                    this.T_Leds[x, y] = new Led(graphics, radius, new Vector3(25 + x * 25, 25 + y * 25, 25 * id), x, y);
+                    this.T_Leds[x, y] = new Led(graphics, radius, new Vector3(25 + x * 25, 25 + y * 25, 25 * id));
                 }
             }
 
@@ -73,7 +73,7 @@ namespace CubeLed
 			{
                 for (int y = 0; y < HEIGHT; y++)
                 {
-                    this.T_Leds[Math.Abs(x - 7), y].Draw(view, projection);
+                    this.T_Leds[x, y].Draw(view, projection);
                 }            
 			}           
         }

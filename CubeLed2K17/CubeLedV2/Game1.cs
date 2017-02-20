@@ -224,14 +224,14 @@ namespace CubeLed
         public void ChangeLed(int x, int y, int z)
         {
             // % 8 is for protect the function
-            myCube.ChangeLed(x % 8, y % 8, z % 8);
+            myCube.ChangeLed(Math.Abs(x - 7) % 8, y % 8, Math.Abs(z - 7) % 8);
         }
 
         //
         public void SelectLed(int x, int y, int z)
         {
             // % 8 is for protect the function
-            myCube.SelectLed(x % 8, y % 8, z % 8);
+            myCube.SelectLed(Math.Abs(x - 7) % 8, y % 8, Math.Abs(z - 7) % 8);
         }
 
         public string[, ,] GetCubeState()

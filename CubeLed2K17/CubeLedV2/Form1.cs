@@ -121,7 +121,7 @@ namespace CubeLed
         private void BtnStop_Click(object sender, EventArgs e)
         {
             Game.ChangeLed(0, 0, 0);
-            Game.ChangeLed(0, 0, 1);
+            Game.ChangeLed(1, 0, 0);
         }
     }
 }
