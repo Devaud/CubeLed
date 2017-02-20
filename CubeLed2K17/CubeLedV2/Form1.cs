@@ -114,14 +114,20 @@ namespace CubeLed
 
         private void BtnPause_Click(object sender, EventArgs e)
         {
-            string[,,] cubeState = this.Game.GetCubeState();
-            this.UsbComm.SendDataToCube(cubeState);
+            /*string[,,] cubeState = this.Game.GetCubeState();
+            this.UsbComm.SendDataToCube(cubeState);*/
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
             Game.ChangeLed(0, 0, 0);
             Game.ChangeLed(1, 0, 0);
+            this.UpdateCube();
+        }
+
+        private void UpdateCube()
+        {
+            this.UsbComm.SendDataToCube(this.Game.GetCubeState());
         }
     }
 }
