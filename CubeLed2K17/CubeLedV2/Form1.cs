@@ -46,7 +46,7 @@ namespace CubeLed
 
         public void connect(Game1 game)
         {
-            this.Game = game; 
+            this.Game = game;
         }
 
         public IntPtr getDrawSurface()
@@ -56,7 +56,7 @@ namespace CubeLed
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void RdbOff_Click(object sender, EventArgs e)
@@ -120,8 +120,31 @@ namespace CubeLed
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
-            Game.ChangeLed(0, 0, 0);
+            Game.ChangeLed(3, 6, 7);
+            Game.ChangeLed(4, 6, 7);
+            Game.ChangeLed(3, 5, 7);
+            Game.ChangeLed(4, 5, 7);
+            Game.ChangeLed(3, 4, 7);
+            Game.ChangeLed(4, 4, 7);
+            Game.ChangeLed(3, 3, 7);
+            Game.ChangeLed(4, 3, 7);
+            Game.ChangeLed(3, 2, 7);
+            Game.ChangeLed(4, 2, 7);
+            Game.ChangeLed(3, 1, 7);
+            Game.ChangeLed(4, 1, 7);
+            Game.ChangeLed(1, 4, 7);
+            Game.ChangeLed(5, 4, 7);
+            Game.ChangeLed(5, 4, 7);
+            Game.ChangeLed(6, 4, 7);
+            Game.ChangeLed(1, 3, 7);
+            Game.ChangeLed(2, 3, 7);
+            Game.ChangeLed(5, 3, 7);
+            Game.ChangeLed(2, 4, 7);
+            Game.ChangeLed(6, 3, 7);
+            /*Game.ChangeLed(0, 0, 0);
             Game.ChangeLed(1, 0, 0);
+            Game.ChangeLed(0, 1, 0);
+            Game.ChangeLed(0, 0, 1);*/
             this.UpdateCube();
         }
 

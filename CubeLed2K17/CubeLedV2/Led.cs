@@ -10,7 +10,7 @@ namespace CubeLed
 {
     public class Led
     {
-        private const int DEFAULT_BRIGHTNESS = 50;
+        private const int DEFAULT_BRIGHTNESS = 0;
 
         private SpherePrimitive primitive;
 

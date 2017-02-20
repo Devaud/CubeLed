@@ -81,7 +81,8 @@ namespace CubeLed
         public void ChangeLed(int x, int y)
         {
             //T_Leds[Math.Abs(x - 7), y].On = false;
-            T_Leds[x, y].On = false;
+            //T_Leds[x, y].On = !T_Leds[x, y].On;
+            T_Leds[x, y].Brightness = 100;
         }
 
         public void SelectLed(int x, int y)

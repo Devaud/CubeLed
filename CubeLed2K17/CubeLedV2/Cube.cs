@@ -68,20 +68,36 @@ namespace CubeLed
         {
             string[, ,] ledStates = new string[8, 8, 8];
 
-            foreach (Face face in this.Faces)
+            /*foreach (Face face in this.Faces)
             {
-                for (int y = 8; y > 0; y-- )
+                for (int y = 0; y < 8; y++ )
                 {
                     for (int x = 0; x < 8; x++)
                     {
-                        ledStates[x, y, face.Id - 1] = "0;" + face.T_Leds[x,y].On.ToString() + ";" +
-                                    face.T_Leds[x, y].Brightness.ToString() + ";" +
-                                    face.T_Leds[x, y].ledColor.R.ToString() + ";" +
-                                    face.T_Leds[x, y].ledColor.G.ToString() + ";" +
-                                    face.T_Leds[x, y].ledColor.B.ToString() + ";";
+                        int inversedX = Math.Abs(x - 7) % 8;
+
+                        ledStates[x, y, face.Id - 1] = "0;" + face.T_Leds[inversedX, y].On.ToString() + ";" +
+                                    face.T_Leds[inversedX, y].Brightness.ToString() + ";" +
+                                    face.T_Leds[inversedX, y].ledColor.R.ToString() + ";" +
+                                    face.T_Leds[inversedX, y].ledColor.G.ToString() + ";" +
+                                    face.T_Leds[inversedX, y].ledColor.B.ToString() + ";";
                     }
                 }
-            }
+            }*/
+
+            for (int z = 0; z < this.Faces.Count; z++)
+                for (int y = 0; y < 8; y++)
+                    for (int x = 0; x < 8; x++)
+                    {
+                        int inversedX = Math.Abs(x - 7) % 8;
+                        int inversedZ = Math.Abs(z - 7) % 8;
+
+                        ledStates[y, z, Math.Abs(x - 7)] = "0;" + this.Faces[inversedZ].T_Leds[inversedX, y].On.ToString() + ";" +
+                                    this.Faces[inversedZ].T_Leds[inversedX, y].Brightness.ToString() + ";" +
+                                    this.Faces[inversedZ].T_Leds[inversedX, y].ledColor.R.ToString() + ";" +
+                                    this.Faces[inversedZ].T_Leds[inversedX, y].ledColor.G.ToString() + ";" +
+                                    this.Faces[inversedZ].T_Leds[inversedX, y].ledColor.B.ToString() + ";";
+                    }
 
             return ledStates;
         }

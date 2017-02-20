@@ -219,7 +219,7 @@ namespace CFPT.Manager
             }
         }
 
-        private void SendFrame(byte[,,] data, int frameIndex)
+        private void SendFrame(byte[, ,] data, int frameIndex)
         {
             int bufferIndex = 1;
             for (int i = 0; i < data.GetLength(0); i++)
@@ -227,7 +227,7 @@ namespace CFPT.Manager
                 {
                     try
                     {
-                        this.BufferOut[bufferIndex] = data[i, j, frameIndex];
+                        this.BufferOut[bufferIndex] = data[j, i, frameIndex];
                         bufferIndex++;
                     }
                     catch (Exception ex)
@@ -257,7 +257,7 @@ namespace CFPT.Manager
             this.SendCommand(STR_START_DRAWING);
             this.SendFrame(datacube, 0);
 
-            
+
         }
 
         /// <summary>
@@ -269,19 +269,20 @@ namespace CFPT.Manager
         {
             byte[, ,] datacube = new byte[8, 8, 8];
 
-            for (int i = 0; i < data.GetLength(0); i++)
-                for (int j = 0; j < data.GetLength(1); j++)
-                    for (int k = 0; k < data.GetLength(2); k++)
+            for (int z = 0; z < data.GetLength(2); z++)
+                for (int x = 0; x < data.GetLength(0); x++)
+                    for (int y = 0; y < data.GetLength(1); y++)
                     {
-                        string[] dataSplited = data[i, j, k].Split(SEPARATOR);
+                        string[] dataSplited = data[x, y, z].Split(SEPARATOR);
 
-                        int line = i / MAX_LED;
-                        int bitRow = (byte)((MAX_LED - 1) - (k % MAX_LED));
+                        int line = x / MAX_LED;
+                        int bitRow = (byte)((MAX_LED - 1) - (z % MAX_LED));
+                        //int bitRow = (byte)(z % 8);
 
                         if (Convert.ToBoolean(dataSplited[LIGHT_POS]))
-                            datacube[i, j, Convert.ToInt32(dataSplited[FRAME_POS])] |= (byte)(0x01 << bitRow);
-                        else if (Convert.ToBoolean(dataSplited[1]))
-                            datacube[i, j, Convert.ToInt32(dataSplited[FRAME_POS])] &= (byte)~(0x01 << bitRow);
+                            datacube[x, y, Convert.ToInt32(dataSplited[FRAME_POS])] |= (byte)(0x01 << bitRow);
+                        else if (!Convert.ToBoolean(dataSplited[1]))
+                            datacube[x, y, Convert.ToInt32(dataSplited[FRAME_POS])] &= (byte)~(0x01 << bitRow);
                     }
 
             return datacube;
