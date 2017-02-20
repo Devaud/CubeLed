@@ -73,7 +73,7 @@ namespace CubeLed
 			{
                 for (int y = 0; y < HEIGHT; y++)
                 {
-                    this.T_Leds[x,y].Draw(view, projection);
+                    this.T_Leds[Math.Abs(x - 7), y].Draw(view, projection);
                 }            
 			}           
         }
@@ -81,17 +81,17 @@ namespace CubeLed
         public void ChangeLed(int x, int y)
         {
             //T_Leds[Math.Abs(x - 7), y].On = false;
-            T_Leds[Math.Abs(x - 0), y].On = false;
+            T_Leds[x, y].On = false;
         }
 
         public void SelectLed(int x, int y)
         {
-            T_Leds[Math.Abs(x - 7), y].Selected = true;
+            T_Leds[x, y].Selected = true;
         }
 
         public void UnSelectLed(int x, int y)
         {
-            T_Leds[Math.Abs(x - 7), y].Selected = false;
+            T_Leds[x, y].Selected = false;
         }
     }
 }
