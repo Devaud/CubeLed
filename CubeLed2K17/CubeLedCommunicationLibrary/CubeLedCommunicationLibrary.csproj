@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CFPT</RootNamespace>
-    <AssemblyName>CubeLedLibrary</AssemblyName>
+    <AssemblyName>CubeLedCommunicationLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,8 +42,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CubeLedManager.cs" />
-    <Compile Include="DataByte.cs" />
+    <Compile Include="CLCLManager.cs" />
+    <Compile Include="CLCLDataByte.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

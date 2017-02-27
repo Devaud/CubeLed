@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿/* *
+ * Projet      : CubeLedCommunicationLibrary
+ * Description : Library for communication between GUI and the cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version     : 1.0
+ */
+using System;
 using System.Text;
-using System.Threading.Tasks;
-// Utilisation de la bibliothèque pour l'usb
-using UsbLibraryCfptAdd;
+using UsbLibraryCfptAdd; // use usb library
 
-namespace CFPT.Manager
+namespace CFPT.UsbCommunicator
 {
-    public class CubeLedManager
+    public class CLCLManager
     {
-        #region Properties
+        #region Constant
         private const char SEPARATOR = ';';
         private const int BUFFER_SIZE = 65;
         private const int NULL_VALUE = 0x00;
@@ -28,10 +31,12 @@ namespace CFPT.Manager
         private const string STR_CUBE_READY = "#ready$"; // Frame received in case of good connexion
         private const string STR_START_DRAWING = "#draw$"; // Frame send for start the draw
         private const string STR_CUBE_NOT_READY = "#notready$"; // Frame received 
+        #endregion
 
+        #region Properties
         public UsbHidPort UsbPort { get; set; }
-        public DataByte BufferIn { get; set; }
-        public DataByte BufferOut { get; set; }
+        public CLCLDataByte BufferIn { get; set; }
+        public CLCLDataByte BufferOut { get; set; }
         public bool IsConnected { get; set; } // If the device is connected
         public bool CanCommunicate { get; set; } // If the device can communicate with the software
         #endregion
@@ -43,7 +48,7 @@ namespace CFPT.Manager
         /// </summary>
         /// <param name="param_vendorId">VendorId</param>
         /// <param name="param_productId">ProductId</param>
-        public CubeLedManager(int param_vendorId, int param_productId)
+        public CLCLManager(int param_vendorId, int param_productId)
         {
             this.UsbPort = new UsbHidPort();
 
@@ -69,7 +74,7 @@ namespace CFPT.Manager
         /// <summary>
         /// Create new CubeLedManager with default VendorId and ProductId
         /// </summary>
-        public CubeLedManager()
+        public CLCLManager()
             : this(DEFAULT_VENDOR_ID, DEFAULT_PRODUCT_ID)
         {
 
@@ -101,8 +106,8 @@ namespace CFPT.Manager
         {
             try
             {
-                this.BufferIn = new DataByte(this.UsbPort.SpecifiedDevice.InputReportLength);
-                this.BufferOut = new DataByte(this.UsbPort.SpecifiedDevice.OutputReportLength);
+                this.BufferIn = new CLCLDataByte(this.UsbPort.SpecifiedDevice.InputReportLength);
+                this.BufferOut = new CLCLDataByte(this.UsbPort.SpecifiedDevice.OutputReportLength);
                 this.IsConnected = true;
             }
             catch (Exception ex)
@@ -264,8 +269,9 @@ namespace CFPT.Manager
         /// Convert the data cube in a Cubeled data
         /// </summary>
         /// <param name="data">Data cube</param>
+        /// <param name="separator">char separator to do the split (optional)</param>
         /// <returns>Cubeled data</returns>
-        private byte[, ,] Cube3DToCubeled(string[, ,] data)
+        private byte[, ,] Cube3DToCubeled(string[, ,] data, char separator = SEPARATOR)
         {
             byte[, ,] datacube = new byte[8, 8, 8];
 
@@ -273,11 +279,10 @@ namespace CFPT.Manager
                 for (int x = 0; x < data.GetLength(0); x++)
                     for (int y = 0; y < data.GetLength(1); y++)
                     {
-                        string[] dataSplited = data[x, y, z].Split(SEPARATOR);
+                        string[] dataSplited = data[y, x, z].Split(separator);
 
                         int line = x / MAX_LED;
                         int bitRow = (byte)((MAX_LED - 1) - (z % MAX_LED));
-                        //int bitRow = (byte)(z % 8);
 
                         if (Convert.ToBoolean(dataSplited[LIGHT_POS]))
                             datacube[x, y, Convert.ToInt32(dataSplited[FRAME_POS])] |= (byte)(0x01 << bitRow);
@@ -288,6 +293,7 @@ namespace CFPT.Manager
             return datacube;
         }
         #endregion
+
         #endregion
     }
 }

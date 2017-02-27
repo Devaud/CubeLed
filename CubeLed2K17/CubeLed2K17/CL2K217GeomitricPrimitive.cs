@@ -1,8 +1,15 @@
-﻿#region Using Statements
-using System;
-using System.Collections.Generic;
+﻿/* *
+ * Projet      : CubeLed2K17
+ * Description : GUI for user interaction with the 3D Cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version 1.0
+ */
+#region Using Statements
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
 #endregion
 
 namespace CubeLed2K17
@@ -16,14 +23,14 @@ namespace CubeLed2K17
     /// 
     /// This class is borrowed from the Primitives3D sample.
     /// </summary>
-    public abstract class GeometricPrimitive : IDisposable
+    public abstract class CL2K17GeometricPrimitive : IDisposable
     {
         #region Fields
 
 
         // During the process of constructing a primitive model, vertex
         // and index data is stored on the CPU in these managed lists.
-        List<VertexPositionNormal> vertices = new List<VertexPositionNormal>();
+        List<CL2K17VertexPositionNormal> vertices = new List<CL2K17VertexPositionNormal>();
         List<ushort> indices = new List<ushort>();
 
 
@@ -46,7 +53,7 @@ namespace CubeLed2K17
         /// </summary>
         protected void AddVertex(Vector3 position, Vector3 normal)
         {
-            vertices.Add(new VertexPositionNormal(position, normal));
+            vertices.Add(new CL2K17VertexPositionNormal(position, normal));
         }
 
 
@@ -83,7 +90,7 @@ namespace CubeLed2K17
 
             // Create a vertex buffer, and copy our vertex data into it.
             vertexBuffer = new VertexBuffer(graphicsDevice,
-                                            typeof(VertexPositionNormal),
+                                            typeof(CL2K17VertexPositionNormal),
                                             vertices.Count, BufferUsage.None);
 
             vertexBuffer.SetData(vertices.ToArray());
@@ -105,7 +112,7 @@ namespace CubeLed2K17
         /// <summary>
         /// Finalizer.
         /// </summary>
-        ~GeometricPrimitive()
+        ~CL2K17GeometricPrimitive()
         {
             Dispose(false);
         }

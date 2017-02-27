@@ -1,22 +1,29 @@
-﻿#region Using Statements
+﻿/* *
+ * Projet      : CubeLed2K17
+ * Description : GUI for user interaction with the 3D Cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version     : 1.0
+ */
+#region Using Statements
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace CubeLed
+namespace CubeLed2K17
 {
     /// <summary>
     /// Geometric primitive class for drawing spheres.
     /// 
     /// This class is borrowed from the Primitives3D sample.
     /// </summary>
-    public class SpherePrimitive : GeometricPrimitive
+    public class CL2K17SpherePrimitive : CL2K17GeometricPrimitive
     {
         /// <summary>
         /// Constructs a new sphere primitive, using default settings.
         /// </summary>
-        public SpherePrimitive(GraphicsDevice graphicsDevice)
+        public CL2K17SpherePrimitive(GraphicsDevice graphicsDevice)
             : this(graphicsDevice, 1, 16)
         {
         }
@@ -26,7 +33,7 @@ namespace CubeLed
         /// Constructs a new sphere primitive,
         /// with the specified size and tessellation level.
         /// </summary>
-        public SpherePrimitive(GraphicsDevice graphicsDevice, float diameter, int tessellation)
+        public CL2K17SpherePrimitive(GraphicsDevice graphicsDevice, float diameter, int tessellation)
         {
             if (tessellation < 3)
                 throw new ArgumentOutOfRangeException("tessellation");

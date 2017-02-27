@@ -1,4 +1,4 @@
-﻿namespace CubeLed
+﻿namespace CubeLed2K17
 {
     partial class FrmCubeLed
     {

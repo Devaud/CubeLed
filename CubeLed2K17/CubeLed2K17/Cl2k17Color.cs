@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* *
+ * Projet      : CubeLed2K17
+ * Description : GUI for user interaction with the 3D Cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version     : 1.0
+ */
+using System;
 
 namespace CubeLed2K17
 {
-    class Cl2k17Color
+    class CL2K17Color
     {
         #region Fields
         private const int RED_MASK = 0xFF0000;
@@ -55,7 +58,7 @@ namespace CubeLed2K17
         /// <summary>
         /// Create new IrpColor with the default color
         /// </summary>
-        public Cl2k17Color()
+        public CL2K17Color()
             : this(DEFAULT_COLOR)
         {
 
@@ -65,7 +68,7 @@ namespace CubeLed2K17
         /// Create new IrpColor with a RGB value
         /// </summary>
         /// <param name="color">Color int value</param>
-        public Cl2k17Color(int color) :
+        public CL2K17Color(int color) :
             this(Convert.ToByte((color & RED_MASK) >> RED_POSITION), Convert.ToByte((color & GREEN_MASK) >> GREEN_POSITION), Convert.ToByte((color & BLUE_MASK) >> BLUE_POSITION))
         {
 
@@ -77,7 +80,7 @@ namespace CubeLed2K17
         /// <param name="param_red">Red value</param>
         /// <param name="param_green">Green value</param>
         /// <param name="param_blue">Blue value</param>
-        public Cl2k17Color(byte param_red, byte param_green, byte param_blue)
+        public CL2K17Color(byte param_red, byte param_green, byte param_blue)
         {
             this.Red = param_red;
             this.Green = param_green;

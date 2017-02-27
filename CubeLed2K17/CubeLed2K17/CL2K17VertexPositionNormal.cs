@@ -1,10 +1,16 @@
-﻿
+﻿/* *
+ * Projet      : CubeLed2K17
+ * Description : GUI for user interaction with the 3D Cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version     : 1.0
+ */
 #region Using Statements
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace CubeLed
+namespace CubeLed2K17
 {
     /// <summary>
     /// Custom vertex type for vertices that have just a
@@ -12,7 +18,7 @@ namespace CubeLed
     /// 
     /// This struct is borrowed from the Primitives3D sample.
     /// </summary>
-    public struct VertexPositionNormal : IVertexType
+    public struct CL2K17VertexPositionNormal : IVertexType
     {
         public Vector3 Position;
         public Vector3 Normal;
@@ -21,7 +27,7 @@ namespace CubeLed
         /// <summary>
         /// Constructor.
         /// </summary>
-        public VertexPositionNormal(Vector3 position, Vector3 normal)
+        public CL2K17VertexPositionNormal(Vector3 position, Vector3 normal)
         {
             Position = position;
             Normal = normal;
@@ -39,7 +45,7 @@ namespace CubeLed
 
         VertexDeclaration IVertexType.VertexDeclaration
         {
-            get { return VertexPositionNormal.VertexDeclaration; }
+            get { return CL2K17VertexPositionNormal.VertexDeclaration; }
         }
 
     }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CubeLed.Properties {
+namespace CubeLed2K17.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

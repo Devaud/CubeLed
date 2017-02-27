@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* *
+ * Projet : CubeLed2K17
+ * Description : GUI for user interaction with the 3D Cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version 1.0
+ */
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-//using CFPT.Manager;
+using System;
 
-namespace CubeLed
+namespace CubeLed2K17
 {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class CL2K17Viewer3D : Game
     {
         //public CubeLedManager CubeLedManager { get; set; }
 
@@ -31,7 +31,7 @@ namespace CubeLed
         Matrix worldMatrix;
         //Sphere mySphere;
         //Face myFace;
-        Cube myCube;
+        CL2K17Cube myCube;
 
         //BasicEffect for rendering
         BasicEffect basicEffect;
@@ -39,7 +39,7 @@ namespace CubeLed
         //Orbit
         bool orbit = false;
 
-        public Game1(IntPtr drawSurface)
+        public CL2K17Viewer3D(IntPtr drawSurface)
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -82,7 +82,7 @@ namespace CubeLed
 
             //mySphere = new Sphere(GraphicsDevice, 10, new Vector3(10,10,10));
             //myFace = new Face(GraphicsDevice, 10, new Vector3(10, 10, 10),1);
-            myCube = new Cube(GraphicsDevice, 10, new Vector3(10, 10, 10));
+            myCube = new CL2K17Cube(GraphicsDevice, 10, new Vector3(10, 10, 10));
         }
 
         /// <summary>

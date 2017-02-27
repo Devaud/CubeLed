@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CFPT
 {
-    public class DataByte
+    public class CLCLDataByte
     {
         #region Fields
         private const int START_INDEX_DATABYTE = 0;
@@ -42,7 +42,7 @@ namespace CFPT
         /// Create new DataByte with variable number of parameters
         /// </summary>
         /// <param name="param_databyte"></param>
-        public DataByte(params byte[] param_databyte)
+        public CLCLDataByte(params byte[] param_databyte)
         {
             this.Data = new byte[param_databyte.Length];
             param_databyte.CopyTo(this.Data, START_INDEX_DATABYTE);
@@ -51,7 +51,7 @@ namespace CFPT
         /// <summary>
         /// Create new DataByte with default value
         /// </summary>
-        public DataByte()
+        public CLCLDataByte()
             : this(DEFAULT_DATABYTE_SIZE)
         {
 
@@ -61,7 +61,7 @@ namespace CFPT
         /// Create DataByte with specific size
         /// </summary>
         /// <param name="param_size">DataByte size</param>
-        public DataByte(int param_size)
+        public CLCLDataByte(int param_size)
             : this(param_size, DEFAULT_DATABYTE_VALUE)
         {
 
@@ -72,7 +72,7 @@ namespace CFPT
         /// </summary>
         /// <param name="param_size">DataByte size</param>
         /// <param name="param_initValue">DataByte initialize value</param>
-        public DataByte(int param_size, byte param_initValue)
+        public CLCLDataByte(int param_size, byte param_initValue)
         {
             this.Data = new byte[param_size];
             for (int i = 0; i < param_size; i++)

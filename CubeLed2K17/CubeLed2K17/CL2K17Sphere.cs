@@ -1,28 +1,25 @@
-﻿using Microsoft.Xna.Framework;
+﻿/* *
+ * Projet      : CubeLed2K17
+ * Description : GUI for user interaction with the 3D Cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version     : 1.0
+ */
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CubeLed2K17
 {
-    public class Led
+    public class CL2K17Sphere
     {
         private const int DEFAULT_BRIGHTNESS = 50;
 
-        private SpherePrimitive primitive;
-        private int _x;
-        private int _y;
-
+        private CL2K17SpherePrimitive primitive;
 
         public Vector3 Position;
         public Vector3 Velocity;
         public Color ledColor;
         private int brightness;
-        public bool On; // state of the led (on/off)
-        public float Radius { get; private set; }
 
         public int Brightness
         {
@@ -40,30 +37,21 @@ namespace CubeLed2K17
                 brightness = value;
             }
         }
-
-        public int X
-        {
-            get { return _x; }
-            set { _x = value; }
-        }
-
-        public int Y
-        {
-            get { return _y; }
-            set { _y = value; }
-        }
+        public bool On; // state of the led (on/off)
+        public float Radius { get; private set; }
 
         public BoundingSphere Bounds
         {
             get { return new BoundingSphere(Position, Radius); }
         }
 
-        public Led(GraphicsDevice graphics, float radius, Vector3 position, int x, int y)
+        public CL2K17Sphere(GraphicsDevice graphics, float radius, Vector3 position)
         {
-            primitive = new SpherePrimitive(graphics, radius, 10);
+            primitive = new CL2K17SpherePrimitive(graphics, radius, 10);
             this.Radius = radius;
             this.ledColor = Color.LightBlue;
             this.Brightness = DEFAULT_BRIGHTNESS;
+            this.On = true;
             this.Position = position;
         }
 
@@ -78,7 +66,7 @@ namespace CubeLed2K17
             }
             else
             {
-                this.ledColor = Color.Black;              
+                this.ledColor = Color.Black;
             }
 
         }

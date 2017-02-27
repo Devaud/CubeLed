@@ -1,23 +1,29 @@
-﻿using Microsoft.Xna.Framework;
+﻿/* *
+ * Projet      : CubeLed2K17
+ * Description : GUI for user interaction with the 3D Cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version     : 1.0
+ */
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CubeLed
+namespace CubeLed2K17
 {
-    public class Sphere
+    public class CL2K17Led
     {
-        private const int DEFAULT_BRIGHTNESS = 50;
+        private const int DEFAULT_BRIGHTNESS = 0;
 
-        private SpherePrimitive primitive;
+        private CL2K17SpherePrimitive primitive;
 
         public Vector3 Position;
         public Vector3 Velocity;
         public Color ledColor;
         private int brightness;
+        public bool On; // state of the led (on/off)
+        private bool _selected = false;
+
+        public float Radius { get; private set; }
 
         public int Brightness
         {
@@ -35,21 +41,24 @@ namespace CubeLed
                 brightness = value;
             }
         }
-        public bool On; // state of the led (on/off)
-        public float Radius { get; private set; }
+
+        public bool Selected
+        {
+            get { return _selected; }
+            set { _selected = value; }
+        }
 
         public BoundingSphere Bounds
         {
             get { return new BoundingSphere(Position, Radius); }
         }
 
-        public Sphere(GraphicsDevice graphics, float radius, Vector3 position)
+        public CL2K17Led(GraphicsDevice graphics, float radius, Vector3 position)
         {
-            primitive = new SpherePrimitive(graphics, radius, 10);
+            primitive = new CL2K17SpherePrimitive(graphics, radius, 10);
             this.Radius = radius;
             this.ledColor = Color.LightBlue;
             this.Brightness = DEFAULT_BRIGHTNESS;
-            this.On = true;
             this.Position = position;
         }
 
@@ -58,7 +67,11 @@ namespace CubeLed
             //this.Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // calcul la luminosité de la sphère 
-            if (On)
+            if (Selected)
+            {
+                this.ledColor = Color.Orange;
+            }
+            else if (On)
             {
                 this.ledColor = Color.FromNonPremultiplied((Brightness * 2), (Brightness * 2), (int)(Color.LightBlue.B), Color.LightBlue.A);
             }

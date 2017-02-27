@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿/* *
+ * Projet      : CubeLed2K17
+ * Description : GUI for user interaction with the 3D Cube led.
+ * Authors     : Devaud Alan, Amado Kevin & Mendez Gregory
+ * Date        :
+ * Version     : 1.0
+ */
+using CFPT.UsbCommunicator;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using CFPT.Manager;
+using System;
+using System.Windows.Forms;
 
-namespace CubeLed
+namespace CubeLed2K17
 {
     public partial class FrmCubeLed : Form
     {
-        public CubeLedManager UsbComm { get; set; }
+        public CLCLManager UsbComm { get; set; }
         public Timer CheckUsbState { get; set; }
-        public Game1 Game { get; set; }
+        public CL2K17Viewer3D Game { get; set; }
 
         //public Game1 Game { get; set; }
 
@@ -41,10 +39,10 @@ namespace CubeLed
 
         private void FrmCubeLed_Load(object sender, EventArgs e)
         {
-            this.UsbComm = new CubeLedManager();
+            this.UsbComm = new CLCLManager();
         }
 
-        public void connect(Game1 game)
+        public void connect(CL2K17Viewer3D game)
         {
             this.Game = game;
         }
@@ -141,6 +139,7 @@ namespace CubeLed
             Game.ChangeLed(5, 3, 7);
             Game.ChangeLed(2, 4, 7);
             Game.ChangeLed(6, 3, 7);
+            Game.ChangeLed(1, 4, 0);
             /*Game.ChangeLed(0, 0, 0);
             Game.ChangeLed(1, 0, 0);
             Game.ChangeLed(0, 1, 0);

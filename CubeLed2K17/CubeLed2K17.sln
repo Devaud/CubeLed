@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubeLed2K17", "CubeLed2K17\CubeLed2K17.csproj", "{73534367-FB84-42B2-84CC-809B7B1615B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubeLedCommunicationLibrary", "CubeLedCommunicationLibrary\CubeLedCommunicationLibrary.csproj", "{93C1ED19-B9B4-402E-A724-C1FD32B38CBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubeLedLibrary", "CubeLedLibrary\CubeLedLibrary.csproj", "{93C1ED19-B9B4-402E-A724-C1FD32B38CBD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubeLed", "CubeLedV2\CubeLed.csproj", "{D4CF67E3-28C6-483D-86A5-F1712F28BA1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubeLed2K17", "CubeLed2K17\CubeLed2K17.csproj", "{D4CF67E3-28C6-483D-86A5-F1712F28BA1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +17,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Debug|x86.ActiveCfg = Debug|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Debug|x86.Build.0 = Debug|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Release|Any CPU.ActiveCfg = Release|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Release|Mixed Platforms.Build.0 = Release|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Release|x86.ActiveCfg = Release|x86
-		{73534367-FB84-42B2-84CC-809B7B1615B6}.Release|x86.Build.0 = Release|x86
 		{93C1ED19-B9B4-402E-A724-C1FD32B38CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{93C1ED19-B9B4-402E-A724-C1FD32B38CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93C1ED19-B9B4-402E-A724-C1FD32B38CBD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
