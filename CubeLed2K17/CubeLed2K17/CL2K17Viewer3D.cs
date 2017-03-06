@@ -36,8 +36,8 @@ namespace CubeLed2K17
         //BasicEffect for rendering
         BasicEffect basicEffect;
 
-        //Orbit
-        bool orbit = false;
+        
+        int faceShowed = 0;
 
         public CL2K17Viewer3D(IntPtr drawSurface)
         {
@@ -63,8 +63,8 @@ namespace CubeLed2K17
             base.Initialize();
 
             //Setup Camera
-            camTarget = new Vector3(100f, 100f, 0f);
-            camPosition = new Vector3(10f, 100f, -400f);
+            camTarget = new Vector3(100f, 110f, 0f);
+            camPosition = new Vector3(90f, 100f, -300f);
             projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), GraphicsDevice.DisplayMode.AspectRatio, 1f, 1000f);
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget, new Vector3(0f, 1f, 0f));// Y up
             worldMatrix = Matrix.CreateWorld(camTarget, Vector3.Forward, Vector3.Up);
@@ -118,62 +118,84 @@ namespace CubeLed2K17
                             Keys.Escape))
                 Exit();
 
-            /*if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
-                if (mySphere.Brightness < 100)
-                {
-                    mySphere.Brightness++;
-                }
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.NumPad2))
-            {
-                if (mySphere.Brightness > 0)
-                {
-                    mySphere.Brightness--;
-                }
-            }*/
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            {
-                camPosition.X -= 1f;
+                //camPosition.X -= 1f;
                 camTarget.X -= 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
-                camPosition.X += 1f;
+              //  camPosition.X += 1f;
                 camTarget.X += 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
-                camPosition.Y -= 1f;
+                //camPosition.Y -= 1f;
                 camTarget.Y -= 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
-                camPosition.Y += 1f;
+              //  camPosition.Y += 1f;
                 camTarget.Y += 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Add) && camPosition.Z < -150f)
+            if (Keyboard.GetState().IsKeyDown(Keys.Add) && camPosition.Z < -200f)
             {
                 camPosition.Z += 1f;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Subtract))
             {
                 camPosition.Z -= 1f;
-                myCube.GetCubeState();
+                //myCube.GetCubeState();
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
-                orbit = !orbit;
+                //orbit = !orbit;
             }
 
-            if (orbit)
+            if(Keyboard.GetState().IsKeyDown(Keys.NumPad1))
+            {
+                faceShowed = 1;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad2))
+            {
+                faceShowed = 2;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad3))
+            {
+                faceShowed = 3;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad4))
+            {
+                faceShowed = 4;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad5))
+            {
+                faceShowed = 5;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad6))
+            {
+                faceShowed = 6;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad7))
+            {
+                faceShowed = 7;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
+            {
+                faceShowed = 8;
+
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad0))
+            {
+                faceShowed = 0;
+            }
+            /*if (orbit)
             {
                 Matrix rotationMatrix = Matrix.CreateRotationY(
                                         MathHelper.ToRadians(1f));
                 camPosition = Vector3.Transform(camPosition,
                               rotationMatrix);
-            }
+            }*/
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget,
                          Vector3.Up);
 
@@ -199,7 +221,37 @@ namespace CubeLed2K17
             rasterizerState.CullMode = CullMode.None;
             GraphicsDevice.RasterizerState = rasterizerState;
 
-            myCube.Draw(viewMatrix, projectionMatrix);
+            switch (faceShowed)
+            {
+                case 1:
+                    myCube.showFace(0, viewMatrix, projectionMatrix);
+                    break;
+                case 2:
+                    myCube.showFace(1, viewMatrix, projectionMatrix);
+                    break;
+                case 3:
+                    myCube.showFace(2, viewMatrix, projectionMatrix);
+                    break;
+                case 4:
+                    myCube.showFace(3, viewMatrix, projectionMatrix);
+                    break;
+                case 5:
+                    myCube.showFace(4, viewMatrix, projectionMatrix);
+                    break;
+                case 6:
+                    myCube.showFace(5, viewMatrix, projectionMatrix);
+                    break;
+                case 7:
+                    myCube.showFace(6, viewMatrix, projectionMatrix);
+                    break;
+                case 8:
+                    myCube.showFace(7, viewMatrix, projectionMatrix);
+                    break;
+                case 0:
+                    myCube.Draw(viewMatrix, projectionMatrix);
+                    break;
+            }
+
             base.Draw(gameTime);
         }
 

@@ -46,7 +46,9 @@ namespace CubeLed2K17
                 Faces.Add(new CL2K17Face(graphics, radius, new Vector3(10, 10, 10), i));
             }
         }
+        #endregion
 
+        #region Methods
         public void Update(GameTime gameTime)
         {
             for (int i = 0; i < NB_FACE; i++)
@@ -61,6 +63,11 @@ namespace CubeLed2K17
             {
                 Faces[i].Draw(view, projection);
             }
+        }
+
+        public void showFace(int nbFace, Matrix view, Matrix projection)
+        {
+            this.faces[nbFace].Draw(view, projection);
         }
 
         /// <summary>
