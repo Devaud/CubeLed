@@ -12,17 +12,20 @@ using System.Windows.Forms;
 
 namespace CubeLed2K17
 {
-    public partial class FrmCubeLed : Form
+    public partial class CL2K17MainView : Form
     {
         public CLCLManager UsbComm { get; set; }
         public Timer CheckUsbState { get; set; }
         public CL2K17Viewer3D Game { get; set; }
+        public CL2K17Controller Ctrl { get; set; }
 
         //public Game1 Game { get; set; }
 
-        public FrmCubeLed()
+        public CL2K17MainView()
         {
             InitializeComponent();
+
+            this.Ctrl = new CL2K17Controller(this);
             this.Text = "CubeLed";
 
             this.CheckUsbState = new Timer();

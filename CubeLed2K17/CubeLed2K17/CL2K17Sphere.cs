@@ -75,5 +75,12 @@ namespace CubeLed2K17
         {
             primitive.Draw(Matrix.CreateTranslation(Position), view, projection, ledColor);
         }
+
+       /* public bool CheckRayIntersection(Ray ray)
+        {
+            BoundingSphere boundingSphere;
+
+            foreach(ModelMesh mesh in primitive.)
+        }*/
     }
 }

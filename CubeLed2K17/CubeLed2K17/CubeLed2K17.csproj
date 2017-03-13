@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CL2K17Color.cs" />
+    <Compile Include="CL2K17Controller.cs" />
     <Compile Include="CL2K17Cube.cs" />
     <Compile Include="CL2K17Face.cs" />
     <Compile Include="CL2K17MainView.cs">

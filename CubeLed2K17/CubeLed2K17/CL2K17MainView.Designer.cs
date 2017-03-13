@@ -1,6 +1,6 @@
 ﻿namespace CubeLed2K17
 {
-    partial class FrmCubeLed
+    partial class CL2K17MainView
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
