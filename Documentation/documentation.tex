@@ -41,6 +41,8 @@
 \date{\today}
 
 \begin{document}
+	
+\newcommand{\clcl}{\emph{CubeLedCommunicationLibrary} }
 
 % Title page
 \begin{titlepage}
@@ -204,11 +206,12 @@ Le logiciel sera incapable de :
 
 \noindent Note : Le tableau complet contient des animations, ce schéma représente une seule image qui pourrait être présente dans le tableau.
 
-\begin{center}
-	\includegraphics[width=8cm]{./img/schemaCube.png}\\
-	\textsc{Figure 1} - Représentation 3D du tableau \emph{CubeLED}
-\end{center}
-
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{./img/schemaCube.png}
+	\caption{Représentation 3D du tableau \emph{CubeLED}}
+	\label{3dArray}
+\end{figure}
 \newpage
 
 \subsection{Format ".cube"}
@@ -223,10 +226,17 @@ Chaque partie du fichier est séparée par des séparateurs de début et fin. Po
 \vspace{0.5cm}
 
 
+
 \begin{flushleft}
 	\noindent Voici un schéma représentant la structure du fichier ".cube" :
-	\includegraphics[width=15cm]{./img/structureCube.png}\\
+	\begin{figure}[htp]
+		\centering
+		\includegraphics[width=15cm, trim={0 1cm 0 0}, clip]{./img/structureCube.png}
+		\caption{Représentation d'un fichier du "\emph{.cube}"}
+		\label{structCube}
+	\end{figure}
 \end{flushleft}
+
 \begin{center}
 	\begin{tabular}{|r  l|}
 		\hline
@@ -241,10 +251,12 @@ Chaque partie du fichier est séparée par des séparateurs de début et fin. Po
 \end{center}
 
 \noindent Voici un schéma représentant un étage du cube, un étage contient huit lignes de leds :
-\begin{center}
-	\includegraphics[width=10cm]{./img/structureEtage.png}\\
-	\textsc{Figure 1} - Représentation d'un étage du \emph{CubeLED}
-\end{center}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=10cm]{./img/structureEtage.png}
+	\caption{Représentation d'un étage du \emph{CubeLed}}
+	\label{cubeFloor}
+\end{figure}
 
 \newpage
 % Analyse fonctionnelle
@@ -257,6 +269,16 @@ Chaque partie du fichier est séparée par des séparateurs de début et fin. Po
 
 % Analyse organique
 \section{Analyse organique}
+\subsection{Bibliothèque \clcl}
+Pour le processus de communication entre le cube à led et l'application, une bibliothèque C\# a été créée. Cette bibliothèque est une sur-couche de \emph{UsbLibraryCfptAdd}. Elle implémente les fonctionnalités qui permettent la communication spécifique entre le cube et l'application.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=10cm]{Img/uml_clcl.png}
+	\caption{Diagramme \emph{UML} de la bibliothèque \clcl}
+	\label{uml_clcl}
+\end{figure}
+
+
 \newpage
 
 % Conclusion
