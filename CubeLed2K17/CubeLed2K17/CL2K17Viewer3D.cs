@@ -36,8 +36,7 @@ namespace CubeLed2K17
         //BasicEffect for rendering
         BasicEffect basicEffect;
 
-        
-        public int faceShowed = 0;
+        int faceShowed;
 
         public CL2K17Viewer3D(IntPtr drawSurface)
         {
@@ -61,7 +60,7 @@ namespace CubeLed2K17
         protected override void Initialize()
         {
             base.Initialize();
-
+            faceShowed = 0;
             //Setup Camera
             camTarget = new Vector3(100f, 110f, 0f);
             camPosition = new Vector3(90f, 100f, -300f);
@@ -138,21 +137,12 @@ namespace CubeLed2K17
               //  camPosition.Y += 1f;
                 camTarget.Y += 1f;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Add) && camPosition.Z < -200f)
-            {
-                camPosition.Z += 1f;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.Subtract))
-            {
-                camPosition.Z -= 1f;
-                //myCube.GetCubeState();
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.Space))
-            {
-                //orbit = !orbit;
-            }
 
-            if(Keyboard.GetState().IsKeyDown(Keys.NumPad1))
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad0))
+            {
+                faceShowed = 0;    
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad1))
             {
                 faceShowed = 1;
             }
@@ -183,19 +173,8 @@ namespace CubeLed2K17
             else if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
             {
                 faceShowed = 8;
+            }
 
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad0))
-            {
-                faceShowed = 0;
-            }
-            /*if (orbit)
-            {
-                Matrix rotationMatrix = Matrix.CreateRotationY(
-                                        MathHelper.ToRadians(1f));
-                camPosition = Vector3.Transform(camPosition,
-                              rotationMatrix);
-            }*/
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget,
                          Vector3.Up);
 

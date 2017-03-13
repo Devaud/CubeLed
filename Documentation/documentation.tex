@@ -31,13 +31,13 @@
 
 % Déclaration du pied de page
 \renewcommand{\footrulewidth}{1pt}
-\fancyfoot[l]{Kevin Amando \& \\ Alan Devaud \& \\ Gregory Mendez}
+\fancyfoot[l]{Kevin Amado \& \\ Alan Devaud \& \\ Grégory Mendez}
 \fancyfoot[c]{T.IS-E2B}
 \fancyfoot[r]{page \thepage}
 
 % Information sur le projet (auteur, titre, date,etc.)
 \title{Cube à led}
-\author{Kevin Amando \& Alan Devaud \& Gregory Mendez}
+\author{Kevin Amado \& Alan Devaud \& Grégory Mendez}
 \date{\today}
 
 \begin{document}
@@ -62,7 +62,7 @@
             \emph{Elèves :}\\
             M. Kevin \textsc{Amado} \\
             M. Alan \textsc{Devaud}\\
-            M. Gregory \textsc{Mendez}
+            M. Grégory \textsc{Mendez}
           \end{flushleft}
         \end{minipage}%
         \begin{minipage}{0.4\textwidth}
@@ -249,6 +249,10 @@ Chaque partie du fichier est séparée par des séparateurs de début et fin. Po
 \newpage
 % Analyse fonctionnelle
 \section{Analyse fonctionnelle}
+\noindent Il nous était imposé de programmer en C\#. Une interface graphique était également demandée, nous avons choisis d'utiliser monogame pour la réaliser. Monogame est la nouvelle version d'XNA, nous permettant de créer une interface graphique 3D. Un cube à Leds (512 leds) est fourni. 
+\vspace{1cm}
+
+\noindent La DLL UsbLibraryCfptAdd nous a été fourni avec le cube. Cette DLL est essentielle au fonctionnement du programme car elle permet la communication du PC au cube. Le micro-processeur du cube utilise une structure de données qui diffère de la notre. Il nous a donc fallu créer une DLL(CubeLedCommunicationLibrary) permettant de traduire notre structure pour qu'elle soit compréhensible par le cube.
 \newpage
 
 % Analyse organique

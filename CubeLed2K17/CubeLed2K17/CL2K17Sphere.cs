@@ -50,6 +50,7 @@ namespace CubeLed2K17
             primitive = new CL2K17SpherePrimitive(graphics, radius, 10);
             this.Radius = radius;
             this.ledColor = Color.LightBlue;
+            //this.ledColor = Color.Beige;
             this.Brightness = DEFAULT_BRIGHTNESS;
             this.On = true;
             this.Position = position;
@@ -62,7 +63,7 @@ namespace CubeLed2K17
             // calcul la luminosité de la sphère 
             if (On)
             {
-                this.ledColor = Color.FromNonPremultiplied((Brightness * 2), (Brightness * 2), (int)(Color.LightBlue.B), Color.LightBlue.A);
+                this.ledColor = Color.FromNonPremultiplied((Brightness * 2), (Brightness * 2), (int)(Color.Beige.B), Color.Beige.A);
             }
             else
             {

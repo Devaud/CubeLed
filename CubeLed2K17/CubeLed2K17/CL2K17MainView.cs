@@ -112,7 +112,7 @@ namespace CubeLed2K17
 
         private void BtnPlay_Click(object sender, EventArgs e)
         {
-            Game.SelectLed(0, 0, 0);
+            //Game.SelectLed(0, 0, 0);
         }
 
         private void BtnPause_Click(object sender, EventArgs e)
@@ -144,6 +144,7 @@ namespace CubeLed2K17
             Game.ChangeLed(5, 3, 7);
             Game.ChangeLed(2, 4, 7);
             Game.ChangeLed(6, 3, 7);
+            /*Game.ChangeLed(1, 4, 0);*/
             this.UpdateCube();
         }
 

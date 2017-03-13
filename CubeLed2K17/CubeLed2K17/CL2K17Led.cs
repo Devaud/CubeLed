@@ -73,7 +73,7 @@ namespace CubeLed2K17
             }
             else if (On)
             {
-                this.ledColor = Color.FromNonPremultiplied((Brightness * 2), (Brightness * 2), (int)(Color.LightBlue.B), Color.LightBlue.A);
+                this.ledColor = Color.FromNonPremultiplied((int)(Color.LightBlue.R), (int)(Color.LightBlue.G), (int)(Color.LightBlue.B), Color.LightBlue.A);
             }
             else
             {
