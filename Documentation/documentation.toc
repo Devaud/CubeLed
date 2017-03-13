@@ -2,9 +2,16 @@
 \contentsline {section}{\numberline {1}R\IeC {\'e}sum\IeC {\'e}}{1}
 \contentsline {section}{\numberline {2}Introduction}{3}
 \contentsline {section}{\numberline {3}Cahier des charges}{4}
-\contentsline {section}{\numberline {4}Analyse de l'existant}{5}
-\contentsline {subsection}{\numberline {4.1}Repr\IeC {\'e}sentation du Cube dans l'application}{5}
-\contentsline {subsection}{\numberline {4.2}Format ".cube"}{7}
-\contentsline {section}{\numberline {5}Analyse fonctionnelle}{8}
-\contentsline {section}{\numberline {6}Analyse organique}{9}
-\contentsline {section}{\numberline {7}Conclusion}{10}
+\contentsline {subsection}{\numberline {3.1}Sujet}{4}
+\contentsline {subsection}{\numberline {3.2}But}{4}
+\contentsline {subsection}{\numberline {3.3}Sp\IeC {\'e}cification}{4}
+\contentsline {subsection}{\numberline {3.4}Restriction}{4}
+\contentsline {subsection}{\numberline {3.5}Environnement}{4}
+\contentsline {subsection}{\numberline {3.6}Livrables}{4}
+\contentsline {subsection}{\numberline {3.7}R\IeC {\'e}ddition}{5}
+\contentsline {section}{\numberline {4}Analyse de l'existant}{6}
+\contentsline {subsection}{\numberline {4.1}Repr\IeC {\'e}sentation du Cube dans l'application}{6}
+\contentsline {subsection}{\numberline {4.2}Format ".cube"}{8}
+\contentsline {section}{\numberline {5}Analyse fonctionnelle}{9}
+\contentsline {section}{\numberline {6}Analyse organique}{10}
+\contentsline {section}{\numberline {7}Conclusion}{11}

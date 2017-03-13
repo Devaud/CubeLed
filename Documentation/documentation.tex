@@ -52,7 +52,7 @@
         
         % Title
         \rule{\linewidth}{0.5mm} \\[0.4cm]
-        { \huge \bfseries Cube à Led \\ Documentation \\[0.4cm] }
+        { \huge \bfseries Cube à Led \\ Documentation technique\\[0.4cm] }
         \rule{\linewidth}{0.5mm} \\[1.5cm]
     
         % Author and supervisor
@@ -97,19 +97,49 @@ Notre projet consiste à améliorer le projet Cube de M. \textsc{Aubert} Jonatha
 
 % Cahier des charges
 \section{Cahier des charges}
-\textbf{\large{But :}}
-\begin{description}
-	\item Reprendre le projet CubeLed et l'améliorer.\\
-\end{description}
+\subsection{Sujet}
+Création d'une interface pour la gestion d'un cube led.
 
-\textbf{\large{Points demandés :}}
+\subsection{But}
+Créer une interface graphique permettant à l'utilisateur de gérer le cube à led. Cette interface est un logicie C\# munie d'un cube 3D. L'utilisateur peut alors sélectionner les leds du cube et les modifier (allumer, étindre, intensité). Le cube à led - physique - se modifier en fonction des actions de l'utilisateur sur l'application.
+\subsection{Spécification}
+Le logiciel sera capable de :
 \begin{itemize}
-	\item[*] Interface 3D
-	\item[*] Affichage d'un cube de leds
-	\item[*] Intéractions avec le cube
-	\item[*] Intéractions avec les leds
-	\item[*] Gestion de la couleur
-	\item[*] Gestion d'animation
+	\item[*] afficher un cube virtuelle en 3D
+	\item[*] communiquer avec le cube
+	\item[*] sélectionner une face du cube virtuelle
+	\item[*] modifier une led du cube modifier
+\end{itemize}
+
+\subsection{Restriction}
+Le logiciel sera incapable de :
+\begin{itemize}
+	\item générer un fichier .cube
+	\item modifier la couleur des led du cube (virtuelle et physique)
+	\item gerer plusieurs cubes led en même temps
+	\item modifier le programme du micro-controlleur du cube led
+\end{itemize}
+
+\subsection{Environnement}
+\begin{itemize}
+	\item[*] Système d'exploitation : \emph{Windows 7}
+	\item[*] Outil de développement : \emph{Visual Studio}
+	\item[*] Langage de programmaction : \emph{C\#}
+\end{itemize}
+
+\subsection{Livrables}
+\begin{itemize}
+	\item[*] Code source
+	\item[*] Documentation technique
+	\item[*] Journal de bord
+\end{itemize}
+
+\subsection{Réddition}
+\begin{itemize}
+	\item[*] 20 mars 2017 : code source
+	\item[*] 20 mars 2017 : documentation technique
+	\item[*] 20 mars 2017 : journal de bord
+	\item[*] 20 mars 2017 : présentation final
 \end{itemize}
 \newpage
 
