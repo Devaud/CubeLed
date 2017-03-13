@@ -49,6 +49,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TSSLIsConnected = new System.Windows.Forms.ToolStripStatusLabel();
             this.TSSLCanCommunicate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblFaceShowing = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TRBIntensity)).BeginInit();
@@ -74,7 +75,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.RdbOff);
             this.groupBox1.Controls.Add(this.RdbOn);
-            this.groupBox1.Location = new System.Drawing.Point(12, 459);
+            this.groupBox1.Location = new System.Drawing.Point(12, 476);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(334, 154);
             this.groupBox1.TabIndex = 1;
@@ -141,7 +142,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.RdbAnimOff);
             this.groupBox2.Controls.Add(this.RdbAnimOn);
-            this.groupBox2.Location = new System.Drawing.Point(352, 459);
+            this.groupBox2.Location = new System.Drawing.Point(352, 476);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(475, 154);
             this.groupBox2.TabIndex = 2;
@@ -254,7 +255,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSSLIsConnected,
             this.TSSLCanCommunicate});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 621);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 633);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(839, 22);
             this.statusStrip1.TabIndex = 3;
@@ -272,16 +273,29 @@
             this.TSSLCanCommunicate.Size = new System.Drawing.Size(134, 17);
             this.TSSLCanCommunicate.Text = "USB can\'t communicate";
             // 
-            // FrmCubeLed
+            // lblFaceShowing
+            // 
+            this.lblFaceShowing.AutoSize = true;
+            this.lblFaceShowing.BackColor = System.Drawing.Color.Transparent;
+            this.lblFaceShowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFaceShowing.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFaceShowing.Location = new System.Drawing.Point(12, 448);
+            this.lblFaceShowing.Name = "lblFaceShowing";
+            this.lblFaceShowing.Size = new System.Drawing.Size(55, 16);
+            this.lblFaceShowing.TabIndex = 4;
+            this.lblFaceShowing.Text = "Face : 0";
+            // 
+            // CL2K17MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 643);
+            this.ClientSize = new System.Drawing.Size(839, 655);
+            this.Controls.Add(this.lblFaceShowing);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pctSurface);
-            this.Name = "FrmCubeLed";
+            this.Name = "CL2K17MainView";
             this.Text = "CubeLed";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCubeLed_FormClosing);
             this.Load += new System.EventHandler(this.FrmCubeLed_Load);
@@ -323,6 +337,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel TSSLIsConnected;
         private System.Windows.Forms.ToolStripStatusLabel TSSLCanCommunicate;
+        private System.Windows.Forms.Label lblFaceShowing;
     }
 }
 

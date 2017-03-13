@@ -38,6 +38,7 @@ namespace CubeLed2K17
         {
             this.TSSLIsConnected.Text = (this.UsbComm.IsConnected) ? "USB connected" : "USB disconnected";
             this.TSSLCanCommunicate.Text = (this.UsbComm.CanCommunicate) ? "USB can communicate" : "USB can't communicate";
+            this.UpdateFaceShowing();
         }
 
         private void FrmCubeLed_Load(object sender, EventArgs e)
@@ -48,6 +49,7 @@ namespace CubeLed2K17
         public void connect(CL2K17Viewer3D game)
         {
             this.Game = game;
+            this.UpdateFaceShowing();
         }
 
         public IntPtr getDrawSurface()
@@ -142,17 +144,20 @@ namespace CubeLed2K17
             Game.ChangeLed(5, 3, 7);
             Game.ChangeLed(2, 4, 7);
             Game.ChangeLed(6, 3, 7);
-            Game.ChangeLed(1, 4, 0);
-            /*Game.ChangeLed(0, 0, 0);
-            Game.ChangeLed(1, 0, 0);
-            Game.ChangeLed(0, 1, 0);
-            Game.ChangeLed(0, 0, 1);*/
             this.UpdateCube();
         }
 
+        /// <summary>
+        /// Met à jour le cube 3D
+        /// </summary>
         private void UpdateCube()
         {
             this.UsbComm.SendDataToCube(this.Game.GetCubeState());
+        }
+
+        private void UpdateFaceShowing()
+        {
+            this.lblFaceShowing.Text = "Face : " + Game.faceShowed.ToString();
         }
     }
 }

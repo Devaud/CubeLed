@@ -37,7 +37,7 @@ namespace CubeLed2K17
         BasicEffect basicEffect;
 
         
-        int faceShowed = 0;
+        public int faceShowed = 0;
 
         public CL2K17Viewer3D(IntPtr drawSurface)
         {
