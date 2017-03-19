@@ -391,14 +391,21 @@ L'une des premières étapes de notre projet a été de définir, comment la cre
 Le problème a été d'imbriquer le projet monogame dans un autre projet \textit{Windows Form}. Mendez s'est occupé de cette tâche. Pendant un certain temps cela à fonctionné puis nous nous sommes aperçu que nous ne pouvions pas charger d'images 3D (.x , .fbx), ne pouvais pas être chargé avec le projet windows forme car \textit{content} est nécessaire
 
 \subsection{Communication USB}
+Pour la communication avec le cube à led plusieurs problèmes ont été rencontrés.
+
 \subsubsection{compréhension code}
+Le plus gros des problèmes a été la compréhension du code source de l'application fournie avec le cube à led. En effet, son créateur était élèctronicien et certaine logique est différentes. L'interprètation se fut alors plus fastidieuse que pour d'autre code. Par exemple, pour l'enregistrement des leds allumées, il a utilisé un tableau tridimensionnel et stocke une valeur de 0 à 256. Cella lui permet de connaitre les leds qui doivent être étaintes et celle qui doivent être allumées (très astucieux).
+
 \subsubsection{Adaptation des données envoyés au MCU}
+Le second problème a été l'adaptation des données. La transformation ce fut difficile. Il a fallu ajuster la position des données par apport à la position réelle des leds et de celles du cube 3D. De plus, il fallait manipuler la modification des leds d'une ligne pour la transformer en une données entre 0 et 256.
+
 \subsection{Gestion de forme 3D}
 
 \subsubsection{Compréhension de la 3D}
 \subsubsection{Création d'une forme 3D}
 \subsubsection{Gestion forme 3D}
 \subsection{Picking}
+\newpage
 
 % Conclusion
 \section{Conclusion}
