@@ -96,39 +96,40 @@
 
 % Introduction
 \section{Introduction}
-Notre projet consiste à améliorer le projet Cube de M. \textsc{Aubert} Jonathan dans le câdre de l'atelier Technicien, qui regroupe les deuxièmes année avec les premières. Nous sommes trois à travailler ensemble. L'objectif est de reprendre le travail réaliser en ajoutant une vue 3D. Notre application doit pouvoir gérer la couleur des Leds. La gestion d'animation est aussi demandée.
+Notre projet consiste à améliorer le projet Cube de M. \textsc{Aubert} Jonathan dans le cadre de l'atelier Technicien, qui regroupe les deuxièmes années avec les premières. Nous sommes trois à travailler ensemble. L'objectif est de reprendre le travail réalisé en ajoutant une vue 3D. Notre application doit pouvoir gérer la couleur des LED. La gestion d'animation est aussi demandée.
 \newpage
 
 % Cahier des charges
 \section{Cahier des charges}
 \subsection{Sujet}
-Création d'une interface pour la gestion d'un cube led.
+Création d'une interface pour la gestion d'un cube à LED.
 
 \subsection{But}
-Créer une interface graphique permettant à l'utilisateur de gérer le cube à led. Cette interface est un logicie C\# munie d'un cube 3D. L'utilisateur peut alors sélectionner les leds du cube et les modifier (allumer, étindre, intensité). Le cube à led - physique - se modifier en fonction des actions de l'utilisateur sur l'application.
+Créer une interface graphique permettant à l'utilisateur de gérer le cube à LED. Cette interface est un logiciel C\# muni d'un cube 3D. L'utilisateur peut alors sélectionner les leds du cube et les modifier (allumer, éteindre, intensité). Le cube à LED - physique - se modifie en fonction des actions de l'utilisateur sur l'application.
+
 \subsection{Spécification}
 Le logiciel sera capable de :
 \begin{itemize}
-	\item[*] afficher un cube virtuelle en 3D
+	\item[*] afficher un cube virtuel en 3D
 	\item[*] communiquer avec le cube
-	\item[*] sélectionner une face du cube virtuelle
-	\item[*] modifier une led du cube modifier
+	\item[*] sélectionner une face du cube virtuel
+	\item[*] modifier une LED du cube
 \end{itemize}
 
 \subsection{Restriction}
 Le logiciel sera incapable de :
 \begin{itemize}
-	\item[*] générer un fichier .cube
-	\item[*] modifier la couleur des led du cube (virtuelle et physique)
-	\item[*] gerer plusieurs cubes led en même temps
-	\item[*] modifier le programme du micro-controlleur du cube led
+	\item[*] générer un fichier ".cube"
+	\item[*] modifier la couleur des LEDS du cube (virtuelle et physique)
+	\item[*] gérer plusieurs cubes à LED en même temps
+	\item[*] modifier le programme du micro-contrôleur du cube à LED
 \end{itemize}
 
 \subsection{Environnement}
 \begin{itemize}
 	\item[*] Système d'exploitation : \emph{Windows 7}
 	\item[*] Outil de développement : \emph{Visual Studio}
-	\item[*] Langage de programmaction : \emph{C\#}
+	\item[*] Langage de programmation : \emph{C\#}
 \end{itemize}
 
 \subsection{Livrables}
@@ -150,7 +151,7 @@ Le logiciel sera incapable de :
 % Analyse de l'existant
 \section{Analyse de l'existant}
 \subsection{Représentation du Cube dans l'application}
-\noindent Le cube possède huit étages, chaques étage contient huit rangées qui, elles-mêmes contiennent huit Leds. Le Cube à Leds est représenté sous la forme d'un tableau à trois dimensions :
+\noindent Le cube possède huit étages, chaque étage contient huit rangées qui, elles-mêmes contiennent huit LED. Le Cube à LED est représenté sous la forme d'un tableau à trois dimensions :
 \begin{center}
 	\textsc{CubeLED}[x][y][nbImage] = value
 \end{center}
@@ -166,7 +167,7 @@ Le logiciel sera incapable de :
 
 \subsubsection{Explication de la valeur stockée dans \emph{"value"}}
 
-\noindent Ce sont les deux premiers paramètres qui sont utiles pour représenter la position d'une Led allumée, c'est donc grâce à la valeur stockée que nous indiquerons au microcontrôleur quelle Led il va devoir allumer. On envoie donc une valeur entre 0 et 255, sous forme binaire. Dans cette chaîne binaire, chaque "1" représente une LED allumée et chaque "0" une LED éteinte.
+\noindent Ce sont les deux premiers paramètres qui sont utiles pour représenter la position d'une Led allumée, c'est donc grâce à la valeur stockée que nous indiquerons au micro-contrôleur quelle LED il va devoir allumer. On envoie donc une valeur entre 0 et 255, sous forme binaire. Dans cette chaîne binaire, chaque "1" représente une LED allumée et chaque "0" une LED éteinte.
 \vspace{1cm} 
 
 \noindent \textsc{Exemple 1 : CubeLED}[0][0][0] = $128_{10}$ -> $10000000_2$ 
@@ -190,7 +191,7 @@ Le logiciel sera incapable de :
 \end{description}
 
 
-\noindent Ce format est utilisé pour simplifier la communication avec le microcontrôleur et la création de fichiers ".cube". Il est aussi important de prendre conscience de l’orientation du Cube en utilisant ce format.
+\noindent Ce format est utilisé pour simplifier la communication avec le micro-contrôleur et la création de fichiers ".cube". Il est aussi important de prendre conscience de l’orientation du Cube en utilisant ce format.
 
 \vspace{0.5cm}
 
@@ -261,11 +262,11 @@ Chaque partie du fichier est séparée par des séparateurs de début et fin. Po
 \section{Analyse fonctionnelle}
 
 \subsection{C\#}
-Le logiciel sera développé en C\#. Language puissant et utilisé lors de la formation. Il va nous permettre de mettre en place une structure à notre programme en créant des classes et utilisant des bibliothèques. 
+Le logiciel sera développé en C\#. Langage puissant et utilisé lors de la formation. Il va nous permettre de mettre en place une structure à notre programme en créant des classes et utilisant des bibliothèques. 
 
 \subsection{Esquisse de l'interface}
 
-L'interface (\addRef{interface}) contient les éléments essentiels pour "jouer" avec le cube. Au millieu, dans la partie verte claire, on retrouve le cube à led matérialisé en 3D. L'utilisateur pourra sélectionner les leds du cube et les modifier grâce aux interaction que l'on trouve en dessous.
+L'interface (\addRef{interface}) contient les éléments essentiels pour "jouer" avec le cube. Au milieu, dans la partie verte claire, on retrouve le cube à LED matérialisé en 3D. L'utilisateur pourra sélectionner les leds du cube et les modifier grâce aux interactions que l'on trouve en dessous.
 \vspace{.5cm}
 
 \noindent Dans le groupe boxe, \emph{Options}, on trouve les informations de la led sélectionnée :
@@ -295,9 +296,9 @@ L'interface (\addRef{interface}) contient les éléments essentiels pour "jouer"
 \end{figure}
 
 \subsection{\emph{UsbLibraryCfptAdd}}
-\emph{UsbLibraryCfptAdd} est une bibliothèque qui permet de communiquer sur une trame USB. Elle a été fournie avec le cube à led pour que l'on puisse communiquer entre le cube à led et le PC. Elle implémente certaine fonctionnalité tels que la détection d'un nouveau périphérique, la communication avec un périphérique donné, la déconnexion d'un périphérique, etc. 
+\emph{UsbLibraryCfptAdd} est une bibliothèque qui permet de communiquer sur une trame USB. Elle a été fournie avec le cube à LED pour que l'on puisse communiquer entre le cube à LED et le PC. Elle implémente certaines fonctionnalités telles que la détection d'un nouveau périphérique, la communication avec un périphérique donné, la déconnexion d'un appareil USB, etc. 
 
-Une bibliothèque créée par nous servira de sur-couche à celle-ci. La bibliothèque pourra alors transformer un format de donnée reçus de notre application, le transformer au format que l'on a besoin. Puis, le format de sortie sera envoyé au cube par la connexion usb.
+Une bibliothèque créée par nous servira de sur-couche à celle-ci. La bibliothèque pourra alors transformer un format de données reçus de notre application, le transformer au format dont on a besoin. Puis, le format de sortie sera envoyé au cube par la connexion USB.
 \newpage
 
 % Analyse organique
@@ -396,7 +397,7 @@ Pour la communication avec le cube à led plusieurs problèmes ont été rencont
 \subsubsection{compréhension code}
 Le plus gros des problèmes a été la compréhension du code source de l'application fournie avec le cube à led. En effet, son créateur était élèctronicien et certaine logique est différentes. L'interprètation se fut alors plus fastidieuse que pour d'autre code. Par exemple, pour l'enregistrement des leds allumées, il a utilisé un tableau tridimensionnel et stocke une valeur de 0 à 256. Cella lui permet de connaitre les leds qui doivent être étaintes et celle qui doivent être allumées (très astucieux).
 
-\subsubsection{Adaptation des données envoyés au MCU}
+\subsubsection{Adaptation des données envoyées au MCU}
 Le second problème a été l'adaptation des données. La transformation ce fut difficile. Il a fallu ajuster la position des données par apport à la position réelle des leds et de celles du cube 3D. De plus, il fallait manipuler la modification des leds d'une ligne pour la transformer en une données entre 0 et 256.
 
 \subsection{Gestion de forme 3D}
