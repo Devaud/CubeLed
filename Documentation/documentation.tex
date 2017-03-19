@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
+\usepackage[a4paper, left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
 \usepackage{graphicx}
 \usepackage{url}
 
@@ -273,11 +274,80 @@ Chaque partie du fichier est séparée par des séparateurs de début et fin. Po
 Pour le processus de communication entre le cube à led et l'application, une bibliothèque C\# a été créée. Cette bibliothèque est une sur-couche de \emph{UsbLibraryCfptAdd}. Elle implémente les fonctionnalités qui permettent la communication spécifique entre le cube et l'application.
 \begin{figure}[htp]
 	\centering
-	\includegraphics[width=10cm]{Img/uml_clcl.png}
+	\includegraphics[width=10cm]{./Img/uml_clcl.png}
 	\caption{Diagramme \emph{UML} de la bibliothèque \clcl}
 	\label{uml_clcl}
 \end{figure}
 
+\newpage
+\subsection{Monogame}
+Monogame est une implémentation \emph{Open Source} du framework Microsoft XNA 4. Le but de monogame dans notre projet est de faciliter la création et la gestion d'objet en 3D. Pour implémenter il suffit de télécharger sur le site "http://www.monogame.net/downloads". Nous avons téléchargé la dernière version disponbile soit la version MonoGame 3.6.
+
+Monogame n'était pas le seul choix possible, au contraire il existe par exemple unity qui permet la création et la gestion simple d'objet 3D (voir même plus simple que monogame), mais nous avons choisis monogame car, implémenter un projet monogame dans un projet windows form avait l'air pour nous beaucoup plus simple avec monogame (voir problèmes rencontrés).
+
+\subsection{Virtualisation du cube en 3D}
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=15cm]{./Img/DiagrammeUmlCube.png}
+	\caption{Diagramme \emph{UML} du cube 3D}
+	\label{uml_clcl}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Classe CL2K17Led}
+    
+    Cette classe à deux fonctions enregistrer les données importantes des leds comme par exemple son état (on/off), sa luminosité et encore sa couleur. La deuxième fonction constitue à dessiner ces leds à l'aide d'une librairie télécharger sur "github.com", c'est de la que vient le type SpherePrimitive. 
+    
+    Le booléan "\emph{selected}" signifie que le focus de l'utilisateur est sur cette led ou non. Elle permet de changer la couleur ou non de la led en question.
+    
+    La variable de type BoundingSphere est utilisé pour l'intersection en picking, mais cette utilitée n'est pas fonctionnelle (voir problèmes rencontrés). 
+    
+    \item \textbf{Classe CL2K17Face}
+    
+    Une face est composée de 64 leds (classe CL2K17Led).
+    
+    Un "\emph{id} est utilisé pour décaler le dessin de la face des autres faces.
+    
+    Une face peut changer l'état des leds, malheureusement la luminosité est une option qu'il manque, même si celle-ci est déjà implémentée sur la classe CL2K17led.
+    
+    \item \textbf{Classe CL2K17Cube}
+    
+    Un cube contient 8 leds, et permet de renvoyer les données des leds dans un tableau de string 3D sous le format suivant : Frame;State;intensity;Color;
+    
+    \begin{itemize}
+        \item frame : numéro de l'image (exemple : 0)
+        \item State : Etat on/off de la led (exemple : true)
+        \item intensity : la luminosité de la led en pourcentage (exemple : 55)
+        \item Color : couleur de la led en RGB : (exemple : 65535)
+    \end{itemize}
+    
+    Le tableau 3D contient un total de 512 variable string pour les 512 leds du cube.
+    
+\end{enumerate}
+
+\subsection{Bibliothèque utilisée}
+
+Pour la création de sphère en 3D nous avons opté pour une bibliothèque \emph{Open Source} disponible au lien suivant : https://github.com/CartBlanche/MonoGame-Samples/tree/master/PerformanceMeasuring/Primitives \\
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=15cm]{./img/diagrammeUmlPrimitive.png}
+	\caption{Diagramme \emph{UML} création sphere 3D}
+	\label{uml_clcl}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{structure CL2K17VertexPositionNormal}
+    
+    Pour créer une sphère en 3D, il faut des triangles, pour créer des triangles, il faut des points pour chaque sommet du triangle., c'est la que les vertex prennent tout leur sens. Cette structure aura pourra unique fonction de stocker les points de chaque triangles.
+    
+    \item \textbf{Classe CL2K17GeometricPrimitive}
+    Cette classe permet de dessiner n'importe quel model 3D.
+    
+    \item \textbf{Classe CL2K17SpherePrimitive}
+    Cette classe créer les triangles rejoignant chaque vertex pour créer une sphère.
+\end{enumerate}
 
 \newpage
 
