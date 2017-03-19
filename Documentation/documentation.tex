@@ -44,6 +44,7 @@
 \begin{document}
 	
 \newcommand{\clcl}{\emph{CubeLedCommunicationLibrary} }
+\newcommand{\addRef}[1]{Fig. \ref{#1} - page \pageref{#1}}
 
 % Title page
 \begin{titlepage}
@@ -117,10 +118,10 @@ Le logiciel sera capable de :
 \subsection{Restriction}
 Le logiciel sera incapable de :
 \begin{itemize}
-	\item générer un fichier .cube
-	\item modifier la couleur des led du cube (virtuelle et physique)
-	\item gerer plusieurs cubes led en même temps
-	\item modifier le programme du micro-controlleur du cube led
+	\item[*] générer un fichier .cube
+	\item[*] modifier la couleur des led du cube (virtuelle et physique)
+	\item[*] gerer plusieurs cubes led en même temps
+	\item[*] modifier le programme du micro-controlleur du cube led
 \end{itemize}
 
 \subsection{Environnement}
@@ -163,9 +164,7 @@ Le logiciel sera incapable de :
 \end{tabular}
 \end{center}
 
-\vspace{1.5cm} 
-
-\textbf{\large{Explication de la valeur stockée dans \emph{"value"} :}}
+\subsubsection{Explication de la valeur stockée dans \emph{"value"}}
 
 \noindent Ce sont les deux premiers paramètres qui sont utiles pour représenter la position d'une Led allumée, c'est donc grâce à la valeur stockée que nous indiquerons au microcontrôleur quelle Led il va devoir allumer. On envoie donc une valeur entre 0 et 255, sous forme binaire. Dans cette chaîne binaire, chaque "1" représente une LED allumée et chaque "0" une LED éteinte.
 \vspace{1cm} 
@@ -190,8 +189,6 @@ Le logiciel sera incapable de :
 	\item[->]Toutes les Leds sont allumées sur la ligne x = 8 / y = 1.\\
 \end{description}
 
-
-\newpage
 
 \noindent Ce format est utilisé pour simplifier la communication avec le microcontrôleur et la création de fichiers ".cube". Il est aussi important de prendre conscience de l’orientation du Cube en utilisant ce format.
 
@@ -262,10 +259,45 @@ Chaque partie du fichier est séparée par des séparateurs de début et fin. Po
 \newpage
 % Analyse fonctionnelle
 \section{Analyse fonctionnelle}
-\noindent Il nous était imposé de programmer en C\#. Une interface graphique était également demandée, nous avons choisis d'utiliser monogame pour la réaliser. Monogame est la nouvelle version d'XNA, nous permettant de créer une interface graphique 3D. Un cube à Leds (512 leds) est fourni. 
-\vspace{1cm}
 
-\noindent La DLL UsbLibraryCfptAdd nous a été fourni avec le cube. Cette DLL est essentielle au fonctionnement du programme car elle permet la communication du PC au cube. Le micro-processeur du cube utilise une structure de données qui diffère de la notre. Il nous a donc fallu créer une DLL(CubeLedCommunicationLibrary) permettant de traduire notre structure pour qu'elle soit compréhensible par le cube.
+\subsection{C\#}
+Le logiciel sera développé en C\#. Language puissant et utilisé lors de la formation. Il va nous permettre de mettre en place une structure à notre programme en créant des classes et utilisant des bibliothèques. 
+
+\subsection{Esquisse de l'interface}
+
+L'interface (\addRef{interface}) contient les éléments essentiels pour "jouer" avec le cube. Au millieu, dans la partie verte claire, on retrouve le cube à led matérialisé en 3D. L'utilisateur pourra sélectionner les leds du cube et les modifier grâce aux interaction que l'on trouve en dessous.
+\vspace{.5cm}
+
+\noindent Dans le groupe boxe, \emph{Options}, on trouve les informations de la led sélectionnée :
+\begin{itemize}
+	\item \emph{On} : allumer la led
+	\item \emph{Off} : étindre la led
+	\item \emph{Intensité} : l'intensité de la led
+	\item \emph{Changer couleur} : modifier la couleur de la led
+\end{itemize}
+\vspace{.5cm}
+
+\noindent Dans le second groupe boxe, \emph{Général}, on retrouve les informations par apport à l'application :
+\begin{itemize}
+	\item \emph{Animation On} : indique qu'une animation sera gérée (plusieurs frame générée)
+	\item \emph{Animation Off} : indique que le cube sera une image fixe (une seule frame)
+	\item \emph{Play} : met en marche l'animation
+	\item \emph{Pause} : suspend l'animation
+	\item \emph{Stop} : arrête entièrement l'animation
+	\item \emph{Options - Nb image} : nombre d'image pour l'animation
+	\item \emph{Options - ms/image} : nombre d'image par milliseconde que le cube doit afficher
+\end{itemize}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=.60\textwidth]{img/windform.png}
+	\caption{Esquisse de l'interface du logiciel}
+	\label{interface}
+\end{figure}
+
+\subsection{\emph{UsbLibraryCfptAdd}}
+\emph{UsbLibraryCfptAdd} est une bibliothèque qui permet de communiquer sur une trame USB. Elle a été fournie avec le cube à led pour que l'on puisse communiquer entre le cube à led et le PC. Elle implémente certaine fonctionnalité tels que la détection d'un nouveau périphérique, la communication avec un périphérique donné, la déconnexion d'un périphérique, etc. 
+
+Une bibliothèque créée par nous servira de sur-couche à celle-ci. La bibliothèque pourra alors transformer un format de donnée reçus de notre application, le transformer au format que l'on a besoin. Puis, le format de sortie sera envoyé au cube par la connexion usb.
 \newpage
 
 % Analyse organique
@@ -355,6 +387,11 @@ Pour la création de sphère en 3D nous avons opté pour une bibliothèque \emph
 \section{Conclusion}
 
 \newpage
+
+\section{Source}
+\begin{itemize}
+	\item Documentation de l'équipe Cube à led de 2015-2016 (existant)
+\end{itemize}
 
 % Pictures table
 \newpage
